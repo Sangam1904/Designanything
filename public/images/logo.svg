@@ -1,0 +1,20 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A89B6E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B7D4F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Circle Background -->
+  <circle cx="20" cy="20" r="20" fill="url(#logoGradient)"/>
+  
+  <!-- ACD Text -->
+  <text x="20" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">ACD</text>
+  
+  <!-- Design Elements -->
+  <circle cx="12" cy="12" r="2" fill="white" opacity="0.3"/>
+  <circle cx="28" cy="12" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="32" cy="28" r="1" fill="white" opacity="0.5"/>
+</svg>
