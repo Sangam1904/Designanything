@@ -1,43 +1,45 @@
+"use client"
+
 import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { Quote, Star } from 'lucide-react'
 
 export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Basavaraj Biradar',
-      company: 'Tech Innovations Inc.',
+      name: 'Sarah Johnson',
       role: 'Product Manager',
-      content: 'Design Anything  transformed our concept into a stunning 3D model that exceeded our expectations. The attention to detail and professional communication made the entire process seamless.',
-      rating: 4,
-      project: 'Smart Home Device Design'
+      company: 'TechCorp Industries',
+      content: 'The CAD modeling service exceeded our expectations. The team delivered precise models that accelerated our product development timeline significantly.',
+      rating: 5,
+      project: 'Automotive Component Design'
     },
     {
       id: 2,
       name: 'Michael Chen',
-      company: 'Automotive Solutions',
       role: 'Design Director',
-      content: 'The CAD modeling work was exceptional. They delivered precise engineering drawings and 3D assemblies that were production-ready. Highly recommended for any automotive design project.',
+      company: 'Innovate Design Studio',
+      content: 'Exceptional quality and attention to detail. Our 3D designs have never looked better, and the turnaround time was impressive.',
       rating: 5,
-      project: 'Electric Vehicle Components'
+      project: 'Consumer Electronics Design'
     },
     {
       id: 3,
       name: 'Emily Rodriguez',
-      company: 'Furniture Craft Co.',
-      role: 'Creative Director',
-      content: 'Outstanding surface modeling skills! They created beautiful, manufacturable furniture designs that perfectly captured our brand aesthetic. The renderings were photorealistic.',
+      role: 'Engineering Lead',
+      company: 'Future Motors',
+      content: 'Professional service with outstanding results. The assembly models helped us identify design issues early in the process.',
       rating: 5,
-      project: 'Luxury Furniture Collection'
+      project: 'Electric Vehicle Assembly'
     },
     {
       id: 4,
-      name: 'David Thompson',
-      company: 'Aerospace Dynamics',
-      role: 'Engineering Manager',
-      content: 'Professional, reliable, and technically excellent. The drone design work included comprehensive analysis and optimization. Delivered on time and within budget.',
+      name: 'David Kim',
+      role: 'R&D Manager',
+      company: 'GreenTech Solutions',
+      content: 'The simulation and analysis services provided valuable insights that improved our product performance and reliability.',
       rating: 5,
-      project: 'Commercial Drone Assembly'
+      project: 'Renewable Energy System'
     }
   ]
 
@@ -114,32 +116,6 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
-            <h3 className="text-2xl font-playfair font-bold mb-4 text-gray-800 dark:text-white">
-              Ready to Join Our Happy Clients?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Start your project today and experience the same level of quality and professionalism that our clients rave about.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="btn-primary">
-                Start Your Project
-              </a>
-              <a href="/portfolio" className="btn-outline">
-                View More Work
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

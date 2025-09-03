@@ -383,9 +383,9 @@ export function getSoftware() {
 
 /**
  * Get featured projects
- * @returns {Array} Array of featured projects
+ * @returns {Array} Array of featured projects (limited to 4)
  */
 export function getFeaturedProjects() {
   const projects = generateProjectData()
-  return projects.filter(project => project.featured)
+  return projects.filter(project => project.featured).slice(0, 4)
 }

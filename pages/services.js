@@ -2,7 +2,7 @@
 
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
-import { Box, Zap, Video, Palette, Settings, FileText, CheckCircle } from 'lucide-react'
+import { Box, Zap, Video, Palette, Settings, FileText, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Services() {
@@ -12,6 +12,7 @@ export default function Services() {
       icon: Box,
       title: 'CAD Modeling',
       description: 'Professional 3D modeling using industry-standard software for mechanical, industrial, and product design.',
+      backgroundImage: '/images/services/cad-modeling-bg.jpg',
       features: [
         'Mechanical component design',
         'Assembly modeling and management',
@@ -28,6 +29,7 @@ export default function Services() {
       icon: Zap,
       title: '3D Design',
       description: 'Creative 3D design solutions for products, furniture, and industrial applications with complex geometry.',
+      backgroundImage: '/images/services/3d-design-bg.jpg',
       features: [
         'Product concept development',
         'Industrial design',
@@ -44,6 +46,7 @@ export default function Services() {
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
+      backgroundImage: '/images/services/product-animation-bg.jpg',
       features: [
         'Assembly and disassembly animations',
         'Product walkthrough videos',
@@ -60,6 +63,7 @@ export default function Services() {
       icon: Palette,
       title: 'Rendering',
       description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
+      backgroundImage: '/images/services/rendering-bg.jpg',
       features: [
         'Photorealistic product renders',
         'Material and texture setup',
@@ -76,6 +80,7 @@ export default function Services() {
       icon: Settings,
       title: 'Simulation',
       description: 'Engineering analysis and simulation using advanced tools for stress analysis, thermal analysis, and optimization.',
+      backgroundImage: '/images/services/simulation-bg.jpg',
       features: [
         'Structural stress analysis',
         'Thermal analysis',
@@ -92,6 +97,7 @@ export default function Services() {
       icon: FileText,
       title: 'Documentation',
       description: 'Complete technical documentation including drawings, specifications, and project reports.',
+      backgroundImage: '/images/services/documentation-bg.jpg',
       features: [
         'Technical drawings and blueprints',
         'Assembly instructions',
@@ -150,15 +156,45 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center mb-12"
           >
             <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
               Our <span className="gradient-text">Services</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Comprehensive design and engineering services to bring your ideas to life. 
               From concept to completion, we handle every aspect of your project.
             </p>
+          </motion.div>
+
+          {/* Hero Service Buttons */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto"
+          >
+            {services.map((service, index) => (
+              <Link 
+                key={service.id}
+                href={`/services/${service.id}`}
+                className="group"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                  className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 border-2 border-transparent group-hover:border-primary/30"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-white text-center group-hover:text-primary transition-colors duration-200">
+                    {service.title}
+                  </h3>
+                </motion.div>
+              </Link>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -175,53 +211,66 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card p-8"
+                className="relative overflow-hidden rounded-2xl shadow-xl group"
               >
-                {/* Service Header */}
-                <div className="flex items-start space-x-4 mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <Link 
-                      href={`/services/${service.id}`}
-                      className="block group"
-                    >
-                      <h3 className="text-2xl font-playfair font-semibold mb-2 text-gray-800 dark:text-white group-hover:text-primary transition-colors duration-200 cursor-pointer hover:underline">
-                        {service.title}
-                      </h3>
-                    </Link>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={service.backgroundImage} 
+                    alt={`${service.title} background`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30 group-hover:from-black/60 group-hover:via-black/40 group-hover:to-black/20 transition-all duration-300"></div>
                 </div>
 
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-3">What's Included:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Software */}
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Software Used:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.software.map((soft) => (
-                      <span 
-                        key={soft}
-                        className="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full"
+                {/* Content Overlay */}
+                <div className="relative z-10 p-8 text-white">
+                  {/* Service Header */}
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <Link 
+                        href={`/services/${service.id}`}
+                        className="block group"
                       >
-                        {soft}
-                      </span>
-                    ))}
+                        <h3 className="text-2xl font-playfair font-semibold mb-2 text-white group-hover:text-primary transition-colors duration-200 cursor-pointer hover:underline">
+                          {service.title}
+                        </h3>
+                      </Link>
+                      <p className="text-gray-200 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-white mb-3">What's Included:</h4>
+                    <ul className="space-y-2">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start space-x-3">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-200">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Software */}
+                  <div>
+                    <h4 className="font-semibold text-white mb-3">Software Used:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.software.map((soft) => (
+                        <span 
+                          key={soft}
+                          className="text-sm font-medium text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30"
+                        >
+                          {soft}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
