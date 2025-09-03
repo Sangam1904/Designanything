@@ -1,199 +1,176 @@
-# DesignAnything - Portfolio Website
+# Anything Can Design - Professional Portfolio Website
 
-A professional portfolio website for DesignAnything, showcasing CAD modeling, 3D design, and product animation services. Built with Next.js, Tailwind CSS, and featuring 3D model viewer support.
+A modern, responsive portfolio website built with Next.js, showcasing CAD modeling, 3D design, and product animation projects.
 
-## 🚀 Features
+## ✨ Features
 
-- **Modern Design**: Clean, professional design inspired by Rolex and Sketchfab
-- **3D Model Viewer**: Interactive .glb/.gltf model viewer with AR support
-- **Responsive**: Fully responsive design for all devices
-- **Dark Mode**: Toggle between light and dark themes
-- **Portfolio Showcase**: Filterable project gallery with search functionality
-- **Contact Forms**: Professional contact forms with validation
-- **Blog Ready**: CMS-ready blog system
-- **SEO Optimized**: Meta tags, Open Graph, and structured data
-- **Performance**: Optimized for speed and performance
+### 🎨 **Portfolio Showcase**
+- **Image-Based Display**: Clean, professional project showcase with 4:3 aspect ratio
+- **Project Galleries**: Multiple image support with lightbox functionality
+- **Responsive Grid**: Systematic layout for both featured projects and portfolio sections
+- **Project Details**: Comprehensive project information with technical specifications
 
-## 🛠 Tech Stack
+### 📝 **Blog System**
+- **Rich Content**: Detailed articles with markdown support
+- **Image Galleries**: Related images with lightbox navigation
+- **Video Integration**: YouTube video embedding support
+- **Search & Filtering**: Advanced search and category filtering
+- **Related Posts**: Intelligent content recommendations
 
-- **Frontend**: Next.js 14, React 18
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **3D Models**: Model Viewer (Google)
-- **Icons**: Lucide React
-- **Deployment**: Vercel (recommended)
+### 🛠️ **Technical Features**
+- **Next.js 13+**: Modern React framework with App Router
+- **Tailwind CSS**: Utility-first CSS framework
+- **Framer Motion**: Smooth animations and transitions
+- **Responsive Design**: Mobile-first, cross-device compatibility
+- **Dark Mode**: Built-in dark/light theme support
+- **SEO Optimized**: Meta tags, structured data, and performance
 
-## 📦 Installation
+## 🚀 Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/designanything.git
-   cd designanything
-   ```
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+### Installation
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd "anything can design"
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+# Install dependencies
+npm install
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Run development server
+npm run dev
 
-## 🎨 Customization
+# Build for production
+npm run build
 
-### Colors
-The color scheme is defined in `tailwind.config.js`:
-- Primary: Deep Emerald Green (#0E3B2E)
-- Secondary: Gold/Champagne (#C8A951)
-- Accent: Tech Blue (#1F7AE0)
-
-### Fonts
-- Headings: Playfair Display
-- Body: Inter
-
-### Content
-Update the following files to customize content:
-- `components/Hero.js` - Hero section content
-- `components/ServicesOverview.js` - Services information
-- `components/PortfolioPreview.js` - Featured projects
-- `components/Testimonials.js` - Client testimonials
-- `pages/about.js` - About page content
-- `pages/services.js` - Services details
+# Start production server
+npm start
+```
 
 ## 📁 Project Structure
 
 ```
-anything-can-design/
-├── components/          # Reusable UI components
-│   ├── Layout.js       # Main layout wrapper
-│   ├── Navbar.js       # Navigation bar
-│   ├── Footer.js       # Footer component
-│   ├── Hero.js         # Hero section
-│   ├── ModelViewer.js  # 3D model viewer
-│   └── ...
-├── pages/              # Next.js pages
-│   ├── index.js        # Home page
-│   ├── portfolio/      # Portfolio pages
-│   ├── about.js        # About page
-│   ├── services.js     # Services page
-│   ├── contact.js      # Contact page
-│   └── ...
-├── styles/             # Global styles
-│   └── globals.css     # Tailwind and custom styles
-├── public/             # Static assets
-│   ├── images/         # Images
-│   ├── models/         # 3D models (.glb/.gltf)
-│   └── ...
-└── ...
+├── components/           # Reusable UI components
+│   ├── Layout.js        # Main layout wrapper
+│   ├── Hero.js          # Hero section component
+│   ├── PortfolioPreview.js # Featured projects display
+│   ├── ImageVideoDisplay.js # Image gallery component
+│   └── ProjectDetailModal.js # Project detail modal
+├── pages/               # Next.js pages
+│   ├── index.js         # Homepage
+│   ├── portfolio/       # Portfolio pages
+│   ├── blog/            # Blog system
+│   ├── about.js         # About page
+│   ├── services.js      # Services page
+│   └── contact.js       # Contact page
+├── public/              # Static assets
+│   ├── images/          # Image assets
+│   │   ├── projects/    # Project images
+│   │   ├── blog/        # Blog post images
+│   │   ├── team/        # Team member photos
+│   │   └── icons/       # Logos and icons
+│   ├── models/          # 3D model files
+│   └── videos/          # Video files
+├── utils/               # Utility functions
+│   ├── projectDiscovery.js # Project data management
+│   └── blogData.js      # Blog content management
+└── styles/              # Global styles
+    └── globals.css      # Tailwind CSS and custom styles
 ```
+
+## 🎯 Content Management
+
+### Adding New Projects
+1. **Prepare Assets**: Add project images to `public/images/projects/`
+2. **Update Metadata**: Add project data to `utils/projectDiscovery.js`
+3. **Test Display**: Verify project appears correctly in portfolio
+
+### Adding Blog Posts
+1. **Create Content**: Add blog post data to `utils/blogData.js`
+2. **Add Images**: Place blog images in `public/images/blog/`
+3. **Update Categories**: Add new categories as needed
+
+### Managing Images
+- **Project Images**: 800x600px (4:3 ratio) for thumbnails
+- **Blog Images**: 800x600px for blog post thumbnails
+- **Gallery Images**: 1200x900px for detailed views
+- **Format**: JPG/PNG with web optimization
+
+## 🎨 Customization
+
+### Colors and Branding
+- **Primary Colors**: Update in `tailwind.config.js`
+- **Custom CSS**: Modify `styles/globals.css`
+- **Logo**: Replace files in `public/images/icons/`
+
+### Layout and Components
+- **Component Styling**: Modify individual component files
+- **Page Layouts**: Update page components in `pages/`
+- **Responsive Design**: Adjust breakpoints in Tailwind classes
+
+## 📱 Responsive Design
+
+The website is built with a mobile-first approach:
+- **Mobile**: Optimized for smartphones and tablets
+- **Desktop**: Enhanced layouts for larger screens
+- **Touch-Friendly**: Optimized for touch interactions
+- **Performance**: Fast loading on all devices
+
+## 🔧 Development
+
+### Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run export       # Export static site
+```
+
+### Code Style
+- **ESLint**: Code quality and consistency
+- **Prettier**: Code formatting
+- **TypeScript**: Type safety (optional)
+- **Component Structure**: Functional components with hooks
+
+## 📊 Performance
+
+### Optimization Features
+- **Image Optimization**: Next.js automatic image optimization
+- **Code Splitting**: Automatic route-based code splitting
+- **Lazy Loading**: Images and components loaded on demand
+- **Caching**: Static generation and caching strategies
+
+### SEO Features
+- **Meta Tags**: Dynamic meta tags for all pages
+- **Structured Data**: JSON-LD schema markup
+- **Sitemap**: Automatic sitemap generation
+- **Performance**: Core Web Vitals optimization
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Deploy to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Import your GitHub repository
-   - Vercel will automatically detect Next.js and deploy
-
-3. **Custom Domain**
-   - In Vercel dashboard, go to Settings → Domains
-   - Add your custom domain (e.g., designanything.com)
-   - Update DNS settings as instructed
-
-### Other Platforms
-
-The site can also be deployed to:
-- **Netlify**: Use `npm run build` and deploy the `out` folder
-- **Railway**: Connect GitHub repository
-- **Heroku**: Use the Next.js buildpack
-
-## 📝 Content Management
-
-### Adding Projects
-1. Update the projects array in `components/PortfolioPreview.js`
-2. Add project images to `public/images/projects/`
-3. Add 3D models to `public/models/`
-4. Update the portfolio page in `pages/portfolio/index.js`
-
-### Adding Blog Posts
-1. Create new files in `pages/blog/`
-2. Use the blog template structure
-3. Update the blog listing page
-
-### Adding Services
-1. Update the services array in `components/ServicesOverview.js`
-2. Modify the services page in `pages/services.js`
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env.local` file for environment variables:
-```env
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
+# Deploy
+vercel
 ```
 
-### Google Analytics
-1. Get your GA4 measurement ID
-2. Update the GA_MEASUREMENT_ID in `components/Layout.js`
-3. Or use environment variable `NEXT_PUBLIC_GA_ID`
+### Other Platforms
+- **Netlify**: Static site hosting
+- **AWS S3**: Cloud hosting
+- **Custom Server**: Node.js deployment
 
-### Contact Form
-The contact form currently uses a simulated submission. To connect to a real backend:
-1. Set up an API route in `pages/api/contact.js`
-2. Update the form submission in `pages/contact.js`
-3. Consider using services like:
-   - EmailJS
-   - Formspree
-   - Netlify Forms
+## 📚 Documentation
 
-## 🎯 SEO Optimization
-
-The site includes:
-- Meta tags for all pages
-- Open Graph tags for social sharing
-- Structured data markup
-- Sitemap generation
-- Robots.txt
-
-## 📱 Mobile Optimization
-
-- Responsive design for all screen sizes
-- Touch-friendly navigation
-- Optimized 3D model viewer for mobile
-- Fast loading times
-
-## 🔒 Security
-
-- HTTPS enforcement
-- Content Security Policy
-- XSS protection
-- Secure headers
-
-## 📊 Performance
-
-- Image optimization with Next.js
-- Code splitting
-- Lazy loading
-- Optimized fonts
-- Minified CSS/JS
+- **Content Management Guide**: `CONTENT_MANAGEMENT_GUIDE.md`
+- **Folder Structure Guide**: `FOLDER_STRUCTURE_GUIDE.md`
+- **Deployment Guide**: `DEPLOYMENT_GUIDE.md`
 
 ## 🤝 Contributing
 
@@ -210,17 +187,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For support and questions:
-- Email: hello@designanything.com
-- Website: https://designanything.com
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/) - React framework
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Model Viewer](https://modelviewer.dev/) - 3D model viewer
-- [Lucide](https://lucide.dev/) - Icon library
+- Check the documentation files
+- Review the code comments
+- Contact the development team
 
 ---
 
-Built with ❤️ by DesignAnything
+**Built with ❤️ using Next.js, React, and Tailwind CSS**
