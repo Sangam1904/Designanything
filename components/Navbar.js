@@ -40,7 +40,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <img 
-              src="/images/logo.svg" 
+              src="/images/icons/logo.svg.svg" 
               alt="DesignAnything Logo" 
               className="h-10 w-10"
             />
