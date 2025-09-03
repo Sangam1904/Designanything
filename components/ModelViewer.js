@@ -112,38 +112,23 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
     setIsLoaded(false)
   }, [modelPath])
 
-  // Move useGLTF outside try-catch to follow React rules of hooks
-  let gltfResult = null
+  // ALWAYS call useGLTF at the top level - never inside conditionals
+  let gltfResult
   try {
     gltfResult = useGLTF(modelPath)
   } catch (error) {
-    console.error('Error loading model:', error)
-    return (
-      <ErrorFallback 
-        error="Failed to load model" 
-        onRetry={onRetry}
-        retryCount={retryCount}
-      />
-    )
+    // If useGLTF throws an error, we need to handle it without breaking hooks
+    console.error('useGLTF error:', error)
+    gltfResult = null
   }
 
-  // If useGLTF failed, show error
-  if (!gltfResult || !gltfResult.scene) {
-    return (
-      <ErrorFallback 
-        error="Failed to load model" 
-        onRetry={onRetry}
-        retryCount={retryCount}
-      />
-    )
-  }
-
-  const { scene } = gltfResult
-  
-  // Process the model when it loads
+  // Process the model when it loads - move all conditions INSIDE useEffect
   useEffect(() => {
-    if (scene && !isLoaded) {
+    // Check if we have a valid scene and haven't loaded yet
+    if (gltfResult && gltfResult.scene && !isLoaded) {
       try {
+        const scene = gltfResult.scene
+        
         // Store reference for cleanup
         sceneRef.current = scene
         
@@ -174,7 +159,7 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
         if (onError) onError(error)
       }
     }
-  }, [scene, modelPath, isLoaded, onLoad, onError])
+  }, [gltfResult, modelPath, isLoaded, onLoad, onError])
 
   // Cleanup on unmount
   useEffect(() => {
@@ -197,6 +182,7 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
     }
   }, [])
 
+  // Handle error states
   if (hasError) {
     return (
       <ErrorFallback 
@@ -207,7 +193,19 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
     )
   }
 
-  return <primitive object={scene} />
+  // Handle missing or invalid gltf result
+  if (!gltfResult || !gltfResult.scene) {
+    return (
+      <ErrorFallback 
+        error="Failed to load model" 
+        onRetry={onRetry}
+        retryCount={retryCount}
+      />
+    )
+  }
+
+  // Render the model
+  return <primitive object={gltfResult.scene} />
 }
 
 // Main ModelViewer component

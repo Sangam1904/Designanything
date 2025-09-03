@@ -3,23 +3,9 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import { motion } from 'framer-motion'
-import { Search, Filter, Download, ExternalLink } from 'lucide-react'
-import dynamic from 'next/dynamic'
+import { Search, Filter, ExternalLink } from 'lucide-react'
 import ProjectDetailModal from '../../components/ProjectDetailModal'
-import ModelPreloader from '../../components/ModelPreloader'
-
-// Dynamically import ModelViewer to avoid SSR issues
-const ModelViewer = dynamic(() => import('../../components/ModelViewer'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-64 bg-gray-800 dark:bg-gray-900 rounded-lg flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-        <p className="text-gray-400 text-sm">Loading 3D viewer...</p>
-      </div>
-    </div>
-  )
-})
+import ImageVideoDisplay from '../../components/ImageVideoDisplay'
 import { 
   generateProjectData, 
   getCategories, 
@@ -81,8 +67,6 @@ export default function Portfolio() {
       title="Portfolio"
       description="Explore our portfolio of CAD modeling, 3D design, and product animation projects. From mechanical design to surface modeling, see our expertise in action."
     >
-      {/* Preload all project models */}
-      <ModelPreloader projects={projects} />
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
@@ -103,28 +87,28 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Filters Section */}
+      {/* Search and Filters */}
       <section className="py-8 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
 
             {/* Filters */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-4">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 {categories.map(category => (
                   <option key={category} value={category}>
@@ -136,11 +120,11 @@ export default function Portfolio() {
               <select
                 value={selectedSoftware}
                 onChange={(e) => setSelectedSoftware(e.target.value)}
-                className="px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
               >
-                {software.map(soft => (
-                  <option key={soft} value={soft}>
-                    {soft === 'all' ? 'All Software' : soft}
+                {software.map(sw => (
+                  <option key={sw} value={sw}>
+                    {sw === 'all' ? 'All Software' : sw}
                   </option>
                 ))}
               </select>
@@ -153,19 +137,20 @@ export default function Portfolio() {
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           {filteredProjects.length === 0 ? (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="text-center py-16"
             >
               <div className="w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Search className="w-12 h-12 text-gray-400" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                 No projects found
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Try adjusting your search criteria or filters
+                Try adjusting your search terms or filters to find what you're looking for.
               </p>
             </motion.div>
           ) : (
@@ -178,16 +163,15 @@ export default function Portfolio() {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="card overflow-hidden group"
                 >
-                  {/* Project Image/Model */}
-                  <div className="relative h-64 overflow-hidden">
-                    <ModelViewer 
-                      modelPath={project.modelUrl}
-                      className="h-full"
-                      height="h-64"
-                      showControls={false}
-                      autoRotate={true}
-                      onLoad={() => console.log('Model loaded:', project.title)}
-                      onError={(error) => console.error('Model loading error for', project.title, ':', error)}
+                  {/* Project Image Display with 4:3 aspect ratio */}
+                  <div className="relative">
+                    <ImageVideoDisplay
+                      project={project}
+                      className="w-full"
+                      height="h-auto"
+                      showOverlay={false}
+                      showTitle={true}
+                      onImageClick={openProjectModal}
                     />
                     
                     {/* Overlay */}
@@ -199,15 +183,6 @@ export default function Portfolio() {
                         >
                           <ExternalLink className="w-5 h-5 text-white" />
                         </button>
-                        {project.modelUrl && project.hasModel && (
-                          <a 
-                            href={project.modelUrl}
-                            download
-                            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
-                          >
-                            <Download className="w-5 h-5 text-white" />
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -229,7 +204,7 @@ export default function Portfolio() {
                       {project.title}
                     </h3>
                     
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                       {project.description}
                     </p>
 
@@ -245,7 +220,7 @@ export default function Portfolio() {
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag) => (
+                      {project.tags.slice(0, 3).map((tag) => (
                         <span 
                           key={tag}
                           className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"
@@ -253,28 +228,22 @@ export default function Portfolio() {
                           {tag}
                         </span>
                       ))}
+                      {project.tags.length > 3 && (
+                        <span className="text-xs font-medium text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                          +{project.tags.length - 3} more
+                        </span>
+                      )}
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex space-x-4">
                       <button 
                         onClick={() => openProjectModal(project)}
-                        className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
+                        className="btn-secondary flex-1 group"
                       >
                         View Details
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                       </button>
-                      
-                      {project.modelUrl && project.hasModel && (
-                        <a 
-                          href={project.modelUrl}
-                          download
-                          className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200"
-                        >
-                          <Download className="w-4 h-4 mr-2" />
-                          Download
-                        </a>
-                      )}
                     </div>
                   </div>
                 </motion.div>

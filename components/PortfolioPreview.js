@@ -2,26 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ExternalLink, Download } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 import { getFeaturedProjects } from '../utils/projectDiscovery'
 import { useState, useEffect } from 'react'
 import ProjectDetailModal from './ProjectDetailModal'
-import ModelViewer from './ModelViewer'
-import ModelPreloader from './ModelPreloader'
-import dynamic from 'next/dynamic'
-
-// Dynamically import ModelViewer to avoid SSR issues
-const DynamicModelViewer = dynamic(() => import('./ModelViewer'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-64 bg-gray-800 dark:bg-gray-900 rounded-lg flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-        <p className="text-gray-400 text-sm">Loading 3D viewer...</p>
-      </div>
-    </div>
-  )
-})
+import ImageVideoDisplay from './ImageVideoDisplay'
 
 export default function PortfolioPreview() {
   const featuredProjects = getFeaturedProjects()
@@ -56,9 +41,6 @@ export default function PortfolioPreview() {
 
   return (
     <section className="section-padding bg-gray-50 dark:bg-gray-800">
-      {/* Preload all featured project models */}
-      <ModelPreloader projects={featuredProjects} />
-      
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -87,31 +69,16 @@ export default function PortfolioPreview() {
               viewport={{ once: true }}
               className="card overflow-hidden group"
             >
-              {/* Project Image/Model */}
-              <div className="relative h-64 overflow-hidden">
-                {project.modelUrl && project.hasModel ? (
-                  <DynamicModelViewer
-                    modelPath={project.modelUrl}
-                    className="h-full"
-                    height="h-64"
-                    showControls={false}
-                    autoRotate={true}
-                    onLoad={() => console.log('Featured project model loaded:', project.title)}
-                    onError={(error) => console.error('Featured project model error for', project.title, ':', error)}
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                      </div>
-                      <p className="text-lg font-medium">{project.title}</p>
-                      <p className="text-gray-300 text-sm">{project.category}</p>
-                    </div>
-                  </div>
-                )}
+              {/* Project Image Display with 4:3 aspect ratio */}
+              <div className="relative">
+                <ImageVideoDisplay
+                  project={project}
+                  className="w-full"
+                  height="h-auto"
+                  showOverlay={false}
+                  showTitle={true}
+                  onImageClick={openProjectModal}
+                />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -122,15 +89,6 @@ export default function PortfolioPreview() {
                     >
                       <ExternalLink className="w-5 h-5 text-white" />
                     </button>
-                    {project.modelUrl && project.hasModel && (
-                      <a 
-                        href={project.modelUrl}
-                        download
-                        className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
-                      >
-                        <Download className="w-5 h-5 text-white" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </div>
@@ -192,17 +150,6 @@ export default function PortfolioPreview() {
                     View Details
                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                   </button>
-                  
-                  {project.modelUrl && project.hasModel && (
-                    <a 
-                      href={project.modelUrl}
-                      download
-                      className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200"
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Download
-                    </a>
-                  )}
                 </div>
               </div>
             </motion.div>
@@ -226,8 +173,7 @@ export default function PortfolioPreview() {
           </Link>
         </motion.div>
       </div>
-
-      {/* Project Detail Modal */}
+      
       <ProjectDetailModal
         project={selectedProject}
         isOpen={isModalOpen}
