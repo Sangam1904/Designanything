@@ -210,10 +210,10 @@ public/models/
 ### Adding New Services
 **File**: `pages/services.js`
 
-```javascript
+   ```javascript
 const services = [
-  {
-    id: 1,
+     {
+       id: 1,
     title: 'CAD Modeling',
     description: 'Professional CAD modeling services...',
     icon: 'CADIcon',
@@ -236,9 +236,9 @@ const services = [
       'Your feature 3'
     ],
     image: '/images/services/your-service.jpg'
-  }
-]
-```
+     }
+   ]
+   ```
 
 ### Service Images
 ```bash

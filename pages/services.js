@@ -1,11 +1,14 @@
+"use client"
+
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 import { Box, Zap, Video, Palette, Settings, FileText, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Services() {
   const services = [
     {
-      id: 'cad',
+      id: 'cad-modeling',
       icon: Box,
       title: 'CAD Modeling',
       description: 'Professional 3D modeling using industry-standard software for mechanical, industrial, and product design.',
@@ -37,7 +40,7 @@ export default function Services() {
       color: 'from-purple-500 to-pink-500'
     },
     {
-      id: 'animation',
+      id: 'product-animation',
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
@@ -176,13 +179,18 @@ export default function Services() {
               >
                 {/* Service Header */}
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-playfair font-semibold mb-2 text-gray-800 dark:text-white">
-                      {service.title}
-                    </h3>
+                    <Link 
+                      href={`/services/${service.id}`}
+                      className="block group"
+                    >
+                      <h3 className="text-2xl font-playfair font-semibold mb-2 text-gray-800 dark:text-white group-hover:text-primary transition-colors duration-200 cursor-pointer hover:underline">
+                        {service.title}
+                      </h3>
+                    </Link>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {service.description}
                     </p>
@@ -382,7 +390,7 @@ export default function Services() {
                   <span>Priority communication</span>
                 </li>
               </ul>
-              <a href="/contact" className="btn-outline w-full">Contact Us</a>
+              <a href="/contact" className="btn-primary w-full">Contact Us</a>
             </motion.div>
           </div>
         </div>
