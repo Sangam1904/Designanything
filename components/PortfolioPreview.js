@@ -40,7 +40,7 @@ export default function PortfolioPreview() {
   const hasPrevious = selectedProject && featuredProjects.length > 1
 
   return (
-    <section className="section-padding bg-gray-50 dark:bg-gray-800">
+                    <section className="section-padding bg-neutral dark:bg-primary">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -53,7 +53,7 @@ export default function PortfolioPreview() {
           <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                                <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed">
             Explore our latest work showcasing expertise in CAD modeling, 3D design, and product animation.
           </p>
         </motion.div>
@@ -86,9 +86,24 @@ export default function PortfolioPreview() {
                     <button 
                       onClick={() => openProjectModal(project)}
                       className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+                      title="View Details"
                     >
                       <ExternalLink className="w-5 h-5 text-white" />
                     </button>
+                    
+                    {project.videoUrl && (
+                      <a 
+                        href={project.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+                        title="Watch Video"
+                      >
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -142,7 +157,7 @@ export default function PortfolioPreview() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-center space-x-4">
                   <button 
                     onClick={() => openProjectModal(project)}
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
@@ -150,6 +165,18 @@ export default function PortfolioPreview() {
                     View Details
                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                   </button>
+                  
+                  {project.videoUrl && (
+                    <a 
+                      href={project.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200 group"
+                    >
+                      Watch Video
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

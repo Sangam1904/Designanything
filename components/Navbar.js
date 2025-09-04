@@ -29,25 +29,25 @@ export default function Navbar({ darkMode, setDarkMode }) {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg dark:bg-dark/90' 
-          : 'bg-transparent'
-      }`}
+                        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                    scrolled 
+                      ? 'bg-dark/90 backdrop-blur-md shadow-lg border-b border-light/10'
+                      : 'bg-transparent'
+                  }`}
     >
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <img 
-              src="/images/icons/logo.svg.svg" 
+              src="/images/icons/logo.svg" 
               alt="DesignAnything Logo" 
               className="h-10 w-10"
             />
             
-            <span className="font-playfair text-xl font-bold text-primary dark:text-white">
-              DesignAnything
-            </span>
+                                    <span className="font-inter text-xl font-medium text-light">
+                          DesignAnything
+                        </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,7 +56,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors duration-200 font-medium"
+                                            className="text-tertiary hover:text-accent transition-colors duration-200 font-medium"
               >
                 {item.name}
               </Link>
@@ -68,13 +68,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {/* Dark mode toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                                        className="p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800 hover:bg-tertiary/30 dark:hover:bg-gray-700 transition-colors duration-200"
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-600" />
+                <Moon className="w-5 h-5 text-metallic-200" />
               )}
             </button>
 
@@ -87,13 +87,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+                                    className="md:hidden p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+              <X className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+              <Menu className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
             )}
           </button>
         </div>
@@ -106,13 +106,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 rounded-lg mt-2 shadow-lg">
+                                    <div className="px-2 pt-2 pb-3 space-y-1 bg-light dark:bg-gray-800 rounded-lg mt-2 shadow-lg">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
+                                      className="block px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -121,7 +121,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               {/* Mobile dark mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="w-full flex items-center px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
+                                    className="w-full flex items-center px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
               >
                 {darkMode ? (
                   <>
@@ -130,7 +130,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   </>
                 ) : (
                   <>
-                    <Moon className="w-5 h-5 mr-2 text-gray-600" />
+                    <Moon className="w-5 h-5 mr-2 text-metallic-200" />
                     Dark Mode
                   </>
                 )}
@@ -140,7 +140,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors duration-200 text-center"
+                                    className="block px-3 py-2 bg-secondary text-white rounded-md hover:bg-primary transition-colors duration-200 text-center"
               >
                 Get Started
               </Link>

@@ -49,7 +49,7 @@ export default function ServicesOverview() {
   ]
 
   return (
-    <section className="section-padding bg-white dark:bg-gray-900">
+    <section className="section-padding bg-neutral dark:bg-primary">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -62,7 +62,7 @@ export default function ServicesOverview() {
           <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6">
             Our <span className="gradient-text">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed">
             Comprehensive design and engineering services to bring your ideas to life. 
             From initial concept to final production-ready files.
           </p>
@@ -85,18 +85,18 @@ export default function ServicesOverview() {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-playfair font-semibold mb-4 text-gray-800 dark:text-white">
+              <h3 className="text-2xl font-playfair font-semibold mb-4 text-primary dark:text-accentBright">
                 {service.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-primary dark:text-neutral mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                    <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
+                  <li key={feature} className="flex items-center text-sm text-primary dark:text-neutral">
+                    <div className="w-1.5 h-1.5 bg-accentBright rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -105,7 +105,7 @@ export default function ServicesOverview() {
               {/* Learn More Link */}
               <Link 
                 href={`/services#${service.title.toLowerCase().replace(' ', '-')}`}
-                className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200"
+                className="inline-flex items-center text-accentBright hover:text-accentDark font-medium transition-colors duration-200"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">

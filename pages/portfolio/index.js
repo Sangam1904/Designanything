@@ -180,9 +180,24 @@ export default function Portfolio() {
                         <button 
                           onClick={() => openProjectModal(project)}
                           className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+                          title="View Details"
                         >
                           <ExternalLink className="w-5 h-5 text-white" />
                         </button>
+                        
+                        {project.videoUrl && (
+                          <a 
+                            href={project.videoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+                            title="Watch Video"
+                          >
+                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -236,14 +251,26 @@ export default function Portfolio() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex space-x-4">
+                    <div className="flex items-center justify-center space-x-4">
                       <button 
                         onClick={() => openProjectModal(project)}
-                        className="btn-secondary flex-1 group"
+                        className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
                       >
                         View Details
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                       </button>
+                      
+                      {project.videoUrl && (
+                        <a 
+                          href={project.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200 group"
+                        >
+                          Watch Video
+                          <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>

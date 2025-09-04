@@ -8,11 +8,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0E3B2E',    // Deep Emerald Green (Rolex inspired)
-        secondary: '#C8A951',  // Gold/Champagne
-        accent: '#1F7AE0',     // Tech Blue
-        dark: '#121212',       // Dark mode background
-        light: '#FFFFFF',      // White background
+        // Lusion-inspired Color Palette
+        primary: '#1A2FFB',      // Vivid Accent Blue
+        secondary: '#F0F1FA',    // Light Text
+        accent: '#1A2FFB',       // Accent Blue (same as primary)
+        tertiary: '#B8BCC8',     // Muted Text
+        light: '#F0F1FA',        // Light Text
+        dark: '#0A0B0F',         // Dark Background
+        white: '#FFFFFF',        // Pure white
+        
+        // Extended palette for gradients and variations
+        'lusion': {
+          50: '#F0F1FA',         // Light Text
+          100: '#E8EAF2',        // Light Gray
+          200: '#B8BCC8',        // Muted Text
+          300: '#8A8FA3',        // Medium Gray
+          400: '#5C6178',        // Dark Gray
+          500: '#1A2FFB',        // Accent Blue
+          600: '#1426D1',        // Darker Blue
+          700: '#0F1FA7',        // Darkest Blue
+          800: '#0A0B0F',        // Dark Background
+          900: '#05060A',        // Darker Background
+        },
+        
+        // Keep existing gray scale for compatibility
         gray: {
           50: '#F9FAFB',
           100: '#F3F4F6',
