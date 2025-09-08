@@ -9,6 +9,7 @@
   }
   
   :root {
+<<<<<<< HEAD
     /* Light Theme */
     --light-bg: #FFFFFF;
     --light-font: #181818;
@@ -37,15 +38,41 @@
     @apply font-inter;
     font-weight: var(--body-weight);
     font-size: var(--body-size);
+=======
+    --background: #ffffff;
+    --text: #4da6ff;         /* Light Blue as main text */
+    --accent: #4da6ff;       /* Light Blue as accent */
+    --dark-bg: #0a0a0a;      /* Dark background */
+    --light-bg: #ffffff;     /* Light background */
+    --muted-text: #b3cde0;   /* Muted Light Blue */
+  }
+  
+  .dark {
+    --background: #0a0a0a;
+    --text: #4da6ff;
+    --accent: #4da6ff;
+  }
+  
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    font-weight: 300;
+>>>>>>> 1d881ccbae8798666e2a71a1d9de093903907ec4
     letter-spacing: -0.01em;
     background-color: var(--light-bg);
     color: var(--light-font);
   }
   
   h1, h2, h3, h4, h5, h6 {
+<<<<<<< HEAD
     @apply font-inter;
     font-weight: var(--heading-weight);
     font-size: var(--heading-size);
+=======
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+>>>>>>> 1d881ccbae8798666e2a71a1d9de093903907ec4
     letter-spacing: -0.02em;
     color: var(--light-heading);
   }
@@ -63,25 +90,54 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent text-white px-8 py-4 rounded-full font-medium hover:bg-accent/90 transition-all duration-300;
-    letter-spacing: -0.01em;
+    background: var(--accent);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
     font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover {
+    background: #339cff;
   }
   
   .btn-secondary {
-    @apply bg-transparent border border-light text-light px-8 py-4 rounded-full font-medium hover:bg-light hover:text-dark transition-all duration-300;
-    letter-spacing: -0.01em;
+    background: transparent;
+    border: 1px solid var(--text);
+    color: var(--text);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
     font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn-secondary:hover {
+    background: rgba(77,166,255,0.1);
+    color: var(--background);
   }
   
   .btn-outline {
-    @apply border border-accent text-accent px-8 py-4 rounded-full font-medium hover:bg-accent hover:text-white transition-all duration-300;
-    letter-spacing: -0.01em;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
     font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn-outline:hover {
+    background: var(--accent);
+    color: #fff;
   }
   
   .card {
-    @apply bg-dark/50 backdrop-blur-sm rounded-2xl shadow-2xl hover:shadow-2xl transition-all duration-500 border border-light/10;
+    background: rgba(var(--background-rgb,255,255,255),0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(100,151,177,0.2), 0 4px 16px rgba(3,57,108,0.15);
+    border: 1px solid rgba(77,166,255,0.1);
+    transition: box-shadow 0.5s;
   }
   
   .section-padding {
@@ -93,11 +149,19 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent;
+    background: linear-gradient(90deg, var(--accent), #339cff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
   
   .gradient-bg {
+<<<<<<< HEAD
     @apply bg-gradient-to-br from-dark via-dark to-primary;
+=======
+    background: linear-gradient(135deg, var(--background), var(--accent) 100%);
+>>>>>>> 1d881ccbae8798666e2a71a1d9de093903907ec4
   }
   
   /* Animations */
@@ -134,6 +198,7 @@
 }
 
 @layer utilities {
+<<<<<<< HEAD
   /* Theme-based text colors */
   .text-theme-font { color: var(--light-font); }
   .text-theme-heading { color: var(--light-heading); }
@@ -156,6 +221,20 @@
   .bg-light { background-color: var(--text-light); }
   .border-muted { border-color: var(--muted-text); }
   .border-light { border-color: var(--text-light); }
+=======
+  /* Text colors */
+  .text-primary { color: var(--accent); }
+  .text-light { color: var(--accent); }
+  .text-muted { color: var(--muted-text); }
+
+  /* Background colors */
+  .bg-dark { background-color: var(--dark-bg); }
+  .bg-light { background-color: var(--light-bg); }
+
+  /* Border colors */
+  .border-muted { border-color: var(--muted-text); }
+  .border-light { border-color: var(--accent); }
+>>>>>>> 1d881ccbae8798666e2a71a1d9de093903907ec4
 }
 
 /* Keyframes */
@@ -210,6 +289,21 @@ model-viewer {
 }
 
 /* Dark Mode */
+<<<<<<< HEAD
 .dark { @apply bg-dark text-light; }
 .dark .card { @apply bg-dark text-muted border-muted; }
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 { @apply text-primary; }
+=======
+.dark {
+  background: var(--background) !important;
+  color: var(--text) !important;
+}
+.dark .card {
+  background: rgba(10,10,10,0.5);
+  color: var(--muted-text);
+  border-color: var(--muted-text);
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--accent);
+}
+>>>>>>> 1d881ccbae8798666e2a71a1d9de093903907ec4
