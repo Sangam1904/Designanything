@@ -68,7 +68,7 @@ export default function Portfolio() {
       description="Explore our portfolio of CAD modeling, 3D design, and product animation projects. From mechanical design to surface modeling, see our expertise in action."
     >
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
               Our <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -161,7 +161,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="card overflow-hidden group"
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group border border-gray-200 dark:border-gray-700"
                 >
                   {/* Project Image Display with 4:3 aspect ratio */}
                   <div className="relative">
@@ -205,11 +205,11 @@ export default function Portfolio() {
                   {/* Project Content */}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-medium text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                         {project.category}
                       </span>
                       {project.featured && (
-                        <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                        <span className="text-xs font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">
                           Featured
                         </span>
                       )}
@@ -225,10 +225,10 @@ export default function Portfolio() {
 
                     {/* Software & Year */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                         {project.software}
                       </span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
                         {project.year}
                       </span>
                     </div>
@@ -238,13 +238,13 @@ export default function Portfolio() {
                       {project.tags.slice(0, 3).map((tag) => (
                         <span 
                           key={tag}
-                          className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"
+                          className="text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded border border-gray-200 dark:border-gray-600"
                         >
                           {tag}
                         </span>
                       ))}
                       {project.tags.length > 3 && (
-                        <span className="text-xs font-medium text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                        <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded border border-gray-200 dark:border-gray-600">
                           +{project.tags.length - 3} more
                         </span>
                       )}
@@ -254,7 +254,7 @@ export default function Portfolio() {
                     <div className="flex items-center justify-center space-x-4">
                       <button 
                         onClick={() => openProjectModal(project)}
-                        className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
+                        className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-200 group"
                       >
                         View Details
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -265,7 +265,7 @@ export default function Portfolio() {
                           href={project.videoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200 group"
+                          className="inline-flex items-center text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium transition-colors duration-200 group"
                         >
                           Watch Video
                           <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />

@@ -118,8 +118,8 @@ public/images/hero/
 #### 4. Team and Profile Images
 ```bash
 public/images/team/
-├── sangam.jpg
-├── anjali.jpg
+├── Sangmeshwar kanade.jpg
+├── abhishek.jpg
 └── rahul.jpg
 ```
 

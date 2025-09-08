@@ -189,7 +189,7 @@ Open `utils/projectDiscovery.js` and add to the `PROJECT_METADATA` array:
 ## 📸 Example 3: Adding Team Member Photos
 
 ### Step 1: Prepare Photos
-- Save photos as: `public/images/team/sangam.jpg`, `public/images/team/anjali.jpg`, etc.
+- Save photos as: `public/images/team/Sangmeshwar kanade.jpg`, `public/images/team/abhishek.jpg`, etc.
 - Recommended size: 400x400 pixels
 - Format: JPG or PNG
 
@@ -199,20 +199,20 @@ Open `pages/about.js` and find the team section:
 ```javascript
 const team = [
   {
-    name: 'Sangam',
+    name: 'Sangmeshwar kanade',
     role: 'Lead Designer',
-    image: '/images/team/sangam.jpg', // Add your photo here
+    image: '/images/team/Sangmeshwar kanade.jpg', // Add your photo here
     bio: 'Expert in product design and 3D modeling with 5+ years experience.',
     skills: ['SOLIDWORKS', 'CATIA', 'Fusion 360'],
-    linkedin: 'https://linkedin.com/in/sangam'
+    linkedin: 'https://linkedin.com/in/Sangmeshwar kanade'
   },
   {
     name: 'Abhishek Raut',
     role: 'CAD Specialist',
-    image: '/images/team/anjali.jpg', // Add your photo here
+    image: '/images/team/Abhishek.jpg', // Add your photo here
     bio: 'Specialized in mechanical design and engineering analysis.',
     skills: ['ANSYS', 'SOLIDWORKS', 'AutoCAD'],
-    linkedin: 'https://linkedin.com/in/anjali'
+    linkedin: 'https://linkedin.com/in/abhishek'
   }
 ]
 ```

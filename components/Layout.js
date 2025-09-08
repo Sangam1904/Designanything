@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { useState, useEffect } from 'react'
+import { generateCSSVariables } from '../config/siteConfig'
 
 export default function Layout({ children, title = 'DesignAnything', description = 'Professional CAD modeling, 3D design, and product animation services. Transform your ideas into reality with expert engineering design.' }) {
   const [darkMode, setDarkMode] = useState(false)
@@ -22,6 +23,12 @@ export default function Layout({ children, title = 'DesignAnything', description
       document.documentElement.classList.remove('dark')
     }
     localStorage.setItem('darkMode', JSON.stringify(darkMode))
+    
+    // Apply CSS variables for theme
+    const cssVars = generateCSSVariables(darkMode)
+    Object.entries(cssVars).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(key, value)
+    })
   }, [darkMode])
 
   return (
@@ -31,7 +38,7 @@ export default function Layout({ children, title = 'DesignAnything', description
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="CAD modeling, 3D design, SOLIDWORKS, CATIA, product animation, engineering design, freelance CAD" />
-        <meta name="author" content="Sangam - DesignAnything" />
+        <meta name="author" content="Sangmeshwar kanade - DesignAnything" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />

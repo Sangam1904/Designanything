@@ -49,7 +49,7 @@ export default function ServicesOverview() {
   ]
 
   return (
-    <section className="section-padding bg-neutral dark:bg-primary">
+    <section className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -59,10 +59,10 @@ export default function ServicesOverview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
             Our <span className="gradient-text">Services</span>
           </h2>
-          <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Comprehensive design and engineering services to bring your ideas to life. 
             From initial concept to final production-ready files.
           </p>
@@ -77,7 +77,7 @@ export default function ServicesOverview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card p-8 hover:scale-105 transition-transform duration-300 group"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 dark:border-gray-700 hover:scale-105"
             >
               {/* Icon */}
               <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -85,18 +85,18 @@ export default function ServicesOverview() {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-playfair font-semibold mb-4 text-primary dark:text-accentBright">
+              <h3 className="text-2xl font-playfair font-semibold mb-4 text-gray-800 dark:text-white">
                 {service.title}
               </h3>
-              <p className="text-primary dark:text-neutral mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-primary dark:text-neutral">
-                    <div className="w-1.5 h-1.5 bg-accentBright rounded-full mr-3"></div>
+                  <li key={feature} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -105,7 +105,7 @@ export default function ServicesOverview() {
               {/* Learn More Link */}
               <Link 
                 href={`/services#${service.title.toLowerCase().replace(' ', '-')}`}
-                className="inline-flex items-center text-accentBright hover:text-accentDark font-medium transition-colors duration-200"
+                className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-200"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">

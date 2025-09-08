@@ -13,7 +13,7 @@ anything-can-design/
 │   │   │   ├── project2.jpg
 │   │   │   └── my-project.jpg   ← Your project images
 │   │   ├── 📁 team/             ← Team member photos
-│   │   │   ├── sangam.jpg
+│   │   │   ├── Sangmeshwar kanade.jpg
 │   │   │   ├── anjali.jpg
 │   │   │   └── rahul.jpg
 │   │   ├── 📁 blog/             ← Blog post images

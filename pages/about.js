@@ -1,8 +1,15 @@
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 import { Award, Users, Target, Zap } from 'lucide-react'
+import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
 
 export default function About() {
+  // Get configuration data
+  const aboutConfig = getLayoutConfig('aboutPage')
+  const teamConfig = aboutConfig.meetOurTeamSection
+  const missionVisionConfig = getSectionConfig('missionAndVision')
+  const valuesConfig = getSectionConfig('values')
+  
   const values = [
     {
       icon: Award,
@@ -49,7 +56,7 @@ export default function About() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
-              About <span className="gradient-text">Anything Can Design</span>
+              About <span className="gradient-text">Design Anything</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               We are passionate about transforming ideas into reality through expert engineering design, 
@@ -60,9 +67,9 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className={`py-16 ${missionVisionConfig.background === 'transparent' ? 'bg-transparent' : 'bg-white dark:bg-gray-900'}`}>
         <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className={`grid grid-cols-1 ${missionVisionConfig.alignment === 'side_by_side' ? 'lg:grid-cols-2' : 'grid-cols-1'} gap-12 items-center`}>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -88,7 +95,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary to-accent rounded-2xl p-8 text-white"
+              className={`${missionVisionConfig.background === 'transparent' ? 'bg-transparent' : 'bg-gradient-to-br from-primary to-accent'} rounded-2xl p-8 ${missionVisionConfig.background === 'transparent' ? 'text-gray-800 dark:text-white' : 'text-white'}`}
             >
               <h3 className="text-2xl font-playfair font-bold mb-6">Our Vision</h3>
               <p className="text-lg mb-6 leading-relaxed">
@@ -115,14 +122,14 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className={`py-16 ${valuesConfig.background === 'card' ? 'bg-gray-50 dark:bg-gray-800' : 'bg-transparent'}`}>
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className={`${valuesConfig.alignment === 'center' ? 'text-center' : 'text-left'} mb-16`}
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
               Our <span className="gradient-text">Values</span>
@@ -140,7 +147,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className={`${valuesConfig.alignment === 'center' ? 'text-center' : 'text-left'} ${valuesConfig.background === 'card' ? 'bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg' : ''}`}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
@@ -175,82 +182,47 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
-                <img 
-                  src="/images/team/sangam.jpg" 
-                  alt="Sangam - Founder & Lead Designer"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-white">
-                Sangam
-              </h3>
-              <p className="text-secondary font-medium mb-4">Founder & Lead Designer</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                Expert in SOLIDWORKS, CATIA, and Blender with over 5 years of experience in 
-                mechanical design and product development.
-              </p>
-              <div className="flex justify-center space-x-4">
-                <span className="text-sm text-gray-500 dark:text-gray-400">SOLIDWORKS Expert</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">CATIA Certified</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl font-bold text-white">A</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-white">
-                Anjali
-              </h3>
-              <p className="text-secondary font-medium mb-4">3D Artist & Animator</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                Specialized in product visualization, rendering, and animation with expertise 
-                in Blender and advanced lighting techniques.
-              </p>
-              <div className="flex justify-center space-x-4">
-                <span className="text-sm text-gray-500 dark:text-gray-400">Blender Expert</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Animation</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-32 h-32 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl font-bold text-white">R</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-white">
-                Rahul
-              </h3>
-              <p className="text-secondary font-medium mb-4">Simulation Engineer</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                ANSYS specialist with deep knowledge in structural analysis, thermal analysis, 
-                and optimization for complex engineering problems.
-              </p>
-              <div className="flex justify-center space-x-4">
-                <span className="text-sm text-gray-500 dark:text-gray-400">ANSYS Expert</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">FEA</span>
-              </div>
-            </motion.div>
+          <div className={`grid grid-cols-1 ${teamConfig.layout === 'horizontal_sequence' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
+            {teamConfig.profiles.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                  {member.name === "Sangmeshwar Kanade" || member.name === "Abhi Jagtap" ? (
+                    <img 
+                      src="/images/team/Sangmeshwar kanade.jpg" 
+                      alt={`${member.name} - ${member.title}`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
+                      <span className="text-4xl font-bold text-white">
+                        {member.name.split(' ')[0][0]}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-white">
+                  {member.name}
+                </h3>
+                <p className="text-secondary font-medium mb-4">{member.title}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  {member.description}
+                </p>
+                <div className="flex justify-center space-x-4">
+                  {member.certifications.map((cert, certIndex) => (
+                    <span key={certIndex} className="text-sm text-gray-500 dark:text-gray-400">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -302,31 +274,33 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-primary to-accent">
-        <div className="container-custom px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-white">
-              Ready to Work Together?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and see how we can bring your ideas to life with our expertise.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="btn-secondary">
-                Start Your Project
-              </a>
-              <a href="/portfolio" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
-                View Our Work
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {aboutConfig.readyToWorkTogetherSection.visible && (
+        <section className="py-16 bg-gradient-to-r from-primary to-accent">
+          <div className="container-custom px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-white">
+                Ready to Work Together?
+              </h2>
+              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss your project and see how we can bring your ideas to life with our expertise.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="btn-secondary">
+                  Start Your Project
+                </a>
+                <a href="/portfolio" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
+                  View Our Work
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
     </Layout>
   )
 }

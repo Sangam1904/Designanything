@@ -157,7 +157,8 @@ const PROJECT_METADATA = {
       'Technical detail 5',
       
       ]
-    },    
+    }, 
+
   'your-new-model-2': {
       id: 6,
     title: 'Your New Model Title 2',
@@ -184,7 +185,40 @@ const PROJECT_METADATA = {
       'Technical detail 5',
       
       ]
-    }
+    },
+  
+    // First Arc Reactor - existing project
+   'first-arc-reactor-im': {
+  id: 7,
+  title: '3D Model of First Arc Reactor (Iron Man)',
+  category: '3D Modeling & Animation',
+  software: 'SOLIDWORKS, Blender',
+  description: 'A detailed 3D model of the first Arc Reactor from the Iron Man movie, meticulously designed in SOLIDWORKS for accurate part geometry, then rendered and animated in Blender to showcase realistic materials, lighting, and mechanical motion.',
+  image: '/images/projects/arc-reactor-thumbnail.jpg',
+  gallery: [
+    '/images/projects/arc-reactor-1.jpg',
+    '/images/projects/arc-reactor-2.jpg',
+    '/images/projects/arc-reactor-3.jpg'
+  ],
+  modelUrl: '/models/arc-reactor-im.glb',
+  videoUrl: 'https://www.youtube.com/watch?v=your-arc-reactor-video-id',
+  tags: ['SOLIDWORKS', 'Blender', 'Arc Reactor', 'Iron Man', '3D Animation', 'Rendering'],
+  featured: true,
+  year: 2024,
+  specifications: {
+    complexity: 'High',
+    parts: '30 components',
+    analysis: 'No engineering simulation, focused on design & animation',
+    manufacturing: 'Digital Model for visualization only'
+  },
+  technicalDetails: [
+    'Modeled in SOLIDWORKS with precise dimensions and assembly structure',
+    'Imported into Blender for realistic rendering and animation',
+    'Animated glowing core and rotating parts to simulate energy flow',
+    'Applied PBR (Physically Based Rendering) materials for photorealistic appearance',
+    'Exported 3D model in GLB format for interactive web visualization'
+  ]
+},
 }
 
 // Known model files (manually maintained)
@@ -210,6 +244,14 @@ const KNOWN_MODEL_FILES = [
     path: '/models/your-new-model-2.glb',
     size: 10039216 // 9.6 MB in bytes
   },
+  
+  {
+    filename: 'arc-reactor-im.glb',
+    name: 'first-arc-reactor-im',
+    extension: '.glb',
+    path: '/models/arc-reactor-im.glb',
+    size: 35000000 // Example size: 35 MB → calculate the actual size of your file
+  }
   // Add your new model here - EXAMPLE:
   // {
   //   filename: 'your-new-model.glb',

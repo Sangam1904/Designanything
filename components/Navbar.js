@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon, Download } from 'lucide-react'
+import { getLayoutConfig } from '../config/siteConfig'
 
 export default function Navbar({ darkMode, setDarkMode }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,14 +16,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Get downloads section visibility from config
+  const downloadsConfig = getLayoutConfig('downloadsSection')
+  
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Services', href: '/services' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Downloads', href: '/downloads' },
+    ...(downloadsConfig.visible ? [{ name: 'Downloads', href: '/downloads' }] : []),
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    // { name: 'Contact', href: '/contact' }, `
   ]
 
   return (
@@ -80,7 +84,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
             {/* CTA Button */}
             <Link href="/contact" className="btn-primary">
-              Get Started
+              Contact
             </Link>
           </div>
 
@@ -142,7 +146,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 onClick={() => setIsOpen(false)}
                                     className="block px-3 py-2 bg-secondary text-white rounded-md hover:bg-primary transition-colors duration-200 text-center"
               >
-                Get Started
+                Contact
               </Link>
             </div>
           </motion.div>

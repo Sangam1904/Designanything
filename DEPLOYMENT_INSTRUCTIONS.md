@@ -8,7 +8,7 @@ Your website is ready to be published! Here's how to deploy it to Vercel using G
 
 ✅ **Completed:**
 - Website code is built and working
-- Code is pushed to GitHub: `https://github.com/Sangam1904/anything-can-design.git`
+- Code is pushed to GitHub: `https://github.com/Sangmeshwar kanade1904/anything-can-design.git`
 - All files are committed and ready for deployment
 
 ---
@@ -23,7 +23,7 @@ Your website is ready to be published! Here's how to deploy it to Vercel using G
 ### Step 2: Import Your Project
 1. In Vercel dashboard, click "New Project"
 2. Select "Import Git Repository"
-3. Find and select: `Sangam1904/anything-can-design`
+3. Find and select: `Sangmeshwar kanade1904/anything-can-design`
 4. Click "Import"
 
 ### Step 3: Configure Project
@@ -164,7 +164,7 @@ git push origin main
 
 2. **Vercel Documentation:** [vercel.com/docs](https://vercel.com/docs)
 
-3. **GitHub Repository:** Your code is at `https://github.com/Sangam1904/anything-can-design`
+3. **GitHub Repository:** Your code is at `https://github.com/Sangmeshwar kanade1904/anything-can-design`
 
 ---
 

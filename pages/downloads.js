@@ -13,7 +13,7 @@ export default function Downloads() {
       fileSize: '45.2 MB',
       downloads: 20,
       date: '2025-08-15',
-      author: 'Sangam',
+      author: 'Sangmeshwar kanade',
       image: '/images/downloads/hydrogen-bike.jpg',
       
       fileUrl: '/downloads/hydrogen-bike-assembly.step',
@@ -29,7 +29,7 @@ export default function Downloads() {
       fileSize: '32.8 MB',
       downloads: 189,
       date: '2025-08-10',
-      author: 'Sangam',
+      author: 'Sangmeshwar kanade',
       image: '/images/downloads/solar-plant.jpg',
       fileUrl: '/downloads/solar-floating-plant.zip',
       tags: ['Structural', 'Renewable Energy', 'CATIA']
@@ -57,7 +57,7 @@ export default function Downloads() {
       fileSize: '67.3 MB',
       downloads: 298,
       date: '2023-12-28',
-      author: 'Sangam',
+      author: 'Sangmeshwar kanade',
       image: '/images/downloads/car-surface.jpg',
       fileUrl: '/downloads/luxury-car-surface.zip',
       tags: ['Surface Modeling', 'Automotive', 'CATIA']
@@ -85,7 +85,7 @@ export default function Downloads() {
       fileSize: '23.7 MB',
       downloads: 167,
       date: '2023-12-15',
-      author: 'Sangam',
+      author: 'Sangmeshwar kanade',
       image: '/images/downloads/ansys-templates.jpg',
       fileUrl: '/downloads/ansys-templates.zip',
       tags: ['Simulation', 'ANSYS', 'Templates']

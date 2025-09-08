@@ -8,30 +8,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Lusion-inspired Color Palette
-        primary: '#1A2FFB',      // Vivid Accent Blue
-        secondary: '#F0F1FA',    // Light Text
-        accent: '#1A2FFB',       // Accent Blue (same as primary)
-        tertiary: '#B8BCC8',     // Muted Text
-        light: '#F0F1FA',        // Light Text
-        dark: '#0A0B0F',         // Dark Background
-        white: '#FFFFFF',        // Pure white
-        
-        // Extended palette for gradients and variations
-        'lusion': {
-          50: '#F0F1FA',         // Light Text
-          100: '#E8EAF2',        // Light Gray
-          200: '#B8BCC8',        // Muted Text
-          300: '#8A8FA3',        // Medium Gray
-          400: '#5C6178',        // Dark Gray
-          500: '#1A2FFB',        // Accent Blue
-          600: '#1426D1',        // Darker Blue
-          700: '#0F1FA7',        // Darkest Blue
-          800: '#0A0B0F',        // Dark Background
-          900: '#05060A',        // Darker Background
+        // Gallifreyja Palette
+        primary: '#011f4b',   // Deep Navy
+        secondary: '#03396c', // Dark Blue
+        accent: '#005b96',    // Strong Blue
+        muted: '#6497b1',     // Soft Muted Blue
+        light: '#b3cde0',     // Light Blue
+        dark: '#011f4b',      // Same as primary (dark background)
+        white: '#FFFFFF',
+
+        gallifreyja: {
+          50: '#b3cde0', 
+          100: '#9cb9d3',
+          200: '#86a5c7',
+          300: '#7091ba',
+          400: '#6497b1',
+          500: '#005b96',
+          600: '#034f83',
+          700: '#03396c',
+          800: '#02254f',
+          900: '#011f4b',
         },
-        
-        // Keep existing gray scale for compatibility
+
         gray: {
           50: '#F9FAFB',
           100: '#F3F4F6',
@@ -49,6 +47,9 @@ module.exports = {
         'playfair': ['Playfair Display', 'serif'],
         'inter': ['Inter', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
+      },
+      textColor: {
+        DEFAULT: '#011f4b', // Dark Navy as default text
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

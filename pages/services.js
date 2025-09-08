@@ -150,7 +150,7 @@ export default function Services() {
       description="Professional CAD modeling, 3D design, product animation, rendering, and simulation services. Transform your ideas into reality with DesignAnything."
     >
       {/* Hero Section */}
-                        <section className="pt-20 pb-16 gradient-bg dark:from-primary dark:to-secondary">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -158,10 +158,10 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
               Our <span className="gradient-text">Services</span>
             </h1>
-                                    <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Comprehensive design and engineering services to bring your ideas to life. 
               From concept to completion, we handle every aspect of your project.
             </p>
@@ -184,12 +184,12 @@ export default function Services() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 border-2 border-transparent group-hover:border-primary/30"
+                  className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 border-2 border-transparent group-hover:border-blue-500/30 dark:group-hover:border-blue-400/30"
                 >
                   <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-sm font-semibold text-primary dark:text-accentBright text-center group-hover:text-accentBright transition-colors duration-200">
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-white text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                     {service.title}
                   </h3>
                 </motion.div>
@@ -200,7 +200,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-neutral dark:bg-primary">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
@@ -211,20 +211,10 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative overflow-hidden rounded-2xl shadow-xl group"
+                className="relative overflow-hidden rounded-2xl shadow-xl group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src={service.backgroundImage} 
-                    alt={`${service.title} background`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30 group-hover:from-black/60 group-hover:via-black/40 group-hover:to-black/20 transition-all duration-300"></div>
-                </div>
-
-                {/* Content Overlay */}
-                <div className="relative z-10 p-8 text-white">
+                {/* Content */}
+                <div className="relative z-10 p-8">
                   {/* Service Header */}
                   <div className="flex items-start space-x-4 mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
@@ -235,11 +225,11 @@ export default function Services() {
                         href={`/services/${service.id}`}
                         className="block group"
                       >
-                        <h3 className="text-2xl font-playfair font-semibold mb-2 text-white group-hover:text-accentBright transition-colors duration-200 cursor-pointer hover:underline">
+                        <h3 className="text-2xl font-playfair font-semibold mb-2 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 cursor-pointer hover:underline">
                           {service.title}
                         </h3>
                       </Link>
-                      <p className="text-gray-200 leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {service.description}
                       </p>
                     </div>
@@ -247,12 +237,12 @@ export default function Services() {
 
                   {/* Features */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-white mb-3">What's Included:</h4>
+                    <h4 className="font-semibold text-gray-800 dark:text-white mb-3">What's Included:</h4>
                     <ul className="space-y-2">
                       {service.features.map((feature) => (
                         <li key={feature} className="flex items-start space-x-3">
-                          <CheckCircle className="w-5 h-5 text-accentBright flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-200">{feature}</span>
+                          <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -260,12 +250,12 @@ export default function Services() {
 
                   {/* Software */}
                   <div>
-                    <h4 className="font-semibold text-white mb-3">Software Used:</h4>
+                    <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Software Used:</h4>
                     <div className="flex flex-wrap gap-2">
                       {service.software.map((soft) => (
                         <span 
                           key={soft}
-                          className="text-sm font-medium text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30"
+                          className="text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-600"
                         >
                           {soft}
                         </span>
@@ -280,7 +270,7 @@ export default function Services() {
       </section>
 
       {/* Process */}
-      <section className="py-16 bg-secondary dark:bg-primary">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -289,10 +279,10 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-primary dark:text-accentBright">
+            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
               Our <span className="gradient-text">Process</span>
             </h2>
-            <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               A streamlined workflow designed to deliver exceptional results efficiently
             </p>
           </motion.div>
@@ -307,13 +297,13 @@ export default function Services() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-accentBright to-accentDark rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-white">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-primary dark:text-accentBright">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="text-primary dark:text-neutral leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>
@@ -323,7 +313,7 @@ export default function Services() {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 bg-neutral dark:bg-primary">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -332,10 +322,10 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-primary dark:text-accentBright">
+            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
               Flexible <span className="gradient-text">Pricing</span>
             </h2>
-            <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Transparent pricing tailored to your project requirements and budget
             </p>
           </motion.div>
@@ -346,29 +336,29 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="card p-8 text-center"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700"
             >
-                              <h3 className="text-2xl font-semibold mb-4 text-primary dark:text-accentBright">Basic</h3>
-                <div className="text-4xl font-bold text-accentBright mb-6">₹1,200</div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Basic</h3>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">₹1,200</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Simple 3D modeling</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Simple 3D modeling</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Basic renders</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Basic renders</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>2 revisions</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">2 revisions</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Source files included</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Source files included</span>
                 </li>
               </ul>
-              <a href="/contact" className="btn-outline w-full">Get Started</a>
+              <a href="/contact" className="btn-outline w-full">Contact</a>
             </motion.div>
 
             <motion.div
@@ -376,36 +366,36 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="card p-8 text-center border-2 border-accentBright relative"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border-2 border-blue-500 dark:border-blue-400 relative"
             >
-                              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-accentBright text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary dark:text-accentBright">Professional</h3>
-                <div className="text-4xl font-bold text-accentBright mb-6">₹2,500+</div>
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-blue-600 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Professional</h3>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">₹2,500+</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Complex 3D modeling</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Complex 3D modeling</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Photorealistic renders</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Photorealistic renders</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Unlimited revisions</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Unlimited revisions</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Animation included</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Animation included</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Technical documentation</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Technical documentation</span>
                 </li>
               </ul>
-              <a href="/contact" className="btn-primary w-full">Get Started</a>
+              <a href="/contact" className="btn-primary w-full">Contact</a>
             </motion.div>
 
             <motion.div
@@ -413,30 +403,30 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="card p-8 text-center"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700"
             >
-                              <h3 className="text-2xl font-semibold mb-4 text-primary dark:text-accentBright">Enterprise</h3>
-                <div className="text-4xl font-bold text-accentBright mb-6">Custom</div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Enterprise</h3>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">Custom</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Full project management</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Full project management</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Advanced simulation</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Advanced simulation</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Multiple iterations</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Multiple iterations</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Ongoing support</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Ongoing support</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-accentBright" />
-                  <span>Priority communication</span>
+                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Priority communication</span>
                 </li>
               </ul>
               <a href="/contact" className="btn-primary w-full">Contact Us</a>

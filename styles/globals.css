@@ -9,22 +9,55 @@
   }
   
   :root {
-    --text-light: #F0F1FA;
-    --accent-blue: #1A2FFB;
-    --dark-bg: #0A0B0F;
-    --muted-text: #B8BCC8;
+    /* Light Theme */
+    --light-bg: #FFFFFF;
+    --light-font: #181818;
+    --light-card-bg: #F7F9FB;
+    --light-heading: #062842;
+    
+    /* Dark Theme */
+    --dark-bg: #181818;
+    --dark-font: #FFFFFF;
+    --dark-card-bg: #242B38;
+    --dark-heading: #2492db;
+    
+    /* Typography */
+    --heading-size: 2rem;
+    --body-size: 1rem;
+    --heading-weight: 700;
+    --body-weight: 400;
+    
+    /* Legacy colors for backward compatibility */
+    --text-light: #b3cde0;
+    --accent-blue: #005b96;
+    --muted-text: #6497b1;
   }
   
   body {
-    @apply font-inter text-light bg-dark;
-    font-weight: 300;
+    @apply font-inter;
+    font-weight: var(--body-weight);
+    font-size: var(--body-size);
     letter-spacing: -0.01em;
+    background-color: var(--light-bg);
+    color: var(--light-font);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-inter font-medium text-light;
+    @apply font-inter;
+    font-weight: var(--heading-weight);
+    font-size: var(--heading-size);
     letter-spacing: -0.02em;
-    font-weight: 500;
+    color: var(--light-heading);
+  }
+  
+  /* Dark mode overrides */
+  .dark body {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+  }
+  
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: var(--dark-heading);
   }
 }
 
@@ -64,140 +97,90 @@
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-br from-dark via-dark to-lusion-800;
+    @apply bg-gradient-to-br from-dark via-dark to-primary;
   }
   
-  /* Lusion-inspired Animations */
-  .slide-fade-in {
-    animation: slideFadeIn 0.8s ease-out forwards;
-  }
+  /* Animations */
+  .slide-fade-in { animation: slideFadeIn 0.8s ease-out forwards; }
+  .slide-fade-up { animation: slideFadeUp 1s ease-out forwards; }
+  .slide-fade-left { animation: slideFadeLeft 0.8s ease-out forwards; }
+  .slide-fade-right { animation: slideFadeRight 0.8s ease-out forwards; }
+  .text-reveal { animation: textReveal 1.2s ease-out forwards; }
+  .fade-in-stagger { animation: fadeInStagger 0.6s ease-out forwards; }
   
-  .slide-fade-up {
-    animation: slideFadeUp 1s ease-out forwards;
-  }
-  
-  .slide-fade-left {
-    animation: slideFadeLeft 0.8s ease-out forwards;
-  }
-  
-  .slide-fade-right {
-    animation: slideFadeRight 0.8s ease-out forwards;
-  }
-  
-  .text-reveal {
-    animation: textReveal 1.2s ease-out forwards;
-  }
-  
-  .fade-in-stagger {
-    animation: fadeInStagger 0.6s ease-out forwards;
-  }
-  
-  /* Cursor Effects */
+  /* Cursor Glow */
   .cursor-glow {
     position: relative;
     overflow: hidden;
   }
-  
   .cursor-glow::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(26, 47, 251, 0.1) 0%, transparent 50%);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,91,150,0.15) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
-  
-  .cursor-glow:hover::before {
-    opacity: 1;
-  }
+  .cursor-glow:hover::before { opacity: 1; }
   
   .glass-effect {
     @apply backdrop-blur-md bg-white/80 border border-white/20;
   }
   
   .metallic-shadow {
-    box-shadow: 0 8px 32px rgba(61, 82, 160, 0.1), 0 4px 16px rgba(112, 145, 230, 0.1);
+    box-shadow: 0 8px 32px rgba(100,151,177,0.2), 0 4px 16px rgba(3,57,108,0.15);
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  /* Theme-based text colors */
+  .text-theme-font { color: var(--light-font); }
+  .text-theme-heading { color: var(--light-heading); }
+  .text-theme-muted { color: var(--muted-text); }
+  
+  /* Theme-based background colors */
+  .bg-theme { background-color: var(--light-bg); }
+  .bg-theme-card { background-color: var(--light-card-bg); }
+  
+  /* Dark mode overrides */
+  .dark .text-theme-font { color: var(--dark-font); }
+  .dark .text-theme-heading { color: var(--dark-heading); }
+  .dark .bg-theme { background-color: var(--dark-bg); }
+  .dark .bg-theme-card { background-color: var(--dark-card-bg); }
+  
+  /* Legacy colors for backward compatibility */
+  .text-light { color: var(--text-light); }
+  .text-primary { color: var(--accent-blue); }
+  .bg-dark { background-color: var(--dark-bg); }
+  .bg-light { background-color: var(--text-light); }
+  .border-muted { border-color: var(--muted-text); }
+  .border-light { border-color: var(--text-light); }
 }
 
-/* Lusion-inspired Keyframe Animations */
-@keyframes slideFadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
-
+/* Keyframes */
 @keyframes slideFadeUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(40px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes slideFadeLeft {
-  from { 
-    opacity: 0; 
-    transform: translateX(-30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes slideFadeRight {
-  from { 
-    opacity: 0; 
-    transform: translateX(30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes textReveal {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px) scale(0.95); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
-  }
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 @keyframes fadeInStagger {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Advanced Text Masking Effect */
+/* Text Mask Effect */
 .text-mask {
   background: linear-gradient(90deg, transparent, var(--text-light), transparent);
   background-size: 200% 100%;
@@ -206,31 +189,18 @@
   -webkit-text-fill-color: transparent;
   animation: textMask 2s ease-in-out infinite;
 }
-
 @keyframes textMask {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #b3cde0; }
+::-webkit-scrollbar-thumb { background: #03396c; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #005b96; }
 
-::-webkit-scrollbar-track {
-  background: #EDE8F5;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3D52A0;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #7091E6;
-}
-
-/* Model viewer custom styles */
+/* Model Viewer */
 model-viewer {
   width: 100%;
   height: 400px;
@@ -239,19 +209,7 @@ model-viewer {
   overflow: hidden;
 }
 
-/* Dark mode styles */
-.dark {
-  @apply bg-dark text-tertiary;
-}
-
-.dark .card {
-  @apply bg-gray-800 border-gray-700;
-}
-
-.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  @apply text-secondary;
-}
-
-.dark model-viewer {
-  background-color: #1f2937;
-}
+/* Dark Mode */
+.dark { @apply bg-dark text-light; }
+.dark .card { @apply bg-dark text-muted border-muted; }
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 { @apply text-primary; }
