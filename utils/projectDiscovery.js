@@ -79,7 +79,7 @@ const PROJECT_METADATA = {
     gallery: [
       '/images/projects/p1.jpg' // Only use existing image
     ],
-    modelUrl: '/models/drone.glb',
+    modelUrl: '/models/drone.obj',
     videoUrl: 'https://www.youtube.com/watch?v=example3',
     tags: ['Aerodynamics', 'Product Design', 'Manufacturing'],
     featured: true,
@@ -110,7 +110,7 @@ const PROJECT_METADATA = {
     gallery: [
       '/images/projects/p1.jpg' // Only use existing image
     ],
-    modelUrl: '/models/car-surfacing.glb',
+    modelUrl: '/models/car-surfacing.obj',
     videoUrl: 'https://www.youtube.com/watch?v=example4',
     tags: ['Surface Modeling', 'Automotive', 'Aesthetic Design'],
     featured: true,
@@ -187,10 +187,9 @@ const PROJECT_METADATA = {
       ]
     },
   
-    // First Arc Reactor - existing project
-   'first-arc-reactor-im': {
+    'first-arc-reactor-im': {
   id: 7,
-  title: '3D Model of First Arc Reactor (Iron Man)',
+  title: '3D Model of First Arc Reactor (Iron Man) | Designed in SOLIDWORKS & Animated in Blender',
   category: '3D Modeling & Animation',
   software: 'SOLIDWORKS, Blender',
   description: 'A detailed 3D model of the first Arc Reactor from the Iron Man movie, meticulously designed in SOLIDWORKS for accurate part geometry, then rendered and animated in Blender to showcase realistic materials, lighting, and mechanical motion.',
@@ -244,14 +243,6 @@ const KNOWN_MODEL_FILES = [
     path: '/models/your-new-model-2.glb',
     size: 10039216 // 9.6 MB in bytes
   },
-  
-  {
-    filename: 'arc-reactor-im.glb',
-    name: 'first-arc-reactor-im',
-    extension: '.glb',
-    path: '/models/arc-reactor-im.glb',
-    size: 35000000 // Example size: 35 MB → calculate the actual size of your file
-  }
   // Add your new model here - EXAMPLE:
   // {
   //   filename: 'your-new-model.glb',
