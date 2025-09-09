@@ -4,6 +4,8 @@ import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 import { Box, Zap, Video, Palette, Settings, FileText, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Prism from '../components/Prism'
+import ScrollFloat from '../components/ScrollFloat'
 
 export default function Services() {
   const services = [
@@ -150,17 +152,42 @@ export default function Services() {
       description="Professional CAD modeling, 3D design, product animation, rendering, and simulation services. Transform your ideas into reality with DesignAnything."
     >
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 relative overflow-hidden">
+        {/* Prism Background Effect - Full Section */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+          <Prism
+            animationType="rotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={0}
+            colorFrequency={1}
+            noise={0.5}
+            glow={1}
+          />
+        </div>
+        
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              My <span className="gradient-text">Services</span>
-            </h1>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-4xl lg:text-6xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.5}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=30%"
+                scrollEnd="center center"
+                stagger={0.03}
+              >
+                My Services
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Comprehensive design and engineering services to bring your ideas to life. 
               From concept to completion, we handle every aspect of your project.
@@ -279,9 +306,19 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              My <span className="gradient-text">Process</span>
-            </h2>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.2}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=40%"
+                scrollEnd="center center"
+                stagger={0.02}
+              >
+                My Process
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               A streamlined workflow designed to deliver exceptional results efficiently
             </p>
@@ -322,9 +359,19 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Flexible <span className="gradient-text">Pricing</span>
-            </h2>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.2}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=40%"
+                scrollEnd="center center"
+                stagger={0.02}
+              >
+                Flexible Pricing
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Transparent pricing tailored to your project requirements and budget
             </p>

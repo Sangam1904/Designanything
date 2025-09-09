@@ -27,7 +27,7 @@ export const PROJECTS_DATA = {
     id: 'arc-reactor',
     title: 'Arc Reactor Design',
     category: 'Mechanical Design',
-    software: 'SOLIDWORKS',
+    software: 'Solidworks',
     description: 'Advanced arc reactor design with detailed mechanical components and energy distribution systems.',
     shortDescription: 'Advanced energy reactor with precision engineering',
     
@@ -170,7 +170,7 @@ export const PROJECTS_DATA = {
     id: 'hydrogen-bike',
     title: 'Hydrogen-Powered Bicycle',
     category: 'Product Design',
-    software: 'Fusion 360',
+    software: 'Blender',
     description: 'Revolutionary hydrogen fuel cell bicycle design with integrated energy storage and distribution system.',
     shortDescription: 'Next-generation hydrogen fuel cell bicycle',
     
@@ -231,6 +231,69 @@ export const PROJECTS_DATA = {
     },
     
     skills: ['Product Design', 'Fuel Cell Technology', 'Carbon Fiber Design', 'Ergonomics', 'Thermal Management']
+  }, 
+  
+  // Car Surfacing Project
+  'drone-design': {
+    id: 'drone-design',
+    title: 'Drone Design',
+    category: 'Automotive Design',
+    software: 'Fusion 360',
+    description: 'Premium drone design with advanced aerodynamics and aesthetic optimization.',
+    shortDescription: 'Luxury car body with advanced aerodynamics',
+    
+    thumbnail: '/projects/drone-design/thumbnails/drone-design-thumbnail.png',
+    heroImage: '/projects/drone-design/images/drone-design-hero.png',
+    gallery: [
+      '/projects/drone-design/images/drone-design-1.png',
+      '/projects/drone-design/images/drone-design-2.png',
+      '/projects/drone-design/images/drone-design-3.png'
+    ],
+    models: [
+      {
+        name: 'Drone',
+        url: '/projects/drone-design/models/drone-design-body.glb',
+        type: 'glb'
+      }
+    ],
+    videos: [
+      {
+        name: 'Design Process',
+        url: '/projects/drone-design/videos/drone-design-process.mp4',
+        type: 'mp4'
+      }
+    ],
+    
+    tags: ['Drone', 'Aerodynamics', 'Design'],
+    featured: true,
+    year: 2024,
+    status: 'Completed',
+    client: 'Drone Company',
+    
+    specifications: {
+      complexity: 'Very High',
+      parts: '25+ surface panels',
+      analysis: 'Aerodynamic & Static',
+      manufacturing: 'Production Ready',
+      materials: ['Aluminum Body', 'Carbon Fiber Accents'],
+      dimensions: '4800mm x 1900mm x 1400mm'
+    },
+    
+    technicalDetails: [
+      'Advanced surface modeling for luxury aesthetics',
+      'Computational fluid dynamics for aerodynamics',
+      'Manufacturing feasibility analysis',
+      'Class-A surface quality standards',
+      'Integration with existing vehicle platform'
+    ],
+    
+    timeline: {
+      startDate: '2023-06-01',
+      endDate: '2023-12-15',
+      duration: '6.5 months'
+    },
+    
+    skills: ['Surface Modeling', 'Automotive Design', 'Aerodynamics', 'Static Analysis', 'CFD Analysis']
   },
 
   // Car Surfacing Project
@@ -330,12 +393,14 @@ export const searchProjects = (query) => {
 
 // Get all unique categories
 export const getAllCategories = () => {
-  return [...new Set(Object.values(PROJECTS_DATA).map(project => project.category))]
+  const categories = [...new Set(Object.values(PROJECTS_DATA).map(project => project.category))]
+  return ['all', ...categories]
 }
 
 // Get all unique software tools
 export const getAllSoftware = () => {
-  return [...new Set(Object.values(PROJECTS_DATA).map(project => project.software))]
+  const software = [...new Set(Object.values(PROJECTS_DATA).map(project => project.software))]
+  return ['all', ...software]
 }
 
 // Get project statistics

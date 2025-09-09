@@ -95,7 +95,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
           >
-            <Link href="/" className="btn-primary group">
+            <Link href="/portfolio" className="btn-primary group">
               Explore Portfolio
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
@@ -151,27 +151,10 @@ export default function Hero() {
               <span className="text-sm font-medium">ANSYS Simulation</span>
             </div>
           </motion.div>
+
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm text-gray-500 dark:text-gray-400">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center">
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"
-            />
-          </div>
-        </div>
-      </motion.div>
     </section>
     </>
   )

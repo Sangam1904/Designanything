@@ -1,6 +1,8 @@
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 import { Award, Users, Target, Zap } from 'lucide-react'
+import Prism from '../components/Prism'
+import ScrollFloat from '../components/ScrollFloat'
 import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
 
 export default function About() {
@@ -46,17 +48,42 @@ export default function About() {
       description="Learn about  Design  Anything - a professional CAD modeling and 3D design company. Meet me and discover my mission to transform ideas into reality."
     >
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 relative overflow-hidden">
+        {/* Prism Background Effect - Full Section */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+          <Prism
+            animationType="rotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={0}
+            colorFrequency={1}
+            noise={0.5}
+            glow={1}
+          />
+        </div>
+        
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
-              About <span className="gradient-text">Design Anything</span>
-            </h1>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-4xl lg:text-6xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.5}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=30%"
+                scrollEnd="center center"
+                stagger={0.03}
+              >
+                About Design Anything
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               I am passionate about transforming ideas into reality through expert engineering design, 
               innovative CAD modeling, and stunning 3D visualizations.
@@ -75,9 +102,19 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-                My Mission
-              </h2>
+              <div className="mb-6">
+                <ScrollFloat
+                  containerClassName="text-left"
+                  textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
+                  animationDuration={1.2}
+                  ease="back.out(1.7)"
+                  scrollStart="top bottom-=40%"
+                  scrollEnd="center center"
+                  stagger={0.02}
+                >
+                  My Mission
+                </ScrollFloat>
+              </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 To empower businesses and individuals with cutting-edge CAD modeling and 3D design solutions 
                 that bridge the gap between imagination and reality. We believe that every great product 
@@ -130,9 +167,19 @@ export default function About() {
             viewport={{ once: true }}
             className={`${valuesConfig.alignment === 'center' ? 'text-center' : 'text-left'} mb-16`}
           >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              My <span className="gradient-text">Values</span>
-            </h2>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.2}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=40%"
+                scrollEnd="center center"
+                stagger={0.02}
+              >
+                My Values
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               The principles that guide my work and relationships with clients
             </p>
@@ -191,7 +238,7 @@ export default function About() {
             >
               {/* Profile Image */}
               <div className="flex-shrink-0">
-                <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl">
+                <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl">
                   <img 
                     src="/images/team/Sangam.jpg" 
                     alt="Sangmeshwar kanade - Founder & Lead Designer"
@@ -209,7 +256,7 @@ export default function About() {
                   Founder & Lead Designer
                 </p>
                 
-                <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                   <p>
                     Expert in SOLIDWORKS, CATIA, and Blender with over 2 years of experience in mechanical design and product development. I specialize in transforming complex ideas into precise, manufacturable designs.
                   </p>

@@ -1,11 +1,14 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import { motion } from 'framer-motion'
 import { Search, Filter, ExternalLink } from 'lucide-react'
 import ProjectDetailModal from '../../components/ProjectDetailModal'
 import ImageVideoDisplay from '../../components/ImageVideoDisplay'
+import Prism from '../../components/Prism'
+import ScrollFloat from '../../components/ScrollFloat'
 import { 
   generateProjectData, 
   getCategories, 
@@ -14,11 +17,19 @@ import {
 } from '../../utils/projectDiscovery'
 
 export default function Portfolio() {
+  const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedSoftware, setSelectedSoftware] = useState('all')
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Handle URL parameters for category filtering
+  useEffect(() => {
+    if (router.query.category) {
+      setSelectedCategory(router.query.category)
+    }
+  }, [router.query.category])
 
   const projects = generateProjectData()
   const categories = getCategories()
@@ -68,17 +79,42 @@ export default function Portfolio() {
       description="Explore  of CAD modeling, 3D design, and product animation projects. From mechanical design to surface modeling, see our expertise in action."
     >
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 relative overflow-hidden">
+        {/* Prism Background Effect - Full Section */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+          <Prism
+            animationType="rotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={0}
+            colorFrequency={1}
+            noise={0.5}
+            glow={1}
+          />
+        </div>
+        
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              My <span className="gradient-text">Portfolio</span>
-            </h1>
+            <div className="mb-6">
+              <ScrollFloat
+                containerClassName="text-center"
+                textClassName="text-4xl lg:text-6xl font-playfair font-bold text-gray-800 dark:text-white"
+                animationDuration={1.5}
+                ease="back.out(1.7)"
+                scrollStart="top bottom-=30%"
+                scrollEnd="center center"
+                stagger={0.03}
+              >
+                My Portfolio
+              </ScrollFloat>
+            </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Explore my diverse collection of CAD modeling, 3D design, and product animation projects. 
               Each project showcases my expertise in transforming ideas into reality.

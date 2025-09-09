@@ -40,7 +40,7 @@ export default function Preview() {
   const hasPrevious = selectedProject && featuredProjects.length > 1
 
   return (
-                    <section className="section-padding bg-neutral dark:bg-primary">
+                    <section className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -50,10 +50,10 @@ export default function Preview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-                                <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed">
+                                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Explore my latest work showcasing expertise in CAD modeling, 3D design, and product animation.
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export default function Preview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card overflow-hidden group"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group border border-gray-200 dark:border-gray-700"
             >
               {/* Project Image Display with 4:3 aspect ratio */}
               <div className="relative">
@@ -111,11 +111,11 @@ export default function Preview() {
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                    <span className="text-xs font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">
                       Featured
                     </span>
                   )}
@@ -144,13 +144,13 @@ export default function Preview() {
                   {project.tags.slice(0, 3).map((tag) => (
                     <span 
                       key={tag}
-                      className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"
+                      className="text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded border border-gray-200 dark:border-gray-600"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 3 && (
-                    <span className="text-xs font-medium text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                    <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded border border-gray-200 dark:border-gray-600">
                       +{project.tags.length - 3} more
                     </span>
                   )}
@@ -160,7 +160,7 @@ export default function Preview() {
                 <div className="flex items-center justify-center space-x-4">
                   <button 
                     onClick={() => openProjectModal(project)}
-                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
+                    className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-200 group"
                   >
                     View Details
                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -171,7 +171,7 @@ export default function Preview() {
                       href={project.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors duration-200 group"
+                      className="inline-flex items-center text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium transition-colors duration-200 group"
                     >
                       Watch Video
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
