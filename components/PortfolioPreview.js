@@ -192,7 +192,7 @@ export default function Preview() {
           className="text-center"
         >
           <Link 
-            href="/"
+            href="/portfolio"
             className="inline-flex items-center btn-primary group"
           >
             View All Projects
