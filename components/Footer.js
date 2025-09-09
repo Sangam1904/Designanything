@@ -12,10 +12,10 @@ export default function Footer() {
       { name: 'Rendering', href: '/services#rendering' },
     ],
     portfolio: [
-      { name: 'Mechanical Design', href: '/portfolio?category=mechanical' },
-      { name: 'Industrial Design', href: '/portfolio?category=industrial' },
-      { name: 'Drone Design', href: '/portfolio?category=drones' },
-      { name: 'Furniture Design', href: '/portfolio?category=furniture' },
+      { name: 'Mechanical Design', href: '/?category=mechanical' },
+      { name: 'Industrial Design', href: '/?category=industrial' },
+      { name: 'sheet metal Design', href: '/?category=sheet metal' },
+      { name: 'structural Design', href: '/?category=structural' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
                                         <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">ACD</span>
+                <span className="text-white font-bold text-lg">DA</span>
               </div>
               <span className="font-playfair text-xl font-bold">DesignAnything</span>
             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                                                    className="text-light hover:text-secondary transition-colors duration-200"
+                    className="text-light hover:text-secondary transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -100,9 +100,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* About */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4">Company</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4">About</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -135,22 +135,7 @@ export default function Footer() {
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                        <p className="text-light text-sm">Subscribe to our newsletter</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 bg-primary/50 border border-tertiary/30 rounded-l-lg focus:outline-none focus:border-secondary text-white placeholder-tertiary"
-                />
-                <button className="px-4 py-2 bg-secondary text-white rounded-r-lg hover:bg-secondary/90 transition-colors duration-200">
-                  Subscribe
-                </button>
-              </div>
-            </div>
+            </div>           
           </div>
         </div>
 

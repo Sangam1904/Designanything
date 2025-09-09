@@ -70,10 +70,10 @@ export default function ProjectDetail() {
 
   // Mock image gallery data - you can replace this with actual project images
   const projectImages = [
-    { id: 1, src: '/images/projects/hydrogen-bike-1.jpg', alt: 'Hydrogen Bike Front View', title: 'Front View' },
-    { id: 2, src: '/images/projects/hydrogen-bike-2.jpg', alt: 'Hydrogen Bike Side View', title: 'Side View' },
-    { id: 3, src: '/images/projects/hydrogen-bike-3.jpg', alt: 'Hydrogen Bike Detail', title: 'Detail View' },
-    { id: 4, src: '/images/projects/hydrogen-bike-4.jpg', alt: 'Hydrogen Bike Assembly', title: 'Assembly' },
+    { id: 1, src: '/images/projects1/hydrogen-bike-1.jpg', alt: 'Hydrogen Bike Front View', title: 'Front View' },
+    { id: 2, src: '/images/projects1/hydrogen-bike-2.jpg', alt: 'Hydrogen Bike Side View', title: 'Side View' },
+    { id: 3, src: '/images/projects1/hydrogen-bike-3.jpg', alt: 'Hydrogen Bike Detail', title: 'Detail View' },
+    { id: 4, src: '/images/projects1/hydrogen-bike-4.jpg', alt: 'Hydrogen Bike Assembly', title: 'Assembly' },
   ]
 
   // Mock downloadable materials

@@ -78,7 +78,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Mon - Fri: 9AM - 6PM IST',
+      details: 'Mon - Sat: 9AM - 6PM UTC',
       description: 'Weekend consultations available',
       action: null
     }
@@ -106,7 +106,7 @@ export default function Contact() {
 
   return (
     <Layout 
-      title="Contact Us"
+      title="Contact Me"
       description="Get in touch with DesignAnything for your CAD modeling, 3D design, and product animation needs. Free consultation available."
     >
       {/* Hero Section */}
@@ -325,7 +325,7 @@ export default function Contact() {
             >
               <div>
                 <h3 className="text-2xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-                  Why Choose Us?
+                  Why Choose Me?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -353,7 +353,7 @@ export default function Contact() {
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">Unlimited Revisions</h4>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">Limited Revisions</h4>
                       <p className="text-gray-600 dark:text-gray-300">We work until you're completely satisfied</p>
                     </div>
                   </div>
@@ -367,14 +367,6 @@ export default function Contact() {
                       <p className="text-gray-600 dark:text-gray-300">Get all project files for future modifications</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600 dark:text-gray-400">Interactive Map Coming Soon</p>
                 </div>
               </div>
             </motion.div>

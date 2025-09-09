@@ -30,47 +30,6 @@ export const siteConfig = {
     aboutPage: {
       readyToWorkTogetherSection: {
         visible: false
-      },
-      meetOurTeamSection: {
-        profiles: [
-          {
-            name: "Sangmeshwar Kanade",
-            title: "Founder & Lead Designer",
-            description: "Expert in SOLIDWORKS, CATIA, and Blender with over 5 years of experience in mechanical design and product development.",
-            certifications: [
-              "SOLIDWORKS Expert",
-              "CATIA Certified"
-            ]
-          },
-          {
-            name: "Abhishek Raut",
-            title: "3D Artist & Animator",
-            description: "Specialized in product visualization, rendering, and animation with expertise in Blender and advanced lighting techniques.",
-            certifications: [
-              "Blender Expert",
-              "Animation"
-            ]
-          },
-          {
-            name: "Shubham Kore",
-            title: "Simulation Engineer",
-            description: "ANSYS specialist with deep knowledge in structural analysis, thermal analysis, and optimization for complex engineering problems.",
-            certifications: [
-              "ANSYS Expert",
-              "FEA"
-            ]
-          },
-          {
-            name: "Abhi Jagtap",
-            title: "Founder & Lead Designer",
-            description: "Expert in SOLIDWORKS, CATIA, and Blender with over 5 years of experience in mechanical design and product development.",
-            certifications: [
-              "SOLIDWORKS Expert",
-              "CATIA Certified"
-            ]
-          }
-        ],
-        layout: "horizontal_sequence"
       }
     }
   },

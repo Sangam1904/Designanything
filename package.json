@@ -1,5 +1,5 @@
 {
-  "name": "anything-can-design",
+  "name": "DesignAnything",
   "version": "1.0.0",
   "description": "Portfolio website for DesignAnything - CAD modeling, 3D design, and product animation services",
   "private": true,
@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@google/model-viewer": "^3.4.0",
+    "@gsap/react": "^2.1.2",
     "@react-three/drei": "^9.102.6",
     "@react-three/fiber": "^8.15.19",
     "date-fns": "^2.30.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.0",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.292.0",
     "next": "^14.0.0",
+    "ogl": "^1.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",

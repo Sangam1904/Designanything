@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import ProjectDetailModal from './ProjectDetailModal'
 import ImageVideoDisplay from './ImageVideoDisplay'
 
-export default function PortfolioPreview() {
+export default function Preview() {
   const featuredProjects = getFeaturedProjects()
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -54,7 +54,7 @@ export default function PortfolioPreview() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
                                 <p className="text-xl text-primary dark:text-neutral max-w-3xl mx-auto leading-relaxed">
-            Explore our latest work showcasing expertise in CAD modeling, 3D design, and product animation.
+            Explore my latest work showcasing expertise in CAD modeling, 3D design, and product animation.
           </p>
         </motion.div>
 
@@ -192,7 +192,7 @@ export default function PortfolioPreview() {
           className="text-center"
         >
           <Link 
-            href="/portfolio"
+            href="/"
             className="inline-flex items-center btn-primary group"
           >
             View All Projects

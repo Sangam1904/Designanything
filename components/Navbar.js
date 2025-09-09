@@ -26,7 +26,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Blog', href: '/blog' },
     ...(downloadsConfig.visible ? [{ name: 'Downloads', href: '/downloads' }] : []),
     { name: 'About', href: '/about' },
-    // { name: 'Contact', href: '/contact' }, `
   ]
 
   return (

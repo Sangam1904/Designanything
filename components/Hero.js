@@ -4,6 +4,8 @@ import { ArrowRight, Play, Download } from 'lucide-react'
 import { useRef } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import FluidCursor from './FluidCursor'
+import SplitText from './SplitText'
+import Prism from './Prism'
 
 export default function Hero() {
   const videoRef = useRef(null)
@@ -23,19 +25,56 @@ export default function Hero() {
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-accent/40 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
+      {/* Full Screen Prism Background Effect */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+        <Prism
+          animationType="rotate"
+          timeScale={0.5}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.6}
+          hueShift={0}
+          colorFrequency={1}
+          noise={0.5}
+          glow={1}
+        />
+      </div>
+
       <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 50 }}
-            animate={isHeroVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl lg:text-8xl font-inter font-medium mb-8 leading-tight"
-          >
-            <span className="text-light">Transform Ideas</span>
-            <br />
-            <span className="text-accent">Into Reality</span>
-          </motion.h1>
+          <div className="text-5xl sm:text-6xl lg:text-8xl font-inter font-medium mb-8 leading-tight">
+            <div className="flex flex-col items-center">
+              <SplitText
+                text="Transform Ideas"
+                tag="span"
+                className="text-light"
+                delay={50}
+                duration={0.8}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 50 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
+              <SplitText
+                text="Into Reality"
+                tag="span"
+                className="text-accent"
+                delay={100}
+                duration={0.8}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 50 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
+            </div>
+          </div>
 
           {/* Subtitle */}
           <motion.p 
@@ -46,7 +85,7 @@ export default function Hero() {
           >
             Professional CAD modeling, 3D design, and product animation services. 
             <br className="hidden sm:block" />
-            From concept to completion, we bring your vision to life.
+            From concept to completion, I bring your vision to life.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -56,13 +95,8 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
           >
-            <Link href="/portfolio" className="btn-primary group">
+            <Link href="/" className="btn-primary group">
               Explore Portfolio
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-            
-            <Link href="/contact" className="btn-secondary group">
-              Start Project
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -72,13 +106,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={isHeroVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-            className="relative max-w-[60rem] mx-auto"
+            className="relative max-w-[60rem] mx-auto z-20"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-video bg-gradient-to-br from-accent to-accent/80">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
+              <div className="aspect-video bg-gradient-to-br from-accent to-accent/80 relative">
+                {/* Video */}
                 <video
                   ref={videoRef}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover relative z-10"
                   src="/videos/product-animation.mp4"
                   autoPlay
                   muted
@@ -91,6 +126,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
+
           {/* Trust Indicators */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -100,15 +136,15 @@ export default function Hero() {
           >
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">SOLIDWORKS Expert</span>
+              <span className="text-sm font-medium">SOLIDWORKS Professional</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">CATIA Certified</span>
+              <span className="text-sm font-medium">CATIA Enthusiast</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">Blender Professional</span>
+              <span className="text-sm font-medium">Blender Beginner</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>

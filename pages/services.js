@@ -21,7 +21,7 @@ export default function Services() {
         'Weldment design',
         'Surface modeling'
       ],
-      software: ['SOLIDWORKS', 'CATIA', 'AutoCAD', 'Inventor'],
+      software: ['SOLIDWORKS', 'CATIA', 'AutoCAD'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -38,7 +38,7 @@ export default function Services() {
         'Aesthetic design optimization',
         'Manufacturing-ready models'
       ],
-      software: ['Blender', 'CATIA', 'SOLIDWORKS', 'Rhino'],
+      software: ['Blender', 'CATIA', 'SOLIDWORKS'],
       color: 'from-purple-500 to-pink-500'
     },
     {
@@ -55,7 +55,7 @@ export default function Services() {
         'Interactive 3D presentations',
         'Motion graphics integration'
       ],
-      software: ['Blender', 'SOLIDWORKS', 'CATIA', 'After Effects'],
+      software: ['Blender', 'SOLIDWORKS'],
       color: 'from-green-500 to-emerald-500'
     },
     {
@@ -72,7 +72,7 @@ export default function Services() {
         '360-degree product views',
         'Marketing-ready imagery'
       ],
-      software: ['Blender', 'V-Ray', 'KeyShot', 'SOLIDWORKS Visualize'],
+      software: ['Blender', 'KeyShot', 'SOLIDWORKS Visualize'],
       color: 'from-orange-500 to-red-500'
     },
     {
@@ -89,7 +89,7 @@ export default function Services() {
         'Finite element analysis (FEA)',
         'Performance validation'
       ],
-      software: ['ANSYS', 'SOLIDWORKS Simulation', 'CATIA Analysis'],
+      software: ['ANSYS', 'SOLIDWORKS Simulation'],
       color: 'from-indigo-500 to-blue-500'
     },
     {
@@ -106,7 +106,7 @@ export default function Services() {
         'User manuals and guides',
         'Quality control documentation'
       ],
-      software: ['SOLIDWORKS', 'AutoCAD', 'CATIA', 'Microsoft Office'],
+      software: ['SOLIDWORKS', 'AutoCAD', 'Microsoft Office'],
       color: 'from-gray-500 to-slate-500'
     }
   ]
@@ -125,22 +125,22 @@ export default function Services() {
     {
       step: 3,
       title: 'Design',
-      description: 'Our team develops the initial concepts and 3D models based on your specifications.'
+      description: 'I develop the initial concepts and 3D models based on your specifications.'
     },
     {
       step: 4,
       title: 'Review',
-      description: 'We share progress updates and gather your feedback for refinements.'
+      description: 'I share progress updates and gather your feedback for refinements.'
     },
     {
       step: 5,
       title: 'Refinement',
-      description: 'We incorporate your feedback and make necessary adjustments to perfect the design.'
+      description: 'I incorporate your feedback and make necessary adjustments to perfect the design.'
     },
     {
       step: 6,
       title: 'Delivery',
-      description: 'We deliver the final files, documentation, and any additional assets you need.'
+      description: 'I deliver the final files, documentation, and any additional assets you need.'
     }
   ]
 
@@ -159,7 +159,7 @@ export default function Services() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Our <span className="gradient-text">Services</span>
+              My <span className="gradient-text">Services</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Comprehensive design and engineering services to bring your ideas to life. 
@@ -280,7 +280,7 @@ export default function Services() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Our <span className="gradient-text">Process</span>
+              My <span className="gradient-text">Process</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               A streamlined workflow designed to deliver exceptional results efficiently
@@ -339,7 +339,7 @@ export default function Services() {
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700"
             >
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Basic</h3>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">₹1,200</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">$ 10</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center justify-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -372,7 +372,7 @@ export default function Services() {
                 <span className="bg-blue-600 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Professional</h3>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">₹2,500+</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">$ 25 </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center justify-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -384,7 +384,7 @@ export default function Services() {
                 </li>
                 <li className="flex items-center justify-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Unlimited revisions</span>
+                  <span className="text-gray-600 dark:text-gray-300"> 4-5 revisions</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />

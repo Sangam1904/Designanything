@@ -15,12 +15,12 @@ import { generateProjectData } from '../../utils/projectDiscovery'
 import Link from 'next/link'
 
 // Service data structure
-const servicesData = {
+const Data = {
   'cad-modeling': {
     title: 'CAD Modeling',
-    tagline: 'Professional CAD modeling services for product design, engineering, and manufacturing',
-    description: 'Our CAD modeling expertise spans across multiple industries, delivering precise 3D models that bridge the gap between concept and reality. We specialize in parametric modeling, surface design, and assembly management using industry-standard software.',
-    heroImage: '/images/services/cad-modeling-hero.jpg',
+    tagline: 'Professional CAD modeling  for product design, engineering, and manufacturing',
+    description: 'My CAD modeling expertise spans across multiple industries, delivering precise 3D models that bridge the gap between concept and reality. We specialize in parametric modeling, surface design, and assembly management using industry-standard software.',
+    heroImage: '/images//cad-modeling-hero.jpg',
     features: [
       'Parametric Modeling',
       'Surface Design',
@@ -30,19 +30,19 @@ const servicesData = {
       'Manufacturing Optimization'
     ],
     gallery: [
-      '/images/services/cad-gallery-1.jpg',
-      '/images/services/cad-gallery-2.jpg',
-      '/images/services/cad-gallery-3.jpg',
-      '/images/services/cad-gallery-4.jpg'
+      '/images//cad-modeling/cad-gallery-1.jpg',
+      '/images//cad-modeling/cad-gallery-2.jpg',
+      '/images//cad-modeling/cad-gallery-3.jpg',
+      '/images//cad-modeling/cad-gallery-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/cad-modeling-demo',
-    relatedServices: ['3d-design', 'simulation', 'documentation']
+    related: ['3d-design', 'simulation', 'documentation']
   },
   '3d-design': {
     title: '3D Design',
     tagline: 'Creative 3D design solutions for visualization, prototyping, and digital art',
-    description: 'Transform your ideas into stunning 3D visualizations with our comprehensive 3D design services. From product visualization to architectural renders, we create immersive experiences that captivate your audience.',
-    heroImage: '/images/services/3d-design-hero.jpg',
+    description: 'Transform your ideas into stunning 3D visualizations with my comprehensive 3D design . From product visualization to architectural renders, we create immersive experiences that captivate your audience.',
+    heroImage: '/images//3d-design-hero.jpg',
     features: [
       'Product Visualization',
       'Architectural Design',
@@ -52,19 +52,19 @@ const servicesData = {
       'Environmental Modeling'
     ],
     gallery: [
-      '/images/services/3d-gallery-1.jpg',
-      '/images/services/3d-gallery-2.jpg',
-      '/images/services/3d-gallery-3.jpg',
-      '/images/services/3d-gallery-4.jpg'
+      '/images//3d-design/3d-gallery-1.jpg',
+      '/images//3d-design/3d-gallery-2.jpg',
+      '/images//3d-design/3d-gallery-3.jpg',
+      '/images//3d-design/3d-gallery-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/3d-design-demo',
-    relatedServices: ['cad-modeling', 'rendering', 'product-animation']
+    related: ['cad-modeling', 'rendering', 'product-animation']
   },
   'product-animation': {
     title: 'Product Animation',
     tagline: 'Dynamic product animations and motion graphics that bring your designs to life',
-    description: 'Create engaging content for marketing, presentations, and client demonstrations with our professional product animation services. We specialize in assembly animations, product walkthroughs, and technical demonstrations.',
-    heroImage: '/images/services/product-animation-hero.jpg',
+    description: 'Create engaging content for marketing, presentations, and client demonstrations with our professional product animation . We specialize in assembly animations, product walkthroughs, and technical demonstrations.',
+    heroImage: '/images//product-animation-hero.jpg',
     features: [
       'Product Demonstrations',
       'Assembly Animations',
@@ -74,19 +74,19 @@ const servicesData = {
       'Interactive Content'
     ],
     gallery: [
-      '/images/services/animation-gallery-1.jpg',
-      '/images/services/animation-gallery-2.jpg',
-      '/images/services/animation-gallery-3.jpg',
-      '/images/services/animation-gallery-4.jpg'
+      '/images//product-animation/product-1.jpg',
+      '/images//product-animation/product-2.jpg',
+      '/images//product-animation/product-3.jpg',
+      '/images//product-animation/product-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/product-animation-demo',
-    relatedServices: ['3d-design', 'rendering', 'cad-modeling']
+    related: ['3d-design', 'rendering', 'cad-modeling']
   },
   'rendering': {
     title: 'Rendering',
     tagline: 'Photorealistic renders and visualizations that bring your designs to life',
-    description: 'Our rendering services deliver stunning, photorealistic imagery that showcases your designs in their best light. From product marketing to architectural visualization, we create compelling visuals that engage your audience.',
-    heroImage: '/images/services/rendering-hero.jpg',
+    description: 'Our rendering  deliver stunning, photorealistic imagery that showcases your designs in their best light. From product marketing to architectural visualization, we create compelling visuals that engage your audience.',
+    heroImage: '/images//rendering-hero.jpg',
     features: [
       'Photorealistic Product Renders',
       'Material & Texture Setup',
@@ -96,19 +96,19 @@ const servicesData = {
       'Marketing-Ready Imagery'
     ],
     gallery: [
-      '/images/services/rendering-gallery-1.jpg',
-      '/images/services/rendering-gallery-2.jpg',
-      '/images/services/rendering-gallery-3.jpg',
-      '/images/services/rendering-gallery-4.jpg'
+      '/images//rendering/rendering-1.jpg',
+      '/images//rendering/rendering-2.jpg',
+      '/images//rendering/rendering-3.jpg',
+      '/images//rendering/rendering-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/rendering-demo',
-    relatedServices: ['3d-design', 'product-animation', 'cad-modeling']
+    related: ['3d-design', 'product-animation', 'cad-modeling']
   },
   'simulation': {
     title: 'Simulation',
     tagline: 'Engineering analysis and simulation for design optimization and validation',
-    description: 'Ensure your designs meet performance and safety requirements with our comprehensive engineering analysis services. We provide structural, thermal, and fluid dynamics analysis using advanced simulation tools.',
-    heroImage: '/images/services/simulation-hero.jpg',
+    description: 'Ensure your designs meet performance and safety requirements with our comprehensive engineering analysis . We provide structural, thermal, and fluid dynamics analysis using advanced simulation tools.',
+    heroImage: '/images//simulation-hero.jpg',
     features: [
       'Structural Analysis',
       'Thermal Analysis',
@@ -118,19 +118,19 @@ const servicesData = {
       'Failure Analysis'
     ],
     gallery: [
-      '/images/services/simulation-gallery-1.jpg',
-      '/images/services/simulation-gallery-2.jpg',
-      '/images/services/simulation-gallery-3.jpg',
-      '/images/services/simulation-gallery-4.jpg'
+      '/images//simulation/simulation-1.jpg',
+      '/images//simulation/simulation-2.jpg',
+      '/images//simulation/simulation-3.jpg',
+      '/images//simulation/simulation-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/simulation-demo',
-    relatedServices: ['cad-modeling', 'documentation', '3d-design']
+    related: ['cad-modeling', 'documentation', '3d-design']
   },
   'documentation': {
     title: 'Documentation',
     tagline: 'Complete technical documentation for manufacturing and quality control',
-    description: 'From technical drawings to comprehensive project reports, our documentation services ensure your designs are properly documented for manufacturing, assembly, and quality control processes.',
-    heroImage: '/images/services/documentation-hero.jpg',
+    description: 'From technical drawings to comprehensive project reports, our documentation  ensure your designs are properly documented for manufacturing, assembly, and quality control processes.',
+    heroImage: '/images//documentation-hero.jpg',
     features: [
       'Technical Drawings',
       'Assembly Instructions',
@@ -140,13 +140,13 @@ const servicesData = {
       'Quality Control Docs'
     ],
     gallery: [
-      '/images/services/documentation-gallery-1.jpg',
-      '/images/services/documentation-gallery-2.jpg',
-      '/images/services/documentation-gallery-3.jpg',
-      '/images/services/documentation-gallery-4.jpg'
+      '/images//documentation/documentation-1.jpg',
+      '/images//documentation/documentation-2.jpg',
+      '/images//documentation/documentation-3.jpg',
+      '/images//documentation/documentation-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/documentation-demo',
-    relatedServices: ['cad-modeling', 'simulation', '3d-design']
+    related: ['cad-modeling', 'simulation', '3d-design']
   }
 }
 
@@ -157,8 +157,8 @@ export default function ServicePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
-    if (service && servicesData[service]) {
-      setCurrentService(servicesData[service])
+    if (service && Data[service]) {
+      setCurrentService(Data[service])
     }
   }, [service])
 
@@ -294,10 +294,10 @@ export default function ServicePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white mb-4">
-              Our Work Gallery
+              My Work Gallery
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Visual examples of our {currentService.title.toLowerCase()} projects
+              Visual examples of my {currentService.title.toLowerCase()} projects
             </p>
           </motion.div>
 
@@ -351,7 +351,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Related Services Section */}
+      {/* Related  Section */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -361,16 +361,16 @@ export default function ServicePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white mb-4">
-              Related Services
+              Related 
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Explore our other design and engineering services
+              Explore my other design and engineering 
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {currentService.relatedServices.map((serviceId, index) => {
-              const relatedService = servicesData[serviceId]
+            {currentService.related.map((serviceId, index) => {
+              const relatedService = Data[serviceId]
               if (!relatedService) return null
               
               return (
@@ -381,7 +381,7 @@ export default function ServicePage() {
                   transition={{ duration: 0.8, delay: 1.6 + index * 0.1 }}
                   className="group"
                 >
-                  <Link href={`/services/${serviceId}`}>
+                  <Link href={`//${serviceId}`}>
                     <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
                       <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 group-hover:text-primary transition-colors duration-200">
                         {relatedService.title}

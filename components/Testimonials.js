@@ -55,10 +55,10 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-playfair font-bold mb-6">
-            What Our <span className="gradient-text">Clients Say</span>
+            What My <span className="gradient-text">Clients Say</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied clients have to say about their experience working with us.
+            Don't just take our word for it. Here's what our satisfied clients have to say about their experience working with me.
           </p>
         </motion.div>
 

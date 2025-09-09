@@ -11,7 +11,7 @@ export default function Stats() {
     },
     {
       icon: Award,
-      number: '00+',
+      number: '10+',
       label: 'Projects Completed',
       description: 'Successfully delivered designs'
     },

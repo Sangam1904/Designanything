@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout 
       title="Home"
-      description="Bring concepts to life with Anything Can Design. High-quality CAD modeling, 3D visualization, and product animations. Innovative engineering solutions tailored for your needs."
+      description="Bring concepts to life with Design Anything. High-quality CAD modeling, 3D visualization, and product animations. Innovative engineering solutions tailored for your needs."
     >
       <Hero />
       <Stats />

@@ -63,10 +63,10 @@ export default function Blog() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6">
-              Our <span className="gradient-text">Blog</span>
+              My <span className="gradient-text">Blog</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Read our latest articles on CAD modeling, 3D design, product animation, and engineering insights. 
+              Read my latest articles on CAD modeling, 3D design, product animation, and engineering insights. 
               Expert tutorials and industry knowledge from DesignAnything.
             </p>
           </motion.div>
@@ -208,7 +208,7 @@ export default function Blog() {
               Stay Updated
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              Get notified about our latest articles, tutorials, and industry insights.
+              Get notified about my latest articles, tutorials, and industry insights.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

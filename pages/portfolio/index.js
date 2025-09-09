@@ -65,7 +65,7 @@ export default function Portfolio() {
   return (
     <Layout 
       title="Portfolio"
-      description="Explore our portfolio of CAD modeling, 3D design, and product animation projects. From mechanical design to surface modeling, see our expertise in action."
+      description="Explore  of CAD modeling, 3D design, and product animation projects. From mechanical design to surface modeling, see our expertise in action."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
@@ -77,11 +77,11 @@ export default function Portfolio() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Our <span className="gradient-text">Portfolio</span>
+              My <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Explore our diverse collection of CAD modeling, 3D design, and product animation projects. 
-              Each project showcases our expertise in transforming ideas into reality.
+              Explore my diverse collection of CAD modeling, 3D design, and product animation projects. 
+              Each project showcases my expertise in transforming ideas into reality.
             </p>
           </motion.div>
         </div>

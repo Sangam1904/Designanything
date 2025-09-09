@@ -29,8 +29,8 @@ export default function CTASection() {
                 <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               
-              <Link href="/portfolio" className="btn-outline border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4">
-                View Our Work
+              <Link href="/" className="btn-outline border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4">
+                View my Work
                 <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
@@ -100,10 +100,6 @@ export default function CTASection() {
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>
                 <span className="text-sm">Fast Turnaround</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span className="text-sm">Unlimited Revisions</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>

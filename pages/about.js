@@ -6,7 +6,6 @@ import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/sit
 export default function About() {
   // Get configuration data
   const aboutConfig = getLayoutConfig('aboutPage')
-  const teamConfig = aboutConfig.meetOurTeamSection
   const missionVisionConfig = getSectionConfig('missionAndVision')
   const valuesConfig = getSectionConfig('values')
   
@@ -34,17 +33,17 @@ export default function About() {
   ]
 
   const skills = [
-    { name: 'SOLIDWORKS', level: 95 },
-    { name: 'CATIA', level: 90 },
-    { name: 'Blender', level: 85 },
-    { name: 'ANSYS', level: 80 },
-    { name: '3DEXPERIENCE', level: 85 }
+    { name: 'SOLIDWORKS', level: 90 },
+    { name: 'CATIA', level: 75 },
+    { name: 'Blender', level: 65 },
+    { name: 'ANSYS', level: 70 },
+    { name: '3DEXPERIENCE', level: 55 }
   ]
 
   return (
     <Layout 
-      title="About Us"
-      description="Learn about  Design  Anything - a professional CAD modeling and 3D design company. Meet our team and discover our mission to transform ideas into reality."
+      title="About Me"
+      description="Learn about  Design  Anything - a professional CAD modeling and 3D design company. Meet me and discover my mission to transform ideas into reality."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
@@ -59,7 +58,7 @@ export default function About() {
               About <span className="gradient-text">Design Anything</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              We are passionate about transforming ideas into reality through expert engineering design, 
+              I am passionate about transforming ideas into reality through expert engineering design, 
               innovative CAD modeling, and stunning 3D visualizations.
             </p>
           </motion.div>
@@ -77,7 +76,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-                Our Mission
+                My Mission
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 To empower businesses and individuals with cutting-edge CAD modeling and 3D design solutions 
@@ -85,7 +84,7 @@ export default function About() {
                 starts with a great design.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                Our team combines technical expertise with creative vision to deliver designs that are not 
+                My technical expertise with creative vision to deliver designs that are not 
                 only functional and manufacturable but also aesthetically pleasing and innovative.
               </p>
             </motion.div>
@@ -97,7 +96,7 @@ export default function About() {
               viewport={{ once: true }}
               className={`${missionVisionConfig.background === 'transparent' ? 'bg-transparent' : 'bg-gradient-to-br from-primary to-accent'} rounded-2xl p-8 ${missionVisionConfig.background === 'transparent' ? 'text-gray-800 dark:text-white' : 'text-white'}`}
             >
-              <h3 className="text-2xl font-playfair font-bold mb-6">Our Vision</h3>
+              <h3 className="text-2xl font-playfair font-bold mb-6">My Vision</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 To become the leading force in digital design innovation, setting new standards for 
                 CAD modeling, 3D visualization, and product development across industries.
@@ -132,10 +131,10 @@ export default function About() {
             className={`${valuesConfig.alignment === 'center' ? 'text-center' : 'text-left'} mb-16`}
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Our <span className="gradient-text">Values</span>
+              My <span className="gradient-text">Values</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              The principles that guide our work and relationships with clients
+              The principles that guide my work and relationships with clients
             </p>
           </motion.div>
 
@@ -164,7 +163,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* About Me */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -175,54 +174,70 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Meet Our <span className="gradient-text">Team</span>
+              About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Passionate professionals dedicated to bringing your ideas to life
+              Passionate designer dedicated to bringing your ideas to life
             </p>
           </motion.div>
 
-          <div className={`grid grid-cols-1 ${teamConfig.layout === 'horizontal_sequence' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
-            {teamConfig.profiles.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
-                  {member.name === "Sangmeshwar Kanade" || member.name === "Abhi Jagtap" ? (
-                    <img 
-                      src="/images/team/Sangmeshwar kanade.jpg" 
-                      alt={`${member.name} - ${member.title}`}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
-                      <span className="text-4xl font-bold text-white">
-                        {member.name.split(' ')[0][0]}
-                      </span>
-                    </div>
-                  )}
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col lg:flex-row items-center gap-12"
+            >
+              {/* Profile Image */}
+              <div className="flex-shrink-0">
+                <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl">
+                  <img 
+                    src="/images/team/Sangam.jpg" 
+                    alt="Sangmeshwar kanade - Founder & Lead Designer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-white">
-                  {member.name}
+              </div>
+
+              {/* Profile Content */}
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+                  Sangmeshwar kanade
                 </h3>
-                <p className="text-secondary font-medium mb-4">{member.title}</p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  {member.description}
+                <p className="text-xl text-secondary font-medium mb-6">
+                  Founder & Lead Designer
                 </p>
-                <div className="flex justify-center space-x-4">
-                  {member.certifications.map((cert, certIndex) => (
-                    <span key={certIndex} className="text-sm text-gray-500 dark:text-gray-400">
-                      {cert}
-                    </span>
-                  ))}
+                
+                <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p>
+                    Expert in SOLIDWORKS, CATIA, and Blender with over 2 years of experience in mechanical design and product development. I specialize in transforming complex ideas into precise, manufacturable designs.
+                  </p>
+                  <p>
+                    My passion lies in creating innovative solutions that bridge the gap between concept and reality. From initial sketches to final production-ready models, I ensure every project meets the highest standards of quality and precision.
+                  </p>
+                  <p>
+                    I believe in the power of design to solve real-world problems and am committed to delivering exceptional results that exceed client expectations.
+                  </p>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* Certifications */}
+                <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    SOLIDWORKS Professional
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    CATIA Enthusiast
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    Blender Beginner
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    ANSYS Simulation
+                  </span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -238,7 +253,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Our <span className="gradient-text">Expertise</span>
+               My<span className="gradient-text">Expertise</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Mastery of industry-leading software and technologies
@@ -294,10 +309,10 @@ export default function About() {
                   Start Your Project
                 </a>
                 <a href="/portfolio" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
-                  View Our Work
+                  View My Work
                 </a>
               </div>
-            </motion.div>
+            </motion.div>     
           </div>
         </section>
       )}
