@@ -165,9 +165,9 @@ export default function ProjectDetail() {
                 </div>
                 
                 <div className="h-96 lg:h-[600px]">
-                  {project.hasModel ? (
+                  {(project.hasModel || (project.models && project.models.length > 0)) ? (
                     <ThreeViewer
-                      modelUrl={project.modelUrl}
+                      modelUrl={project.models?.[0]?.url || project.modelUrl}
                       className="w-full h-full"
                       autoRotate={true}
                       showControls={true}

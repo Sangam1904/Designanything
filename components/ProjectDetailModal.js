@@ -148,7 +148,7 @@ export default function ProjectDetailModal({
             {/* 3D Model Section */}
             <div className="lg:w-2/3 h-[28rem] lg:h-full bg-gray-50 dark:bg-gray-800">
               <ModelViewer
-                modelPath={project.modelUrl}
+                modelPath={project.models?.[0]?.url || project.modelUrl}
                 className="w-full h-full"
                 height="h-full"
                 showControls={true}

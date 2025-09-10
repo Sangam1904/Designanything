@@ -112,22 +112,17 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
     setIsLoaded(false)
   }, [modelPath])
 
-  // ALWAYS call useGLTF at the top level - never inside conditionals
-  let gltfResult
-  try {
-    gltfResult = useGLTF(modelPath)
-  } catch (error) {
-    // If useGLTF throws an error, we need to handle it without breaking hooks
-    console.error('useGLTF error:', error)
-    gltfResult = null
-  }
+  // Use useGLTF with proper error handling
+  const gltfResult = useGLTF(modelPath, true) // true for draco support
 
-  // Process the model when it loads - move all conditions INSIDE useEffect
+  // Process the model when it loads
   useEffect(() => {
+    if (!modelPath) return
+    
     // Check if we have a valid scene and haven't loaded yet
     if (gltfResult && gltfResult.scene && !isLoaded) {
       try {
-        const scene = gltfResult.scene
+        const scene = gltfResult.scene.clone() // Clone to avoid modifying the original
         
         // Store reference for cleanup
         sceneRef.current = scene
@@ -140,9 +135,9 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
         // Center the model
         scene.position.sub(center)
         
-        // Scale to fit in view
+        // Scale to fit in view (adjust scale based on model size)
         const maxDim = Math.max(size.x, size.y, size.z)
-        const scale = 4 / maxDim
+        const scale = maxDim > 0 ? 3 / maxDim : 1
         scene.scale.setScalar(scale)
         
         setIsLoaded(true)
@@ -197,7 +192,7 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
   if (!gltfResult || !gltfResult.scene) {
     return (
       <ErrorFallback 
-        error="Failed to load model" 
+        error="Model not found or failed to load" 
         onRetry={onRetry}
         retryCount={retryCount}
       />
@@ -205,7 +200,7 @@ function Model({ modelPath, onLoad, onError, retryCount = 0, onRetry }) {
   }
 
   // Render the model
-  return <primitive object={gltfResult.scene} />
+  return <primitive object={sceneRef.current || gltfResult.scene} />
 }
 
 // Main ModelViewer component

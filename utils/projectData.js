@@ -42,13 +42,8 @@ export const PROJECTS_DATA = {
     ],
     models: [
       {
-        name: 'Main Assembly',
-        url: '/projects/arc-reactor/models/arc-reactor-main.glb',
-        type: 'glb'
-      },
-      {
-        name: 'Core Component',
-        url: '/projects/arc-reactor/models/arc-reactor-core.glb', 
+        name: 'Arc Reactor Model',
+        url: '/models/arc-reactor-im.glb',
         type: 'glb'
       }
     ],
@@ -120,8 +115,8 @@ export const PROJECTS_DATA = {
     ],
     models: [
       {
-        name: 'Main Structure',
-        url: '/projects/solar-plant/models/solar-plant-main.glb',
+        name: 'Solar Plant Model',
+        url: '/models/solar-plant.glb',
         type: 'glb'
       }
     ],
@@ -183,15 +178,10 @@ export const PROJECTS_DATA = {
     ],
     models: [
       {
-        name: 'Complete Bike',
-        url: '/projects/hydrogen-bike/models/hydrogen-bike-complete.glb',
+        name: 'Hydrogen Bike Model',
+        url: '/models/hydrogen-bike.glb',
         type: 'glb'
       },
-      {
-        name: 'Fuel Cell System',
-        url: '/projects/hydrogen-bike/models/hydrogen-bike-fuel-cell.glb',
-        type: 'glb'
-      }
     ],
     videos: [
       {
@@ -251,8 +241,8 @@ export const PROJECTS_DATA = {
     ],
     models: [
       {
-        name: 'Drone',
-        url: '/projects/drone-design/models/drone-design-body.glb',
+        name: 'Drone Model',
+        url: '/models/drone.glb',
         type: 'glb'
       }
     ],
@@ -314,8 +304,8 @@ export const PROJECTS_DATA = {
     ],
     models: [
       {
-        name: 'Body Shell',
-        url: '/projects/car-surfacing/models/car-surfacing-body.glb',
+        name: 'Car Surfacing Model',
+        url: '/models/car-surfacing.glb',
         type: 'glb'
       }
     ],

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Image as ImageIcon, ExternalLink } from 'lucide-react'
+import ThreeViewer from './ThreeViewer'
 
 export default function ImageVideoDisplay({ 
   project, 
@@ -13,9 +14,11 @@ export default function ImageVideoDisplay({
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Determine what to display: image gallery or single image
+  // Determine what to display: thumbnail image, image gallery, or single image (prioritize thumbnails)
+  const hasThumbnail = project.thumbnail && project.thumbnail !== '/images/projects/p1.jpg'
   const hasImages = project.gallery && project.gallery.length > 0
   const hasImage = project.image && project.image !== '/images/projects/p1.jpg' // Skip placeholder image
+  const hasModel = project.models && project.models.length > 0 && project.models[0].url
 
   // Handle image click
   const handleImageClick = () => {
@@ -37,6 +40,40 @@ export default function ImageVideoDisplay({
         prev === 0 ? project.gallery.length - 1 : prev - 1
       )
     }
+  }
+
+  // Render thumbnail image if available (prioritize thumbnails for featured projects)
+  if (hasThumbnail) {
+    return (
+      <div className={`relative ${height} overflow-hidden rounded-t-lg ${className}`} style={{ aspectRatio: '4/3' }}>
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="w-full h-full object-cover cursor-pointer"
+          onClick={handleImageClick}
+        />
+        
+        {/* Project Title Overlay */}
+        {showTitle && (
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+            <h3 className="text-lg font-playfair font-bold text-white mb-1">
+              {project.title}
+            </h3>
+            <p className="text-sm text-gray-200">
+              {project.category}
+            </p>
+          </div>
+        )}
+        
+        {showOverlay && (
+          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <ExternalLink className="w-6 h-6 text-white" />
+            </div>
+          </div>
+        )}
+      </div>
+    )
   }
 
   // Render image gallery
@@ -64,33 +101,19 @@ export default function ImageVideoDisplay({
           </div>
         )}
         
-        {/* Gallery Navigation */}
+        {/* Gallery Pagination (no arrows) */}
         {project.gallery.length > 1 && (
-          <>
-            <button
-              onClick={prevImage}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors duration-200"
-            >
-              ←
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors duration-200"
-            >
-              →
-            </button>
-            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-1">
-              {project.gallery.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                    index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                  }`}
-                />
-              ))}
-            </div>
-          </>
+          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-1">
+            {project.gallery.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
         )}
         
         {showOverlay && (
