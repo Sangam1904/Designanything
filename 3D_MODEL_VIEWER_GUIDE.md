@@ -1,8 +1,16 @@
-# Dynamic Interactive 3D GLTF Model Viewer System
+# Dynamic Interactive 3D GLTF Model Viewer System - DesignAnything Website
 
 ## Overview
 
-This system provides a complete, dynamic 3D model viewer solution for the portfolio website. It automatically discovers 3D model files, creates project mappings, and provides interactive viewing capabilities with consistent UI patterns.
+This system provides a complete, dynamic 3D model viewer solution for the DesignAnything portfolio website. It automatically discovers 3D model files, creates project mappings, and provides interactive viewing capabilities with consistent UI patterns.
+
+## 🌐 Current Implementation Status
+
+- **Website**: DesignAnything Portfolio
+- **Brand**: "Transform Ideas Into Reality"
+- **Technology**: Next.js 13+ | React Three Fiber | @react-three/drei
+- **Models**: 5 active 3D models in `/public/models/`
+- **Components**: Fully integrated and working
 
 ## Features
 

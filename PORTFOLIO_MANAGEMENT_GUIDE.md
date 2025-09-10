@@ -1,6 +1,14 @@
-# Portfolio Management Guide
+# Portfolio Management Guide - DesignAnything Website
 
 This guide explains how to manage and add new projects to the portfolio section of the DesignAnything website.
+
+## 🌐 Current Website Overview
+
+- **Brand**: DesignAnything
+- **Tagline**: "Transform Ideas Into Reality"
+- **Contact**: anythingcandesign@gmail.com | +91 7498441756
+- **Location**: India
+- **Technology**: Next.js 13+ | React Three Fiber | Tailwind CSS
 
 ## 📁 Project Folder Structure
 
@@ -10,45 +18,62 @@ Each project has its own dedicated folder in `public/projects/` with the followi
 public/projects/
 ├── project-name/
 │   ├── images/
-│   │   ├── project-name-hero.jpg      # Main hero image
-│   │   ├── project-name-1.jpg         # Gallery image 1
-│   │   ├── project-name-2.jpg         # Gallery image 2
-│   │   └── project-name-3.jpg         # Gallery image 3
+│   │   ├── project-name-hero.png      # Main hero image
+│   │   ├── project-name-1.png         # Gallery image 1
+│   │   ├── project-name-2.png         # Gallery image 2
+│   │   └── project-name-3.png         # Gallery image 3
 │   ├── models/
-│   │   ├── project-name-main.glb      # Main 3D model
-│   │   └── project-name-detail.glb    # Detail model (optional)
+│   │   └── project-name-main.glb      # Main 3D model (optional)
 │   ├── videos/
-│   │   ├── project-name-overview.mp4  # Overview video
+│   │   ├── project-name-overview.mp4  # Overview video (optional)
 │   │   └── project-name-process.mp4   # Process video (optional)
 │   └── thumbnails/
-│       └── project-name-thumbnail.jpg # Thumbnail for portfolio grid
+│       └── project-name-thumbnail.png # Thumbnail for portfolio grid
 ```
+
+**Note**: 3D models are stored in `/public/models/` directory for better organization.
 
 ## 🎯 Current Projects
 
-### 1. Arc Reactor (`arc-reactor`)
+### 1. Arc Reactor Design (`arc-reactor`)
 - **Category**: Mechanical Design
 - **Software**: SOLIDWORKS
 - **Status**: Completed
 - **Featured**: Yes
+- **Year**: 2024
+- **Model**: `/models/arc-reactor-im.glb`
 
-### 2. Solar Plant (`solar-plant`)
+### 2. Solar Floating Plant (`solar-plant`)
 - **Category**: Industrial Design
 - **Software**: CATIA
 - **Status**: Completed
 - **Featured**: Yes
+- **Year**: 2024
+- **Model**: `/models/solar-plant.glb`
 
-### 3. Hydrogen Bike (`hydrogen-bike`)
+### 3. Hydrogen-Powered Bicycle (`hydrogen-bike`)
 - **Category**: Product Design
-- **Software**: Fusion 360
-- **Status**: In Development
+- **Software**: Blender
+- **Status**: Completed
 - **Featured**: Yes
+- **Year**: 2024
+- **Model**: `/models/hydrogen-bike.glb`
 
-### 4. Car Surfacing (`car-surfacing`)
+### 4. Drone Design (`drone-design`)
+- **Category**: Aerospace Design
+- **Software**: Fusion 360
+- **Status**: Completed
+- **Featured**: Yes
+- **Year**: 2024
+- **Model**: `/models/drone.glb`
+
+### 5. Car Surfacing (`car-surfacing`)
 - **Category**: Automotive Design
 - **Software**: CATIA
 - **Status**: Completed
 - **Featured**: No
+- **Year**: 2024
+- **Model**: `/models/car-surfacing.glb`
 
 ## ➕ Adding a New Project
 

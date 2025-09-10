@@ -1,15 +1,41 @@
-# Content Management Guide - Complete Reference
+# Content Management Guide - DesignAnything Website
 
 ## 📚 Table of Contents
-1. [Adding New Projects](#adding-new-projects)
-2. [Managing Images](#managing-images)
-3. [Adding Videos](#adding-videos)
-4. [3D Models Management](#3d-models-management)
-5. [Services Management](#services-management)
-6. [Logo and Branding](#logo-and-branding)
-7. [Blog Content Management](#blog-content-management)
-8. [File Organization](#file-organization)
-9. [Content Guidelines](#content-guidelines)
+1. [Website Overview](#website-overview)
+2. [Adding New Projects](#adding-new-projects)
+3. [Managing Images](#managing-images)
+4. [Adding Videos](#adding-videos)
+5. [3D Models Management](#3d-models-management)
+6. [Services Management](#services-management)
+7. [Logo and Branding](#logo-and-branding)
+8. [Blog Content Management](#blog-content-management)
+9. [File Organization](#file-organization)
+10. [Content Guidelines](#content-guidelines)
+11. [Brand Customization](#brand-customization)
+
+---
+
+## 🌐 Website Overview
+
+### Current Website Structure
+- **Brand Name**: DesignAnything
+- **Tagline**: "Transform Ideas Into Reality"
+- **Contact Email**: anythingcandesign@gmail.com
+- **Phone**: +91 7498441756
+- **Location**: India
+
+### Current Projects (Featured)
+1. **Arc Reactor Design** - Mechanical Design (SOLIDWORKS)
+2. **Solar Floating Plant** - Industrial Design (CATIA)  
+3. **Hydrogen-Powered Bicycle** - Product Design (Blender)
+4. **Drone Design** - Aerospace Design (Fusion 360)
+
+### Technology Stack
+- **Framework**: Next.js 13+ with App Router
+- **Styling**: Tailwind CSS
+- **3D Models**: React Three Fiber + @react-three/drei
+- **Animations**: Framer Motion + GSAP
+- **Icons**: Lucide React
 
 ---
 
@@ -31,23 +57,33 @@ public/
 ```
 
 ### Step 2: Update Project Metadata
-**File**: `utils/projectDiscovery.js`
+**File**: `utils/projectData.js`
 
 ```javascript
-// Add new project to PROJECT_METADATA
+// Add new project to PROJECTS_DATA
 'your-new-project': {
-  id: 7, // Increment from existing projects
+  id: 'your-new-project',
   title: 'Your New Project Title',
-  category: 'Your Category',
-  software: 'Your Software',
+  category: 'Mechanical Design', // Choose from: Mechanical Design, Industrial Design, Product Design, Automotive Design, Aerospace Design
+  software: 'SOLIDWORKS', // Choose from: SOLIDWORKS, CATIA, Fusion 360, Blender, ANSYS, AutoCAD
   description: 'Detailed description of your new project.',
-  image: '/images/projects/your-new-project-thumbnail.jpg',
+  shortDescription: 'Brief project description for cards',
+  
+  // Media files
+  thumbnail: '/projects/your-new-project/thumbnails/your-new-project-thumbnail.png',
+  heroImage: '/projects/your-new-project/images/your-new-project-hero.png',
   gallery: [
-    '/images/projects/your-new-project-1.jpg',
-    '/images/projects/your-new-project-2.jpg',
-    '/images/projects/your-new-project-3.jpg'
+    '/projects/your-new-project/images/your-new-project-1.png',
+    '/projects/your-new-project/images/your-new-project-2.png',
+    '/projects/your-new-project/images/your-new-project-3.png'
   ],
-  modelUrl: '/models/your-new-project.glb',
+  models: [
+    {
+      name: 'Main Model',
+      url: '/models/your-new-project.glb',
+      type: 'glb'
+    }
+  ],
   videoUrl: 'https://www.youtube.com/watch?v=your-video-id',
   tags: ['Tag1', 'Tag2', 'Tag3'],
   featured: true, // Set to true for featured projects
@@ -537,6 +573,145 @@ public/
 - **Code comments**: Check inline documentation
 - **Version control**: Review recent changes
 - **Team support**: Contact development team
+
+---
+
+## 🎨 Brand Customization
+
+### Changing Logo and Brand Name
+
+#### 1. Logo Files
+Replace these files with your new logo:
+```
+public/images/
+├── logo.svg          # Main logo (SVG format)
+├── logo.jpg          # Footer logo (JPG format)
+└── icons/
+    └── logo.svg      # Icon version
+```
+
+#### 2. Brand Name Changes
+Update brand name in these files:
+
+**File**: `components/Footer.js`
+```javascript
+// Line ~15: Update company name
+<span className="font-playfair text-xl font-bold text-light">YourNewBrandName</span>
+
+// Line ~20: Update description
+<p className="text-light mb-6 leading-relaxed text-lg text-left">
+  Your new company description here.
+</p>
+```
+
+**File**: `components/Hero.js`
+```javascript
+// Line ~25: Update main tagline
+<SplitText
+  text="Your New Tagline"
+  tag="span"
+  className="text-light"
+  // ... rest of props
+/>
+```
+
+**File**: `config/siteConfig.js`
+```javascript
+export const siteConfig = {
+  name: 'YourNewBrandName',
+  description: 'Your new website description',
+  url: 'https://yourwebsite.com',
+  // ... rest of config
+}
+```
+
+#### 3. Contact Information
+Update contact details in `components/Footer.js`:
+```javascript
+// Email
+<span>your-new-email@domain.com</span>
+
+// Phone
+<span>+1 (555) 123-4567</span>
+
+// Location
+<span>Your City, Country</span>
+```
+
+#### 4. Meta Tags
+Update SEO information in `pages/_app.js`:
+```javascript
+<Head>
+  <title>YourNewBrandName - Professional Engineering Design</title>
+  <meta name="description" content="Your new website description" />
+  <meta property="og:title" content="YourNewBrandName" />
+  <meta property="og:description" content="Your new website description" />
+</Head>
+```
+
+### Color Scheme Customization
+
+#### Primary Colors
+Update `tailwind.config.js`:
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#your-primary-color',
+        secondary: '#your-secondary-color',
+        accent: '#your-accent-color',
+        // ... other colors
+      }
+    }
+  }
+}
+```
+
+#### CSS Variables
+Update `styles/globals.css`:
+```css
+:root {
+  --primary: #your-primary-color;
+  --secondary: #your-secondary-color;
+  --accent: #your-accent-color;
+}
+```
+
+### Font Customization
+
+#### Google Fonts
+Update `pages/_app.js`:
+```javascript
+import { Inter, Playfair_Display } from 'next/font/google'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
+```
+
+#### Tailwind Config
+Update `tailwind.config.js`:
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'inter': ['var(--font-inter)', 'sans-serif'],
+        'playfair': ['var(--font-playfair)', 'serif'],
+      }
+    }
+  }
+}
+```
 
 ---
 

@@ -41,10 +41,10 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/images/logo.jpg" 
-                alt="DesignAnything Logo" 
+                alt="YourNewBrandName Logo" 
                 className="w-10 h-10"
               />
-              <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
+              <span className="font-playfair text-xl font-bold text-light">YourNewBrandName</span>
             </div>
             <p className="text-light mb-6 leading-relaxed text-lg text-left">
               Transforming ideas into reality through expert engineering design. 
@@ -145,7 +145,7 @@ export default function Footer() {
                               <div className="border-t border-tertiary/30 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                                     <p className="text-tertiary text-base">
-              © {currentYear} DesignAnything. All rights reserved.
+              © {currentYear} YourNewBrandName. All rights reserved.
             </p>
             <div className="flex space-x-6 text-base">
               <Link href="/privacy" className="text-tertiary hover:text-secondary transition-colors duration-200">

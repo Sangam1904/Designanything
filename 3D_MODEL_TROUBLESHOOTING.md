@@ -1,6 +1,14 @@
-# 🎮 3D Model Troubleshooting Guide
+# 🎮 3D Model Troubleshooting Guide - DesignAnything Website
 
-This guide will help you fix issues with 3D models not displaying or not being interactive on your website.
+This guide will help you fix issues with 3D models not displaying or not being interactive on your DesignAnything website.
+
+## 🌐 Current 3D Model Setup
+
+- **Technology**: React Three Fiber + @react-three/drei
+- **Model Format**: GLB (preferred) or GLTF
+- **Storage**: `/public/models/` directory
+- **Components**: `ModelViewer.js`, `ThreeViewer.js`, `ImageVideoDisplay.js`
+- **Current Models**: 5 projects with 3D models
 
 ---
 
@@ -24,6 +32,9 @@ This guide will help you fix issues with 3D models not displaying or not being i
    ```javascript
    // Use this test URL in your portfolio
    modelUrl: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb'
+   
+   // Or test with existing working model
+   modelUrl: '/models/arc-reactor-im.glb'
    ```
 
 3. **Verify Your Model File:**
