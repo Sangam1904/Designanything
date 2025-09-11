@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
-import { Award, Users, Target, Zap } from 'lucide-react'
+import { Award, Users, Target, Zap, Linkedin, Mail, Download } from 'lucide-react'
 import Prism from '../components/Prism'
 import ScrollFloat from '../components/ScrollFloat'
 import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
@@ -211,7 +211,7 @@ export default function About() {
       </section>
 
       {/* About Me */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="pt-20 pb-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -253,7 +253,7 @@ export default function About() {
                   Sangmeshwar kanade
                 </h3>
                 <p className="text-xl text-secondary font-medium mb-6">
-                  Founder & Lead Designer
+                  Mechanical Design Engineer
                 </p>
                 
                 <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
@@ -269,7 +269,7 @@ export default function About() {
                 </div>
 
                 {/* Certifications */}
-                <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+                <div className="mt-4 flex flex-wrap justify-center lg:justify-start gap-4">
                   <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
                     SOLIDWORKS Professional
                   </span>
@@ -283,6 +283,36 @@ export default function About() {
                     ANSYS Simulation
                   </span>
                 </div>
+
+                {/* Contact Information */}
+                <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <a
+                    href="https://linkedin.com/in/sangmeshwar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  
+                  <a
+                    href="mailto:sangmeshwar@example.com"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200"
+                    title="Email Me"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                  
+                  <a
+                    href="/downloads/Sangmeshwar_Kanade_Resume.pdf"
+                    download="Sangmeshwar_Kanade_Resume.pdf"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white rounded-lg transition-all duration-200"
+                    title="Download Resume"
+                  >
+                    <Download className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -290,7 +320,7 @@ export default function About() {
       </section>
 
       {/* Skills */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}

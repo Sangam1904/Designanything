@@ -97,68 +97,72 @@ export const PROJECTS_DATA = {
     skills: ['3D Modeling', 'Assembly Design', 'FEA Analysis', 'Technical Drawing', 'Manufacturing Design']
   },
 
-  // Solar Plant Project
-  'solar-plant': {
-    id: 'solar-plant',
-    title: 'Solar Floating Plant',
-    category: 'Industrial Design',
-    software: 'CATIA',
-    description: 'Innovative solar panel floating system design with structural analysis and optimization for renewable energy applications.',
-    shortDescription: 'Floating solar energy system with structural optimization',
+// Headphone Stand Project
+'headphone-stand': {
+  id: 'headphone-stand',
+  title: 'Ergonomic Headphone Stand',
+  category: 'Product Design',
+  software: 'SolidWorks, Ansys',
+  description: 'A sleek and ergonomic headphone stand designed using SolidWorks with structural optimization performed in Ansys to ensure durability, stability, and material efficiency.',
+  shortDescription: 'Ergonomic headphone stand with design optimization in Ansys',
+  
+  thumbnail: '/projects/headphone-stand/thumbnails/headphone-stand-thumbnail.jpg',
+  heroImage: '/projects/headphone-stand/images/headphone-stand-hero.jpg',
+  gallery: [
+    '/projects/headphone-stand/images/headphone-stand-1.jpg',
+    '/projects/headphone-stand/images/headphone-stand-2.jpg',
+    '/projects/headphone-stand/images/headphone-stand-3.jpg',
+    '/projects/headphone-stand/images/headphone-stand-4.jpg'
     
-    thumbnail: '/projects/solar-plant/thumbnails/solar-plant-thumbnail.png',
-    heroImage: '/projects/solar-plant/images/solar-plant-hero.png',
-    gallery: [
-      '/projects/solar-plant/images/solar-plant-1.png',
-      '/projects/solar-plant/images/solar-plant-2.png',
-      '/projects/solar-plant/images/solar-plant-3.png'
-    ],
+
+  ],
     models: [
       {
-        name: 'Solar Plant Model',
-        url: '/models/solar-plant.glb',
+        name: 'Headphone Stand Model',
+        url: '/projects/headphone-stand/models/headphone-stand.glb',
         type: 'glb'
       }
     ],
-    videos: [
-      {
-        name: 'Installation Process',
-        url: '/projects/solar-plant/videos/solar-plant-installation.mp4',
-        type: 'mp4'
-      }
-    ],
-    
-    tags: ['Renewable Energy', 'Structural Design', 'Floating Systems', 'Industrial'],
-    featured: true,
-    year: 2024,
-    status: 'Completed',
-    client: 'Green Energy Solutions',
-    
-    specifications: {
-      complexity: 'Medium-High',
-      parts: '50+ components',
-      analysis: 'Structural & Hydrodynamic',
-      manufacturing: 'Production Ready',
-      materials: ['Aluminum Frame', 'Fiberglass Float', 'Steel Cables'],
-      dimensions: '10m x 10m x 2m'
-    },
-    
-    technicalDetails: [
-      'Floating platform design for water-based solar installation',
-      'Structural analysis for wind and wave loads',
-      'Modular design for scalable energy production',
-      'Corrosion-resistant materials for marine environment',
-      'Easy installation and maintenance procedures'
-    ],
-    
-    timeline: {
-      startDate: '2024-02-01',
-      endDate: '2024-05-15',
-      duration: '3.5 months'
-    },
-    
-    skills: ['Structural Analysis', 'Marine Engineering', 'Renewable Energy', 'Modular Design', 'CAD Modeling']
+  videos: [
+    {
+      name: 'Design & Optimization Process',
+      url: '/projects/headphone-stand/videos/headphone-stand-process.mp4',
+      type: 'mp4'
+    }
+  ],
+  
+  tags: ['Product Design', 'Ergonomics', 'Structural Optimization', 'Consumer Electronics'],
+  featured: true,
+  year: 2025,
+  status: 'Completed',
+  client: 'In-house Concept',
+  
+  specifications: {
+    complexity: 'Medium',
+    parts: 'Single main body with base support',
+    analysis: 'Structural & Load Optimization',
+    manufacturing: 'Prototype Ready',
+    materials: ['ABS Plastic', 'Aluminum Alloy'],
+    dimensions: '220mm x 120mm x 280mm'
   },
+  
+  technicalDetails: [
+    'Designed for stable support of over-ear and on-ear headphones',
+    'Structural optimization in Ansys for material reduction while maintaining strength',
+    'Curved ergonomic profile for cable management',
+    'Lightweight yet durable design for desktop use',
+    'Minimalist form factor enhancing workspace aesthetics'
+  ],
+  
+  timeline: {
+    startDate: '2025-07-01',
+    endDate: '2025-07-25',
+    duration: '3.5 weeks'
+  },
+  
+  skills: ['CAD Modeling', 'Structural Optimization', 'Product Ergonomics', 'Finite Element Analysis (FEA)', 'Design for Manufacturing']
+},
+
 
   // Hydrogen Bike Project
   'hydrogen-bike': {

@@ -6,16 +6,16 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: 'CAD Modeling', href: '/services' },
-      { name: '3D Design', href: '/services' },
-      { name: 'Product Animation', href: '/services' },
-      { name: 'Rendering', href: '/services' },
+      { name: 'CAD Modeling', href: '/services/cad-modeling' },
+      { name: '3D Design', href: '/services/3d-design' },
+      { name: 'Product Animation', href: '/services/product-animation' },
+      { name: 'Rendering', href: '/services/rendering' },
     ],
     portfolio: [
-      { name: 'Mechanical Design', href: '/portfolio?category=mechanical' },
-      { name: 'Industrial Design', href: '/portfolio?category=industrial' },
-      { name: 'sheet metal Design', href: '/portfolio?category=sheet metal' },
-      { name: 'structural Design', href: '/portfolio?category=structural' },
+      { name: 'Mechanical Design', href: '/portfolio?category=Mechanical Design' },
+      { name: 'Industrial Design', href: '/portfolio?category=Industrial Design' },
+      { name: 'Product Design', href: '/portfolio?category=Product Design' },
+      { name: 'Automotive Design', href: '/portfolio?category=Automotive Design' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
@@ -41,10 +41,10 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/images/logo.jpg" 
-                alt="YourNewBrandName Logo" 
+                alt="DesignAnything Logo" 
                 className="w-10 h-10"
               />
-              <span className="font-playfair text-xl font-bold text-light">YourNewBrandName</span>
+              <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
             </div>
             <p className="text-light mb-6 leading-relaxed text-lg text-left">
               Transforming ideas into reality through expert engineering design. 
