@@ -82,11 +82,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
     >
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/*  */}
           <Link href="/" className="flex items-center space-x-2">
             <img 
-              src="/images/icons/logo.svg" 
-              alt="DesignAnything Logo" 
+              src="/images/icons/.svg" 
+              alt="DesignAnything " 
               className="h-10 w-10"
             />
             

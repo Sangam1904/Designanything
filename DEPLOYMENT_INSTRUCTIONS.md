@@ -118,7 +118,7 @@ git push origin main
 ## 🎯 Next Steps After Deployment
 
 ### 1. **Customize Content:**
-- Update logo, images, and text
+- Update , images, and text
 - Add your real projects and 3D models
 - Update contact information
 

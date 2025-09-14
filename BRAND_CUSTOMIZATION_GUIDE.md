@@ -1,6 +1,6 @@
 # 🎨 Brand Customization Guide - DesignAnything Website
 
-This comprehensive guide will help you change the logo, brand name, colors, and other branding elements of your DesignAnything website.
+This comprehensive guide will help you change the , brand name, colors, and other branding elements of your DesignAnything website.
 
 ## 📋 Quick Reference
 
@@ -8,61 +8,61 @@ This comprehensive guide will help you change the logo, brand name, colors, and 
 |---------|---------------|---------------|
 | Brand Name | DesignAnything | `components/Footer.js`, `components/Hero.js` |
 | Tagline | "Transform Ideas Into Reality" | `components/Hero.js` |
-| Logo | `/images/logo.jpg` | `public/images/logo.jpg` |
+|  | `/images/.jpg` | `public/images/.jpg` |
 | Contact Email | anythingcandesign@gmail.com | `components/Footer.js` |
 | Phone | +91 7498441756 | `components/Footer.js` |
 | Location | India | `components/Footer.js` |
 
 ---
 
-## 🖼️ Logo Changes
+## 🖼️  Changes
 
-### Step 1: Prepare Your Logo Files
+### Step 1: Prepare Your  Files
 
-Create these logo files in the specified formats:
+Create these  files in the specified formats:
 
 ```
 public/images/
-├── logo.svg          # Main logo (SVG format - scalable)
-├── logo.jpg          # Footer logo (JPG format - 100x100px)
+├── .svg          # Main  (SVG format - scalable)
+├── .jpg          # Footer  (JPG format - 100x100px)
 └── icons/
-    └── logo.svg      # Icon version (SVG format - 50x50px)
+    └── .svg      # Icon version (SVG format - 50x50px)
 ```
 
-### Step 2: Logo Specifications
+### Step 2:  Specifications
 
-#### Main Logo (`logo.svg`)
+#### Main  (`.svg`)
 - **Format**: SVG (preferred) or PNG
 - **Size**: 200x60px (recommended)
 - **Background**: Transparent
 - **Usage**: Navigation bar, hero section
 
-#### Footer Logo (`logo.jpg`)
+#### Footer  (`.jpg`)
 - **Format**: JPG or PNG
 - **Size**: 100x100px (square)
 - **Background**: Transparent or white
 - **Usage**: Footer section
 
-#### Icon Logo (`icons/logo.svg`)
+#### Icon  (`icons/.svg`)
 - **Format**: SVG
 - **Size**: 50x50px (square)
 - **Background**: Transparent
 - **Usage**: Favicon, mobile menu
 
-### Step 3: Replace Logo Files
+### Step 3: Replace  Files
 
-1. **Backup existing logos**:
+1. **Backup existing s**:
    ```bash
-   cp public/images/logo.svg public/images/logo-backup.svg
-   cp public/images/logo.jpg public/images/logo-backup.jpg
+   cp public/images/.svg public/images/-backup.svg
+   cp public/images/.jpg public/images/-backup.jpg
    ```
 
-2. **Replace with your logos**:
+2. **Replace with your s**:
    ```bash
-   # Copy your new logo files
-   cp your-new-logo.svg public/images/logo.svg
-   cp your-new-logo.jpg public/images/logo.jpg
-   cp your-new-icon.svg public/images/icons/logo.svg
+   # Copy your new  files
+   cp your-new-.svg public/images/.svg
+   cp your-new-.jpg public/images/.jpg
+   cp your-new-icon.svg public/images/icons/.svg
    ```
 
 ---
@@ -77,8 +77,8 @@ public/images/
 // Find this section (around line 15)
 <div className="flex items-center space-x-2 mb-4">
   <img 
-    src="/images/logo.jpg" 
-    alt="DesignAnything Logo" 
+    src="/images/.jpg" 
+    alt="DesignAnything " 
     className="w-10 h-10"
   />
   <span className="font-playfair text-xl font-bold text-light">YourNewBrandName</span>
@@ -86,8 +86,8 @@ public/images/
 
 // Update the alt text as well
 <img 
-  src="/images/logo.jpg" 
-  alt="YourNewBrandName Logo" 
+  src="/images/.jpg" 
+  alt="YourNewBrandName " 
   className="w-10 h-10"
 />
 ```
@@ -403,7 +403,7 @@ open http://localhost:3000
 
 ### Step 2: Check All Pages
 
-1. **Homepage**: Verify logo, tagline, and colors
+1. **Homepage**: Verify , tagline, and colors
 2. **About Page**: Check brand name consistency
 3. **Portfolio Page**: Ensure project cards display correctly
 4. **Contact Page**: Verify contact information
@@ -432,12 +432,12 @@ npm run deploy
 
 ## 📋 Brand Change Checklist
 
-### ✅ Logo Changes
-- [ ] Main logo (`logo.svg`) replaced
-- [ ] Footer logo (`logo.jpg`) replaced
-- [ ] Icon logo (`icons/logo.svg`) replaced
+### ✅  Changes
+- [ ] Main  (`.svg`) replaced
+- [ ] Footer  (`.jpg`) replaced
+- [ ] Icon  (`icons/.svg`) replaced
 - [ ] Alt text updated in all components
-- [ ] Logo displays correctly on all pages
+- [ ]  displays correctly on all pages
 
 ### ✅ Brand Name Changes
 - [ ] Footer brand name updated
@@ -485,7 +485,7 @@ npm run deploy
 
 ### Common Issues
 
-#### Logo Not Displaying
+####  Not Displaying
 - Check file path is correct
 - Verify file format is supported
 - Ensure file exists in public directory
@@ -520,23 +520,23 @@ npm run deploy
 
 ## 🧭 Navigation Bar & Hero Section Changes
 
-### Changing Logo in Navigation Bar
+### Changing  in Navigation Bar
 
 **File**: `components/Navbar.js`
 
-#### Step 1: Update Logo File Path
+#### Step 1: Update  File Path
 ```javascript
 // Find this section (around line 87-91)
 <img 
-  src="/images/icons/logo.svg" 
-  alt="DesignAnything Logo" 
+  src="/images/icons/.svg" 
+  alt="DesignAnything " 
   className="h-10 w-10"
 />
 
-// Update to your new logo:
+// Update to your new :
 <img 
-  src="/images/icons/your-new-logo.svg" 
-  alt="YourNewBrandName Logo" 
+  src="/images/icons/your-new-.svg" 
+  alt="YourNewBrandName " 
   className="h-10 w-10"
 />
 ```
@@ -564,9 +564,9 @@ npm run deploy
 
 ### Hero Section Notes
 
-**Important**: The Hero section (`components/Hero.js`) does **NOT** contain any logo or brand name text. The main title "Transform Ideas Into Reality" is the only text in the hero section.
+**Important**: The Hero section (`components/Hero.js`) does **NOT** contain any  or brand name text. The main title "Transform Ideas Into Reality" is the only text in the hero section.
 
-If you want to add a logo or brand name to the hero section, you would need to add it manually to the Hero component.
+If you want to add a  or brand name to the hero section, you would need to add it manually to the Hero component.
 
 ### Complete Navigation Bar Update Example
 
@@ -574,11 +574,11 @@ Here's a complete example of updating the navigation bar:
 
 ```javascript
 // In components/Navbar.js
-{/* Logo */}
+{/*  */}
 <Link href="/" className="flex items-center space-x-2">
   <img 
-    src="/images/icons/your-new-logo.svg" 
-    alt="YourNewBrandName Logo" 
+    src="/images/icons/your-new-.svg" 
+    alt="YourNewBrandName " 
     className="h-10 w-10"
   />
   
@@ -592,9 +592,9 @@ Here's a complete example of updating the navigation bar:
 </Link>
 ```
 
-### Logo File Requirements
+###  File Requirements
 
-**Navigation Bar Logo** (`/images/icons/logo.svg`):
+**Navigation Bar ** (`/images/icons/.svg`):
 - **Format**: SVG (preferred) or PNG
 - **Size**: 40x40px (h-10 w-10 class)
 - **Background**: Transparent
@@ -604,14 +604,14 @@ Here's a complete example of updating the navigation bar:
 
 1. **Save the file** after making changes
 2. **Refresh your browser** (Ctrl+F5 or Cmd+Shift+R)
-3. **Check the navigation bar** for your new logo and brand name
+3. **Check the navigation bar** for your new  and brand name
 4. **Test both light and dark modes** to ensure proper contrast
 5. **Test on mobile** to ensure responsive design works
 
 ### Common Issues
 
-#### Logo Not Displaying
-- Check file path is correct: `/images/icons/logo.svg`
+####  Not Displaying
+- Check file path is correct: `/images/icons/.svg`
 - Verify file exists in the public directory
 - Check file format is supported (SVG, PNG, JPG)
 - Clear browser cache

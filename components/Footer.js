@@ -40,8 +40,8 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/images/logo.jpg" 
-                alt="DesignAnything Logo" 
+                src="/images/.svg" 
+                alt="DesignAnything " 
                 className="w-10 h-10"
               />
               <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>

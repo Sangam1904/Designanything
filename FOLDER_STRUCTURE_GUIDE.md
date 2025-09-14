@@ -21,7 +21,7 @@ anything-can-design/
 │   │   │   └── my-blog.jpg
 │   │   ├── 📁 icons/            ← Custom icons
 │   │   │   └── custom-icon.png
-│   │   └── logo.png             ← Your company logo
+│   │   └── .png             ← Your company 
 │   ├── 📁 models/               ← 3D models (.glb/.gltf)
 │   │   ├── hydrogen-bike.glb
 │   │   ├── solar-plant.glb
@@ -43,7 +43,7 @@ anything-can-design/
 ## 🎯 What Goes Where?
 
 ### 📸 Images (`public/images/`)
-- **Logo:** `public/images/logo.png`
+- **:** `public/images/.png`
 - **Hero Background:** `public/images/hero/hero-bg.jpg`
 - **Project Images:** `public/images/portfolio/your-project.jpg`
 - **Team Photos:** `public/images/team/your-name.jpg`

@@ -7,7 +7,7 @@
 4. [Adding Videos](#adding-videos)
 5. [3D Models Management](#3d-models-management)
 6. [Services Management](#services-management)
-7. [Logo and Branding](#logo-and-branding)
+7. [ and Branding](#-and-branding)
 8. [Blog Content Management](#blog-content-management)
 9. [File Organization](#file-organization)
 10. [Content Guidelines](#content-guidelines)
@@ -287,26 +287,26 @@ public/images/services/
 
 ---
 
-## 🎨 Logo and Branding
+## 🎨  and Branding
 
-### Logo Management
+###  Management
 ```bash
 public/images/icons/
-├── logo.svg                 # Main logo (SVG recommended)
-├── logo-white.svg          # White version for dark backgrounds
-├── logo-dark.svg           # Dark version for light backgrounds
+├── .svg                 # Main  (SVG recommended)
+├── -white.svg          # White version for dark backgrounds
+├── -dark.svg           # Dark version for light backgrounds
 ├── favicon.ico             # Browser favicon
 └── apple-touch-icon.png    # iOS home screen icon
 ```
 
-### Logo Requirements
-- **Format**: SVG (vector) for logos, PNG for icons
-- **Dimensions**: Logo should be scalable without quality loss
+###  Requirements
+- **Format**: SVG (vector) for s, PNG for icons
+- **Dimensions**:  should be scalable without quality loss
 - **Colors**: Ensure contrast with background colors
 - **Versions**: Create light and dark variants
 
 ### Updating Branding
-1. **Replace logo files** in `public/images/icons/`
+1. **Replace  files** in `public/images/icons/`
 2. **Update color scheme** in `tailwind.config.js`
 3. **Modify brand colors** in `styles/globals.css`
 4. **Update favicon** and touch icons
@@ -498,7 +498,7 @@ public/
 │   ├── services/         # Service images
 │   ├── team/             # Team member photos
 │   ├── hero/             # Hero section images
-│   └── icons/            # Logos and icons
+│   └── icons/            # s and icons
 ├── models/               # 3D model files
 ├── videos/               # Video files
 ├── downloads/            # Downloadable files
@@ -578,16 +578,16 @@ public/
 
 ## 🎨 Brand Customization
 
-### Changing Logo and Brand Name
+### Changing  and Brand Name
 
-#### 1. Logo Files
-Replace these files with your new logo:
+#### 1.  Files
+Replace these files with your new :
 ```
 public/images/
-├── logo.svg          # Main logo (SVG format)
-├── logo.jpg          # Footer logo (JPG format)
+├── .svg          # Main  (SVG format)
+├── .jpg          # Footer  (JPG format)
 └── icons/
-    └── logo.svg      # Icon version
+    └── .svg      # Icon version
 ```
 
 #### 2. Brand Name Changes
