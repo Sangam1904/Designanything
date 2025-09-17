@@ -85,13 +85,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/*  */}
           <Link href="/" className="flex items-center space-x-2">
             <img 
-<<<<<<< HEAD
               src="/images/icons/logo.svg" 
               alt="Solid Canvas Logo" 
-=======
-              src="/images/icons/.svg" 
-              alt="DesignAnything " 
->>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
               className="h-10 w-10"
             />
             
