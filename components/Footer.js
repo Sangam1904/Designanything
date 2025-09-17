@@ -6,33 +6,20 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-<<<<<<< HEAD
-      { name: 'CAD Modeling', href: 'services/cad-modeling' },
-      { name: '3D Design', href: 'services/3d-design' },
-      { name: 'Product Animation', href: 'services/product-animation' },
-      { name: 'Rendering', href: 'services/rendering' },
-      { name: 'Simulation', href: 'services/simulation' },
-    ],
-    portfolio: [
-      { name: 'Mechanical Design', href: '/mechanical-design' },
-      { name: 'Industrial Design', href: '/industrial-design' },
-      { name: 'sheet metal Design', href: '/sheet-metal-design' },
-      { name: 'structural Design', href: '/structural-design' },
-=======
       { name: 'CAD Modeling', href: '/services/cad-modeling' },
       { name: '3D Design', href: '/services/3d-design' },
       { name: 'Product Animation', href: '/services/product-animation' },
       { name: 'Rendering', href: '/services/rendering' },
+      { name: 'Simulation', href: '/services/simulation' },
     ],
     portfolio: [
       { name: 'Mechanical Design', href: '/portfolio?category=Mechanical Design' },
       { name: 'Industrial Design', href: '/portfolio?category=Industrial Design' },
       { name: 'Product Design', href: '/portfolio?category=Product Design' },
       { name: 'Automotive Design', href: '/portfolio?category=Automotive Design' },
->>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
     ],
     company: [
-      { name: 'About Us', href: '/about-us' },
+      { name: 'About Us', href: '/about' },
       { name: 'Blog', href: '/blog' },
       { name: 'Downloads', href: '/downloads' },
       { name: 'Contact', href: '/contact' }, 
@@ -40,33 +27,25 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/designanything/' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/solidcanvas/' },
     { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/channel/UCeKbTkZ2z_Rx-6f6uEUroMw' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/_designanything_/' },
-    { name: 'Pinterest', icon: Pin, href: 'https://in.pinterest.com/Designanything1904/' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/solidcanvas/' },
+    { name: 'Pinterest', icon: Pin, href: 'https://in.pinterest.com/solidcanvas/' },
   ]
 
   return (
-                    <footer className="bg-primary text-tertiary">
+    <footer className="bg-primary text-tertiary">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-<<<<<<< HEAD
-                src="/images/logo.jpg" 
+                src="/images/icons/logo.svg" 
                 alt="Solid Canvas Logo" 
                 className="w-10 h-10"
               />
               <span className="font-playfair text-xl font-bold text-light">Solid Canvas</span>
-=======
-                src="/images/.svg" 
-                alt="DesignAnything " 
-                className="w-10 h-10"
-              />
-              <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
->>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
             </div>
             <p className="text-light mb-4 leading-relaxed text-base text-left">
               Transforming ideas into reality through expert engineering design. 

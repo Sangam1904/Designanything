@@ -362,20 +362,17 @@ export const PROJECTS_DATA = {
     shortDescription: 'Portable cooling device with modern design and efficient airflow.',
     
     // Media files - organized by type
-    thumbnail: '/projects/mini-evap-cooler/thumbnails/mini-cooler-thumbnail.png',
-    heroImage: '/projects/mini-evap-cooler/images/mini-cooler-hero.png',
+    thumbnail: '/projects/mini-evap-cooler/thumbnails/cooler-thumbnail.png',
+    heroImage: '/projects/mini-evap-cooler/images/cooler-hero.png',
     gallery: [
-      '/projects/mini-evap-cooler/images/mini-Cooler Solid-1.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler-1.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler Solid-2.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler-2.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler Solid-3.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler Solid-4.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler-4.png',
-      '/projects/mini-evap-cooler/images/mini-Cooler SW-1.png',
-      '/projects/mini-evap-cooler/images/mini-Cover image.png',
-    ],
-    models: [
+      '/projects/mini-evap-cooler/images/Cooler-1.png',
+      '/projects/mini-evap-cooler/images/Cooler-2.png',
+      '/projects/mini-evap-cooler/images/Cooler-3.png',
+      '/projects/mini-evap-cooler/images/Cooler-4.png',
+      '/projects/mini-evap-cooler/images/Cooler-5.png',
+      '/projects/mini-evap-cooler/images/Cooler-6.png',
+      ],
+      models: [
       {
         name: 'Mini Cooler Model',
         url: 'projects/mini-evap-cooler/models/mini-evap-cooler.glb',
