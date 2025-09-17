@@ -6,22 +6,23 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: 'CAD Modeling', href: '/services' },
-      { name: '3D Design', href: '/services' },
-      { name: 'Product Animation', href: '/services' },
-      { name: 'Rendering', href: '/services' },
+      { name: 'CAD Modeling', href: 'services/cad-modeling' },
+      { name: '3D Design', href: 'services/3d-design' },
+      { name: 'Product Animation', href: 'services/product-animation' },
+      { name: 'Rendering', href: 'services/rendering' },
+      { name: 'Simulation', href: 'services/simulation' },
     ],
     portfolio: [
-      { name: 'Mechanical Design', href: '/portfolio?category=mechanical' },
-      { name: 'Industrial Design', href: '/portfolio?category=industrial' },
-      { name: 'sheet metal Design', href: '/portfolio?category=sheet metal' },
-      { name: 'structural Design', href: '/portfolio?category=structural' },
+      { name: 'Mechanical Design', href: '/mechanical-design' },
+      { name: 'Industrial Design', href: '/industrial-design' },
+      { name: 'sheet metal Design', href: '/sheet-metal-design' },
+      { name: 'structural Design', href: '/structural-design' },
     ],
     company: [
-      { name: 'About Us', href: '/about' },
+      { name: 'About Us', href: '/about-us' },
       { name: 'Blog', href: '/blog' },
       { name: 'Downloads', href: '/downloads' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'Contact', href: '/contact' }, 
     ],
   }
 
@@ -34,49 +35,49 @@ export default function Footer() {
 
   return (
                     <footer className="bg-primary text-tertiary">
-      <div className="container-custom px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container-custom px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/images/logo.jpg" 
-                alt="YourNewBrandName Logo" 
+                alt="Solid Canvas Logo" 
                 className="w-10 h-10"
               />
-              <span className="font-playfair text-xl font-bold text-light">YourNewBrandName</span>
+              <span className="font-playfair text-xl font-bold text-light">Solid Canvas</span>
             </div>
-            <p className="text-light mb-6 leading-relaxed text-lg text-left">
+            <p className="text-light mb-4 leading-relaxed text-base text-left">
               Transforming ideas into reality through expert engineering design. 
               Professional CAD modeling, 3D design, and product animation services.
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex items-center space-x-3 text-light">
-                <Mail className="w-5 h-5 text-secondary" />
-                <span>anythingcandesign@gmail.com</span>
+                <Mail className="w-4 h-4 text-secondary" />
+                <span className="text-sm">canvassolid@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-light">
-                <Phone className="w-5 h-5 text-secondary" />
-                <span>+91 7498441756</span>
+                <Phone className="w-4 h-4 text-secondary" />
+                <span className="text-sm">+91 7498441756 +91 9325383214</span>
               </div>
               <div className="flex items-center space-x-3 text-light">
-                <MapPin className="w-5 h-5 text-secondary" />
-                <span>India</span>
+                <MapPin className="w-4 h-4 text-secondary" />
+                <span className="text-sm">India</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="font-playfair text-base font-semibold mb-3 text-light">Services</h3>
+            <ul className="space-y-1">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-light hover:text-secondary transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -87,13 +88,13 @@ export default function Footer() {
 
           {/* Portfolio */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">Portfolio</h3>
-            <ul className="space-y-2">
+            <h3 className="font-playfair text-base font-semibold mb-3 text-light">Portfolio</h3>
+            <ul className="space-y-1">
               {footerLinks.portfolio.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-light hover:text-secondary transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -104,13 +105,13 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">About</h3>
-            <ul className="space-y-2">
+            <h3 className="font-playfair text-base font-semibold mb-3 text-light">About</h3>
+            <ul className="space-y-1">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-light hover:text-secondary transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -121,20 +122,20 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Newsletter */}
-                              <div className="border-t border-tertiary/30 mt-8 pt-8">
+        <div className="border-t border-tertiary/30 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-primary/50 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-200"
+                  className="w-8 h-8 bg-primary/50 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-200"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>           
@@ -142,12 +143,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-                              <div className="border-t border-tertiary/30 mt-8 pt-8">
+        <div className="border-t border-tertiary/30 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                                    <p className="text-tertiary text-base">
-              © {currentYear} YourNewBrandName. All rights reserved.
+            <p className="text-tertiary text-sm">
+              © {currentYear} Solid Canvas. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-base">
+            <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-tertiary hover:text-secondary transition-colors duration-200">
                 Privacy Policy
               </Link>

@@ -149,7 +149,7 @@ export default function Services() {
   return (
     <Layout 
       title="Services"
-      description="Professional CAD modeling, 3D design, product animation, rendering, and simulation services. Transform your ideas into reality with DesignAnything."
+      description="Professional CAD modeling, 3D design, product animation, rendering, and simulation services. Transform your ideas into reality with Solid Canvas."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 relative overflow-hidden">
@@ -405,7 +405,7 @@ export default function Services() {
                   <span className="text-gray-600 dark:text-gray-300">Source files included</span>
                 </li>
               </ul>
-              <a href="/contact" className="btn-outline w-full">Contact</a>
+              <a href="/contact" className="btn-primary w-full">Contact</a>
             </motion.div>
 
             <motion.div

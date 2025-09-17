@@ -63,9 +63,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Home', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Services', href: '/services' },
+    { name: 'Team', href: '/about' },
     { name: 'Blog', href: '/blog' },
     ...(downloadsConfig.visible ? [{ name: 'Downloads', href: '/downloads' }] : []),
-    { name: 'About', href: '/about' },
   ]
 
   return (
@@ -86,7 +86,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           <Link href="/" className="flex items-center space-x-2">
             <img 
               src="/images/icons/logo.svg" 
-              alt="DesignAnything Logo" 
+              alt="Solid Canvas Logo" 
               className="h-10 w-10"
             />
             
@@ -95,7 +95,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                             ? darkMode ? 'text-light' : 'text-gray-800'
                             : 'text-light'
                         }`}>
-                          DesignAnything
+                          Solid Canvas
                         </span>
           </Link>
 
@@ -112,8 +112,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
               >
                 <span className={`${
                   scrolled 
-                    ? darkMode ? 'text-tertiary hover:text-accent' : 'text-gray-600 hover:text-gray-800'
-                    : 'text-tertiary hover:text-accent'
+                    ? darkMode ? 'text-light hover:text-accent' : 'text-gray-600 hover:text-gray-800'
+                    : 'text-light hover:text-accent'
                 } transition-colors duration-200 font-medium text-base`}>
                   {item.name}
                 </span>
@@ -122,48 +122,35 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </div>
 
           {/* Right side buttons */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4">
             {/* Dark mode toggle */}
-            <NavButton
+            <button
               onClick={() => setDarkMode(!darkMode)}
-              baseSize={48}
-              maxSize={56}
-              distance={70}
-              spring={{ mass: 0.1, stiffness: 200, damping: 15 }}
+              className="p-2 rounded-lg bg-tertiary/20 hover:bg-tertiary/30 transition-colors duration-200"
             >
-              <div className="p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800 hover:bg-tertiary/30 dark:hover:bg-gray-700 transition-colors duration-200">
-                {darkMode ? (
-                  <Sun className="w-6 h-6 text-yellow-500" />
-                ) : (
-                  <Moon className="w-6 h-6 text-metallic-200" />
-                )}
-              </div>
-            </NavButton>
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-light" />
+              )}
+            </button>
 
             {/* CTA Button */}
-            <NavButton
-              href="/contact"
-              baseSize={90}
-              maxSize={100}
-              distance={110}
-              spring={{ mass: 0.1, stiffness: 200, damping: 15 }}
-            >
-              <div className="btn-primary px-6 py-3 text-base font-medium">
-                Contact
-              </div>
-            </NavButton>
+            <a href="/contact" className="btn-primary px-4 py-2 text-sm font-medium">
+              Contact
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-                                    className="md:hidden p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800"
+                                    className="md:hidden p-2 rounded-lg bg-tertiary/20"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
+              <X className="w-6 h-6 text-light" />
             ) : (
-              <Menu className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
+              <Menu className="w-6 h-6 text-light" />
             )}
           </button>
         </div>
@@ -176,13 +163,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-                                    <div className="px-2 pt-2 pb-3 space-y-1 bg-light dark:bg-gray-800 rounded-lg mt-2 shadow-lg">
+                                    <div className="px-2 pt-2 pb-3 space-y-1 bg-light rounded-lg mt-2 shadow-lg">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200 w-full"
+                  className="block px-3 py-2 text-dark hover:text-secondary hover:bg-tertiary/20 rounded-md transition-colors duration-200 w-full"
                 >
                   {item.name}
                 </Link>
@@ -191,7 +178,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               {/* Mobile dark mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                                    className="w-full flex items-center px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
+                                    className="w-full flex items-center px-3 py-2 text-dark hover:text-secondary hover:bg-tertiary/20 rounded-md transition-colors duration-200"
               >
                 {darkMode ? (
                   <>
@@ -200,7 +187,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   </>
                 ) : (
                   <>
-                    <Moon className="w-5 h-5 mr-2 text-metallic-200" />
+                    <Moon className="w-5 h-5 mr-2 text-dark" />
                     Dark Mode
                   </>
                 )}
@@ -210,7 +197,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 bg-secondary text-white rounded-md hover:bg-primary transition-colors duration-200 text-center w-full"
+                className="btn-primary w-full text-center"
               >
                 Contact
               </Link>

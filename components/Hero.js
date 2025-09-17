@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="text-5xl sm:text-6xl lg:text-8xl font-inter font-medium mb-8 leading-tight">
             <div className="flex flex-col items-center">
               <SplitText
-                text="Transform Ideas"
+                text="Designs Built to Last."
                 tag="span"
                 className="text-light"
                 delay={50}
@@ -60,7 +60,7 @@ export default function Hero() {
                 textAlign="center"
               />
               <SplitText
-                text="Into Reality"
+                text="Ideas Built to Fly."
                 tag="span"
                 className="text-accent"
                 delay={100}

@@ -95,19 +95,18 @@ export default function Contact() {
   ]
 
   const budgetRanges = [
-    'Under ₹1,200',
-    '₹1,200 - ₹2,500',
-    '₹2,500 - ₹5,000',
-    '₹5,000 - ₹10,000',
-    '₹10,000 - ₹15,000',
-    '₹15,000 - ₹20,000',
-    '₹20,000+'
+    'Under $25',
+    '$25 - $50',
+    '$50 - $100',
+    '$100 - $200',
+    '$200 - $300',
+    '$300+'
   ]
 
   return (
     <Layout 
-      title="Contact Me"
-      description="Get in touch with DesignAnything for your CAD modeling, 3D design, and product animation needs. Free consultation available."
+      title="Contact Us"
+      description="Get in touch with Solid Canvas for your CAD modeling, 3D design, and product animation needs. Free consultation available."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
@@ -325,7 +324,7 @@ export default function Contact() {
             >
               <div>
                 <h3 className="text-2xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-                  Why Choose Me?
+                  Why Choose Us?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -348,15 +347,6 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">Limited Revisions</h4>
-                      <p className="text-gray-600 dark:text-gray-300">We work until you're completely satisfied</p>
-                    </div>
-                  </div>
                   
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">

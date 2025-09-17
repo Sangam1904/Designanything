@@ -4,16 +4,20 @@
 export const siteConfig = {
   theme: {
     light: {
-      backgroundColor: "#FFFFFF",
-      fontColor: "#181818",
-      cardBackground: "#F7F9FB",
-      headingColor: "#062842"
+      backgroundColor: "#D3D9D4",  // Light gray background
+      fontColor: "#212A31",        // Dark blue-gray text
+      cardBackground: "#FFFFFF",   // White cards
+      headingColor: "#124E66",     // Teal headings
+      accentColor: "#124E66",      // Teal accent
+      mutedColor: "#748D92"        // Muted blue-gray
     },
     dark: {
-      backgroundColor: "#181818",
-      fontColor: "#FFFFFF",
-      cardBackground: "#242B38",
-      headingColor: "#2492db"
+      backgroundColor: "#212A31",  // Dark blue-gray background
+      fontColor: "#D3D9D4",        // Light gray text
+      cardBackground: "#2E3944",   // Dark secondary cards
+      headingColor: "#124E66",     // Teal headings
+      accentColor: "#124E66",      // Teal accent
+      mutedColor: "#748D92"        // Muted blue-gray
     }
   },
   layout: {
@@ -29,7 +33,15 @@ export const siteConfig = {
     },
     aboutPage: {
       readyToWorkTogetherSection: {
-        visible: false
+        visible: true
+      }
+    },
+    teamPage: {
+      individualProfiles: {
+        enabled: true
+      },
+      teamOverview: {
+        enabled: true
       }
     }
   },

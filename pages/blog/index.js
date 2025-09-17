@@ -53,7 +53,7 @@ export default function Blog() {
   return (
     <Layout 
       title="Blog"
-      description="Read our latest articles on CAD modeling, 3D design, product animation, and engineering insights. Expert tutorials and industry knowledge from DesignAnything."
+      description="Read our latest articles on CAD modeling, 3D design, product animation, and engineering insights. Expert tutorials and industry knowledge from Solid Canvas."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 relative overflow-hidden">
@@ -94,7 +94,7 @@ export default function Blog() {
             </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Read my latest articles on CAD modeling, 3D design, product animation, and engineering insights. 
-              Expert tutorials and industry knowledge from DesignAnything.
+              Expert tutorials and industry knowledge from Solid Canvas.
             </p>
           </motion.div>
         </div>

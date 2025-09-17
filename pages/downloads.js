@@ -97,7 +97,7 @@ export default function Downloads() {
   return (
     <Layout 
       title="Downloads"
-      description="Download CAD models, technical reports, design guides, and simulation templates from DesignAnything. Free resources for engineers and designers."
+      description="Download CAD models, technical reports, design guides, and simulation templates from Solid Canvas. Free resources for engineers and designers."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
