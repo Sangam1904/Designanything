@@ -112,29 +112,29 @@ The ModelViewer component is used like this:
 
 ---
 
-## 📝 Example 1: Adding Your Logo
+## 📝 Example 1: Adding Your 
 
-### Step 1: Prepare Your Logo
-- Save your logo as: `public/images/logo.png`
+### Step 1: Prepare Your 
+- Save your  as: `public/images/.png`
 - Recommended size: 200x60 pixels
 - Format: PNG (transparent background preferred)
 
 ### Step 2: Update the Navbar
-Open `components/Navbar.js` and replace the logo section:
+Open `components/Navbar.js` and replace the  section:
 
-**Current (Text Logo):**
+**Current (Text ):**
 ```javascript
-{/* OPTION 1: Text-based Logo (Current) */}
+{/* OPTION 1: Text-based  (Current) */}
 <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
   <span className="text-white font-bold text-lg">ACD</span>
 </div>
 ```
 
-**New (Image Logo):**
+**New (Image ):**
 ```javascript
-{/* OPTION 2: Image-based Logo */}
+{/* OPTION 2: Image-based  */}
 <img 
-  src="/images/logo.png" 
+  src="/images/.png" 
   alt="DesignAnything" 
   className="h-8 w-auto"
 />
@@ -372,7 +372,7 @@ For better mobile performance, use different image sizes:
 - [ ] Test mobile responsiveness
 
 ### For Website Customization:
-- [ ] Update logo and branding
+- [ ] Update  and branding
 - [ ] Update contact information
 - [ ] Update social media links
 - [ ] Customize colors in Tailwind config

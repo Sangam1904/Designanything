@@ -96,7 +96,7 @@ designanything-portfolio/
 │   ├── services.js     # Services page
 │   └── blog/           # Blog pages
 ├── public/             # Static assets
-│   ├── images/         # Images and logos
+│   ├── images/         # Images and s
 │   ├── models/         # 3D model files
 │   └── videos/         # Video files
 ├── styles/             # CSS styles
@@ -111,7 +111,7 @@ designanything-portfolio/
 ## 🎨 Customization
 
 ### Brand Customization
-- **Logo**: Replace files in `public/images/`
+- ****: Replace files in `public/images/`
 - **Brand Name**: Update in `components/Footer.js` and `components/Hero.js`
 - **Colors**: Modify `tailwind.config.js`
 - **Fonts**: Update in `pages/_app.js`
@@ -133,7 +133,7 @@ designanything-portfolio/
 ### Guides
 - **[Content Management Guide](CONTENT_MANAGEMENT_GUIDE.md)** - Complete content management reference
 - **[Portfolio Management Guide](PORTFOLIO_MANAGEMENT_GUIDE.md)** - Adding and managing projects
-- **[Brand Customization Guide](BRAND_CUSTOMIZATION_GUIDE.md)** - Changing logo, brand name, and colors
+- **[Brand Customization Guide](BRAND_CUSTOMIZATION_GUIDE.md)** - Changing , brand name, and colors
 - **[3D Model Viewer Guide](3D_MODEL_VIEWER_GUIDE.md)** - 3D model integration and troubleshooting
 - **[3D Model Troubleshooting](3D_MODEL_TROUBLESHOOTING.md)** - Common issues and solutions
 

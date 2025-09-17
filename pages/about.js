@@ -1,6 +1,10 @@
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
+<<<<<<< HEAD
 import { Award, Users, Target, Zap, ExternalLink } from 'lucide-react'
+=======
+import { Award, Users, Target, Zap, Linkedin, Mail, Download } from 'lucide-react'
+>>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
 import Prism from '../components/Prism'
 import ScrollFloat from '../components/ScrollFloat'
 import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
@@ -207,8 +211,13 @@ export default function About() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Our Team */}
       <section className="py-16 bg-white dark:bg-gray-900">
+=======
+      {/* About Me */}
+      <section className="pt-20 pb-16 bg-white dark:bg-gray-900">
+>>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -225,8 +234,122 @@ export default function About() {
             </p>
           </motion.div>
 
+<<<<<<< HEAD
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
+=======
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col lg:flex-row items-center gap-12"
+            >
+              {/* Profile Image */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl">
+                  <img 
+                    src="/images/team/Sangam.jpg" 
+                    alt="Sangmeshwar kanade - Founder & Lead Designer"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Profile Content */}
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+                  Sangmeshwar kanade
+                </h3>
+                <p className="text-xl text-secondary font-medium mb-6">
+                  Mechanical Design Engineer
+                </p>
+                
+                <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                  <p>
+                    Expert in SOLIDWORKS, CATIA, and Blender with over 2 years of experience in mechanical design and product development. I specialize in transforming complex ideas into precise, manufacturable designs.
+                  </p>
+                  <p>
+                    My passion lies in creating innovative solutions that bridge the gap between concept and reality. From initial sketches to final production-ready models, I ensure every project meets the highest standards of quality and precision.
+                  </p>
+                  <p>
+                    I believe in the power of design to solve real-world problems and am committed to delivering exceptional results that exceed client expectations.
+                  </p>
+                </div>
+
+                {/* Certifications */}
+                <div className="mt-4 flex flex-wrap justify-center lg:justify-start gap-4">
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    SOLIDWORKS Professional
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    CATIA Enthusiast
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    Blender Beginner
+                  </span>
+                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                    ANSYS Simulation
+                  </span>
+                </div>
+
+                {/* Contact Information */}
+                <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <a
+                    href="https://linkedin.com/in/sangmeshwar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  
+                  <a
+                    href="mailto:sangmeshwar@example.com"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200"
+                    title="Email Me"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                  
+                  <a
+                    href="/downloads/Sangmeshwar_Kanade_Resume.pdf"
+                    download="Sangmeshwar_Kanade_Resume.pdf"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white rounded-lg transition-all duration-200"
+                    title="Download Resume"
+                  >
+                    <Download className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
+               My<span className="gradient-text">Expertise</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Mastery of industry-leading software and technologies
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {skills.map((skill, index) => (
+>>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
               <motion.div
                 key={member.id}
                 initial={{ opacity: 0, y: 30 }}

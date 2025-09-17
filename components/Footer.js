@@ -6,6 +6,7 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
+<<<<<<< HEAD
       { name: 'CAD Modeling', href: 'services/cad-modeling' },
       { name: '3D Design', href: 'services/3d-design' },
       { name: 'Product Animation', href: 'services/product-animation' },
@@ -17,6 +18,18 @@ export default function Footer() {
       { name: 'Industrial Design', href: '/industrial-design' },
       { name: 'sheet metal Design', href: '/sheet-metal-design' },
       { name: 'structural Design', href: '/structural-design' },
+=======
+      { name: 'CAD Modeling', href: '/services/cad-modeling' },
+      { name: '3D Design', href: '/services/3d-design' },
+      { name: 'Product Animation', href: '/services/product-animation' },
+      { name: 'Rendering', href: '/services/rendering' },
+    ],
+    portfolio: [
+      { name: 'Mechanical Design', href: '/portfolio?category=Mechanical Design' },
+      { name: 'Industrial Design', href: '/portfolio?category=Industrial Design' },
+      { name: 'Product Design', href: '/portfolio?category=Product Design' },
+      { name: 'Automotive Design', href: '/portfolio?category=Automotive Design' },
+>>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
     ],
     company: [
       { name: 'About Us', href: '/about-us' },
@@ -41,11 +54,19 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
+<<<<<<< HEAD
                 src="/images/logo.jpg" 
                 alt="Solid Canvas Logo" 
                 className="w-10 h-10"
               />
               <span className="font-playfair text-xl font-bold text-light">Solid Canvas</span>
+=======
+                src="/images/.svg" 
+                alt="DesignAnything " 
+                className="w-10 h-10"
+              />
+              <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
+>>>>>>> 7a6815d30b95d021ffb65d80766b41e06a182b96
             </div>
             <p className="text-light mb-4 leading-relaxed text-base text-left">
               Transforming ideas into reality through expert engineering design. 

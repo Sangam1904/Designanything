@@ -9,42 +9,48 @@ export default function ServicesOverview() {
       title: 'CAD Modeling',
       description: 'Professional 3D modeling using SOLIDWORKS, CATIA, and other industry-standard software. From concept sketches to detailed assemblies.',
       features: ['Mechanical Design', 'Assembly Design', 'GD&T', 'Drafting'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      href: '/services/cad-modeling'
     },
     {
       icon: Zap,
       title: '3D Design',
       description: 'Creative 3D design solutions for products, furniture, and industrial applications. Surface modeling and complex geometry.',
       features: ['Surface Modeling', 'Product Design', 'Industrial Design', 'Furniture Design'],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      href: '/services/3d-design'
     },
     {
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
       features: ['Assembly Animation', 'Product Walkthrough', 'Marketing Videos', 'Technical Demos'],
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      href: '/services/product-animation'
     },
     {
       icon: Palette,
       title: 'Rendering',
       description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
       features: ['Photorealistic Renders', 'Material Setup', 'Lighting Design', 'Environment Creation'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      href: '/services/rendering'
     },
     {
       icon: Settings,
       title: 'Simulation',
       description: 'Engineering analysis and simulation using ANSYS for stress analysis, thermal analysis, and optimization.',
       features: ['Stress Analysis', 'Thermal Analysis', 'Optimization', 'FEA'],
-      color: 'from-indigo-500 to-blue-500'
+      color: 'from-indigo-500 to-blue-500',
+      href: '/services/simulation'
     },
     {
       icon: FileText,
       title: 'Documentation',
       description: 'Complete technical documentation including drawings, specifications, and project reports.',
       features: ['Technical Drawings', 'Specifications', 'Project Reports', 'User Manuals'],
-      color: 'from-gray-500 to-slate-500'
+      color: 'from-gray-500 to-slate-500',
+      href: '/services/documentation'
     }
   ]
 
@@ -104,7 +110,7 @@ export default function ServicesOverview() {
 
               {/* Learn More Link */}
               <Link 
-                href={`/services#${service.title.toLowerCase().replace(' ', '-')}`}
+                href={service.href}
                 className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-200"
               >
                 Learn More
