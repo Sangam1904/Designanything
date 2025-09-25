@@ -85,9 +85,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/*  */}
           <Link href="/" className="flex items-center space-x-2">
             <img 
-              src="/images/icons/.svg" 
+              src="/images/icons/logo.svg" 
               alt="DesignAnything " 
-              className="h-10 w-10"
+                    className="h-12 w-12 sm:h-14 sm:w-14"
             />
             
                                     <span className={`font-inter text-xl font-medium ${

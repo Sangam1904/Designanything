@@ -40,9 +40,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/images/.svg" 
-                alt="DesignAnything " 
-                className="w-10 h-10"
+                src="/images/icons/logo.svg" 
+                alt="DesignAnything Logo" 
+                className="w-12 h-12 sm:w-14 sm:h-14"
               />
               <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
             </div>
@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-light">
                 <Mail className="w-5 h-5 text-secondary" />
-                <span>anythingcandesign@gmail.com</span>
+                <span>designanything25@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-light">
                 <Phone className="w-5 h-5 text-secondary" />
@@ -145,7 +145,7 @@ export default function Footer() {
                               <div className="border-t border-tertiary/30 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                                     <p className="text-tertiary text-base">
-              © {currentYear} YourNewBrandName. All rights reserved.
+              © {currentYear} DesignAnything. All rights reserved.
             </p>
             <div className="flex space-x-6 text-base">
               <Link href="/privacy" className="text-tertiary hover:text-secondary transition-colors duration-200">

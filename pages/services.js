@@ -14,7 +14,7 @@ export default function Services() {
       icon: Box,
       title: 'CAD Modeling',
       description: 'Professional 3D modeling using industry-standard software for mechanical, industrial, and product design.',
-      backgroundImage: '/images/services/cad-modeling-bg.jpg',
+      backgroundImage: 'public/images/services/cad-modeling-bg.jpg',
       features: [
         'Mechanical component design',
         'Assembly modeling and management',
@@ -31,7 +31,7 @@ export default function Services() {
       icon: Zap,
       title: '3D Design',
       description: 'Creative 3D design solutions for products, furniture, and industrial applications with complex geometry.',
-      backgroundImage: '/images/services/3d-design-bg.jpg',
+      backgroundImage: 'public/images/services/3d-design-bg.jpg',
       features: [
         'Product concept development',
         'Industrial design',
@@ -48,7 +48,7 @@ export default function Services() {
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
-      backgroundImage: '/images/services/product-animation-bg.jpg',
+      backgroundImage: 'public/images/services/product-animation-bg.jpg',
       features: [
         'Assembly and disassembly animations',
         'Product walkthrough videos',
@@ -65,7 +65,7 @@ export default function Services() {
       icon: Palette,
       title: 'Rendering',
       description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
-      backgroundImage: '/images/services/rendering-bg.jpg',
+      backgroundImage: 'public/images/services/rendering-bg.jpg',
       features: [
         'Photorealistic product renders',
         'Material and texture setup',
@@ -82,7 +82,7 @@ export default function Services() {
       icon: Settings,
       title: 'Simulation',
       description: 'Engineering analysis and simulation using advanced tools for stress analysis, thermal analysis, and optimization.',
-      backgroundImage: '/images/services/simulation-bg.jpg',
+      backgroundImage: 'public/images/services/simulation-bg.jpg',
       features: [
         'Structural stress analysis',
         'Thermal analysis',
@@ -99,7 +99,7 @@ export default function Services() {
       icon: FileText,
       title: 'Documentation',
       description: 'Complete technical documentation including drawings, specifications, and project reports.',
-      backgroundImage: '/images/services/documentation-bg.jpg',
+      backgroundImage: 'public/images/services/documentation-bg.jpg',
       features: [
         'Technical drawings and blueprints',
         'Assembly instructions',

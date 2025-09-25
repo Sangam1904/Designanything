@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, Clock, User, Tag, ArrowLeft, ArrowRight, X } from 'lucide-react'
 import Layout from '../../components/Layout'
 import { blogPosts, getRelatedPosts } from '../../utils/blogData'
+import { parseBlogContent } from '../../utils/blogContentParser'
 import Link from 'next/link'
 
 export default function BlogPost() {
@@ -129,9 +130,10 @@ export default function BlogPost() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:dark:text-white prose-p:text-gray-600 prose-p:dark:text-gray-300 prose-strong:text-gray-900 prose-strong:dark:text-white prose-ul:text-gray-600 prose-ul:dark:text-gray-300 prose-li:text-gray-600 prose-li:dark:text-gray-300"
-                dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }}
-              />
+                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:dark:text-white prose-strong:text-gray-900 prose-strong:dark:text-white prose-ul:text-gray-600 prose-ul:dark:text-gray-300 prose-li:text-gray-600 prose-li:dark:text-gray-300"
+              >
+                {parseBlogContent(post.content, post.mediaElements || [])}
+              </motion.div>
 
               {/* Tags */}
               {post.tags && post.tags.length > 0 && (
