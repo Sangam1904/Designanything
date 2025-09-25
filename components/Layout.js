@@ -4,7 +4,7 @@ import Footer from './Footer'
 import { useState, useEffect } from 'react'
 import { generateCSSVariables } from '../config/siteConfig'
 
-export default function Layout({ children, title = 'DesignAnything', description = 'Professional CAD modeling, 3D design, and product animation . Transform your ideas into reality with expert engineering design.' }) {
+export default function Layout({ children, title = 'Solid Canvas', description = 'Professional CAD modeling, 3D design, and product animation services. Transform your ideas into reality with our expert engineering design team.' }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -34,15 +34,15 @@ export default function Layout({ children, title = 'DesignAnything', description
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <Head>
-        <title>{title} | DesignAnything</title>
+        <title>{title} | Solid Canvas</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="CAD modeling, 3D design, SOLIDWORKS, CATIA, product animation, engineering design, freelance CAD" />
-        <meta name="author" content="Sangmeshwar kanade - DesignAnything" />
+        <meta name="author" content="Solid Canvas Team" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://designanything.com/" />
+        <meta property="og:url" content="https://solidcanvas.com/" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="/og-image.jpg" />

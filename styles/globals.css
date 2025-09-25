@@ -9,17 +9,17 @@
   }
 
   :root {
-    /* Light Theme (Metallic Chic Palette) */
-    --light-bg: #EDE8F5;
-    --light-font: #181818;
-    --light-card-bg: #ADBBDA;
-    --light-heading: #3D52A0;
+    /* Light Theme (New Color Palette) */
+    --light-bg: #D3D9D4;      /* Light gray background */
+    --light-font: #212A31;     /* Dark blue-gray text */
+    --light-card-bg: #FFFFFF;  /* White cards */
+    --light-heading: #124E66;  /* Teal headings */
 
     /* Dark Theme */
-    --dark-bg: #181818;
-    --dark-font: #FFFFFF;
-    --dark-card-bg: #242B38;
-    --dark-heading: #7091E6;
+    --dark-bg: #212A31;        /* Dark blue-gray background */
+    --dark-font: #D3D9D4;      /* Light gray text */
+    --dark-card-bg: #2E3944;   /* Dark secondary cards */
+    --dark-heading: #124E66;   /* Teal headings */
 
     /* Typography */
     --heading-size: 2rem;
@@ -27,12 +27,12 @@
     --heading-weight: 700;
     --body-weight: 400;
 
-    /* Accent Palette */
-    --primary: #3D52A0;
-    --secondary: #7091E6;
-    --tertiary: #8697C4;
-    --muted: #ADBBDA;
-    --background-alt: #EDE8F5;
+    /* New Accent Palette */
+    --primary: #124E66;        /* Deep teal */
+    --secondary: #748D92;      /* Muted blue-gray */
+    --tertiary: #2E3944;       /* Dark secondary */
+    --muted: #748D92;          /* Muted blue-gray */
+    --background-alt: #D3D9D4; /* Light gray */
   }
 
   body {
@@ -65,50 +65,80 @@
 
 @layer components {
   .btn-primary {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 500;
-    transition: background 0.3s;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(18,78,102,0.3);
+    position: relative;
+    overflow: hidden;
   }
   .btn-primary:hover {
-    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(18,78,102,0.4);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+  }
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
     background: transparent;
-    border: 1px solid var(--secondary);
-    color: var(--secondary);
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 500;
-    transition: background 0.3s, color 0.3s;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
   .btn-secondary:hover {
-    background: rgba(61,82,160,0.1);
-    color: var(--primary);
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(18,78,102,0.3);
+  }
+  .btn-secondary:active {
+    transform: translateY(0);
   }
 
   .btn-outline {
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
     color: var(--primary);
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 500;
-    transition: background 0.3s, color 0.3s;
+    background: transparent;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
   .btn-outline:hover {
     background: var(--primary);
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(18,78,102,0.3);
+  }
+  .btn-outline:active {
+    transform: translateY(0);
   }
 
   .card {
     background: var(--light-card-bg);
     backdrop-filter: blur(8px);
     border-radius: 1.5rem;
-    box-shadow: 0 8px 32px rgba(61,82,160,0.15), 0 4px 16px rgba(112,145,230,0.15);
-    border: 1px solid rgba(61,82,160,0.2);
+    box-shadow: 0 8px 32px rgba(18,78,102,0.15), 0 4px 16px rgba(116,141,146,0.15);
+    border: 1px solid rgba(18,78,102,0.2);
     transition: box-shadow 0.5s;
   }
 
@@ -137,7 +167,7 @@
   }
 
   .metallic-shadow {
-    box-shadow: 0 8px 32px rgba(61,82,160,0.2), 0 4px 16px rgba(112,145,230,0.2);
+    box-shadow: 0 8px 32px rgba(18,78,102,0.2), 0 4px 16px rgba(116,141,146,0.2);
   }
 }
 

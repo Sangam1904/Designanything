@@ -8,39 +8,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Gallifreyja Palette
-        primary: '#011f4b',   // Deep Navy
-        secondary: '#03396c', // Dark Blue
-        accent: '#005b96',    // Strong Blue
-        muted: '#6497b1',     // Soft Muted Blue
-        light: '#b3cde0',     // Light Blue
-        dark: '#011f4b',      // Same as primary (dark background)
+        // New Color Palette
+        primary: '#124E66',   // Deep Teal
+        secondary: '#748D92', // Muted Blue-Gray
+        accent: '#124E66',    // Same as primary (teal accent)
+        muted: '#748D92',     // Muted Blue-Gray
+        light: '#D3D9D4',     // Light Gray
+        dark: '#212A31',      // Dark Blue-Gray
+        tertiary: '#2E3944',  // Dark Secondary
         white: '#FFFFFF',
 
-        gallifreyja: {
-          50: '#b3cde0', 
-          100: '#9cb9d3',
-          200: '#86a5c7',
-          300: '#7091ba',
-          400: '#6497b1',
-          500: '#005b96',
-          600: '#034f83',
-          700: '#03396c',
-          800: '#02254f',
-          900: '#011f4b',
+        // Custom palette based on provided colors
+        custom: {
+          darkest: '#212A31',  // Very dark blue-gray
+          dark: '#2E3944',     // Dark blue-gray
+          teal: '#124E66',     // Deep teal
+          muted: '#748D92',    // Muted blue-gray
+          light: '#D3D9D4',    // Light gray
         },
 
+        // Updated gray scale to complement the new palette
         gray: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
+          50: '#D3D9D4',   // Light gray
+          100: '#C5CDCA',  // Slightly darker light gray
+          200: '#B7C1C0',  // Light blue-gray
+          300: '#A9B5B6',  // Medium light blue-gray
+          400: '#9BA9AC',  // Medium blue-gray
+          500: '#748D92',  // Muted blue-gray (secondary)
+          600: '#5A6B70',  // Darker blue-gray
+          700: '#40494E',  // Dark blue-gray
+          800: '#2E3944',  // Dark secondary
+          900: '#212A31',  // Darkest
         }
       },
       fontFamily: {
@@ -49,7 +47,7 @@ module.exports = {
         'roboto': ['Roboto', 'sans-serif'],
       },
       textColor: {
-        DEFAULT: '#011f4b', // Dark Navy as default text
+        DEFAULT: '#212A31', // Dark blue-gray as default text
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

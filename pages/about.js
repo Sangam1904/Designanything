@@ -1,15 +1,20 @@
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
-import { Award, Users, Target, Zap, Linkedin, Mail, Download } from 'lucide-react'
+import { Award, Users, Target, Zap, ExternalLink, Linkedin, Mail, Download } from 'lucide-react'
 import Prism from '../components/Prism'
 import ScrollFloat from '../components/ScrollFloat'
 import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
+import { getTeamMembers } from '../utils/teamData'
+import Link from 'next/link'
 
 export default function About() {
   // Get configuration data
   const aboutConfig = getLayoutConfig('aboutPage')
   const missionVisionConfig = getSectionConfig('missionAndVision')
   const valuesConfig = getSectionConfig('values')
+  
+  // Get team members
+  const teamMembers = getTeamMembers()
   
   const values = [
     {
@@ -34,21 +39,13 @@ export default function About() {
     }
   ]
 
-  const skills = [
-    { name: 'SOLIDWORKS', level: 90 },
-    { name: 'CATIA', level: 75 },
-    { name: 'Blender', level: 65 },
-    { name: 'ANSYS', level: 70 },
-    { name: '3DEXPERIENCE', level: 55 }
-  ]
-
   return (
     <Layout 
-      title="About Me"
-      description="Learn about  Design  Anything - a professional CAD modeling and 3D design company. Meet me and discover my mission to transform ideas into reality."
+      title="About Our Team"
+      description="Learn about Solid Canvas - a professional CAD modeling and 3D design company. Meet our talented team and discover our mission to transform ideas into reality."
     >
       {/* Hero Section */}
-      <section className="pt-20 pb-16 relative overflow-hidden">
+      <section className="pt-20 pb-16 relative overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
         {/* Prism Background Effect - Full Section */}
         <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
           <Prism
@@ -81,11 +78,11 @@ export default function About() {
                 scrollEnd="center center"
                 stagger={0.03}
               >
-                About Design Anything
+                About Our Team
               </ScrollFloat>
             </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              I am passionate about transforming ideas into reality through expert engineering design, 
+              We are passionate about transforming ideas into reality through expert engineering design, 
               innovative CAD modeling, and stunning 3D visualizations.
             </p>
           </motion.div>
@@ -93,7 +90,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className={`py-16 ${missionVisionConfig.background === 'transparent' ? 'bg-transparent' : 'bg-white dark:bg-gray-900'}`}>
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className={`grid grid-cols-1 ${missionVisionConfig.alignment === 'side_by_side' ? 'lg:grid-cols-2' : 'grid-cols-1'} gap-12 items-center`}>
             <motion.div
@@ -112,7 +109,7 @@ export default function About() {
                   scrollEnd="center center"
                   stagger={0.02}
                 >
-                  My Mission
+                  Our Mission
                 </ScrollFloat>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
@@ -121,7 +118,7 @@ export default function About() {
                 starts with a great design.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                My technical expertise with creative vision to deliver designs that are not 
+                Our team combines technical expertise with creative vision to deliver designs that are not 
                 only functional and manufacturable but also aesthetically pleasing and innovative.
               </p>
             </motion.div>
@@ -133,7 +130,7 @@ export default function About() {
               viewport={{ once: true }}
               className={`${missionVisionConfig.background === 'transparent' ? 'bg-transparent' : 'bg-gradient-to-br from-primary to-accent'} rounded-2xl p-8 ${missionVisionConfig.background === 'transparent' ? 'text-gray-800 dark:text-white' : 'text-white'}`}
             >
-              <h3 className="text-2xl font-playfair font-bold mb-6">My Vision</h3>
+              <h3 className="text-2xl font-playfair font-bold mb-6">Our Vision</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 To become the leading force in digital design innovation, setting new standards for 
                 CAD modeling, 3D visualization, and product development across industries.
@@ -158,7 +155,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className={`py-16 ${valuesConfig.background === 'card' ? 'bg-gray-50 dark:bg-gray-800' : 'bg-transparent'}`}>
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -168,21 +165,21 @@ export default function About() {
             className={`${valuesConfig.alignment === 'center' ? 'text-center' : 'text-left'} mb-16`}
           >
             <div className="mb-6">
-              <ScrollFloat
-                containerClassName="text-center"
-                textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
-                animationDuration={1.2}
-                ease="back.out(1.7)"
-                scrollStart="top bottom-=40%"
-                scrollEnd="center center"
-                stagger={0.02}
-              >
-                My Values
-              </ScrollFloat>
-            </div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              The principles that guide my work and relationships with clients
-            </p>
+                <ScrollFloat
+                  containerClassName="text-center"
+                  textClassName="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white"
+                  animationDuration={1.2}
+                  ease="back.out(1.7)"
+                  scrollStart="top bottom-=40%"
+                  scrollEnd="center center"
+                  stagger={0.02}
+                >
+                  Our Values
+                </ScrollFloat>
+              </div>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                The principles that guide our work and relationships with clients
+              </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -210,8 +207,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* About Me */}
-      <section className="pt-20 pb-16 bg-white dark:bg-gray-900">
+      {/* Our Team */}
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -221,143 +218,81 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              About <span className="gradient-text">Me</span>
+              Meet Our <span className="gradient-text">Team</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Passionate designer dedicated to bringing your ideas to life
+              Talented professionals dedicated to bringing your ideas to life
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-col lg:flex-row items-center gap-12"
-            >
-              {/* Profile Image */}
-              <div className="flex-shrink-0">
-                <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl">
-                  <img 
-                    src="/images/team/Sangam.jpg" 
-                    alt="Sangmeshwar kanade - Founder & Lead Designer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Profile Content */}
-              <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
-                  Sangmeshwar kanade
-                </h3>
-                <p className="text-xl text-secondary font-medium mb-6">
-                  Mechanical Design Engineer
-                </p>
-                
-                <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-                  <p>
-                    Expert in SOLIDWORKS, CATIA, and Blender with over 2 years of experience in mechanical design and product development. I specialize in transforming complex ideas into precise, manufacturable designs.
-                  </p>
-                  <p>
-                    My passion lies in creating innovative solutions that bridge the gap between concept and reality. From initial sketches to final production-ready models, I ensure every project meets the highest standards of quality and precision.
-                  </p>
-                  <p>
-                    I believe in the power of design to solve real-world problems and am committed to delivering exceptional results that exceed client expectations.
-                  </p>
-                </div>
-
-                {/* Certifications */}
-                <div className="mt-4 flex flex-wrap justify-center lg:justify-start gap-4">
-                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                    SOLIDWORKS Professional
-                  </span>
-                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                    CATIA Enthusiast
-                  </span>
-                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                    Blender Beginner
-                  </span>
-                  <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                    ANSYS Simulation
-                  </span>
-                </div>
-
-                {/* Contact Information */}
-                <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <a
-                    href="https://linkedin.com/in/sangmeshwar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200"
-                    title="LinkedIn Profile"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  
-                  <a
-                    href="mailto:sangmeshwar@example.com"
-                    className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200"
-                    title="Email Me"
-                  >
-                    <Mail className="w-5 h-5" />
-                  </a>
-                  
-                  <a
-                    href="/downloads/Sangmeshwar_Kanade_Resume.pdf"
-                    download="Sangmeshwar_Kanade_Resume.pdf"
-                    className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white rounded-lg transition-all duration-200"
-                    title="Download Resume"
-                  >
-                    <Download className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-               My<span className="gradient-text">Expertise</span>
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Mastery of industry-leading software and technologies
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
               <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={member.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-gray-800 dark:text-white">{skill.name}</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gradient-to-r from-primary to-accent h-3 rounded-full"
+                {/* Profile Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={`${member.name} - ${member.role}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-secondary text-sm font-medium">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Profile Content */}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                      {member.professionalEducation}
+                    </p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500">
+                      {member.university} • {member.graduationYear}
+                    </p>
+                  </div>
+                  
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {member.description}
+                  </p>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {member.skills.slice(0, 2).map((skill, skillIndex) => (
+                      <span 
+                        key={skillIndex}
+                        className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-medium"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                    {member.skills.length > 2 && (
+                      <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
+                        +{member.skills.length - 2} more
+                      </span>
+                    )}
+                  </div>
+
+                  {/* View Profile Button */}
+                  <Link 
+                    href={`/team/${member.id}`}
+                    className="inline-flex items-center text-secondary hover:text-primary transition-colors duration-200 text-sm font-medium group"
+                  >
+                    View Profile
+                    <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -365,34 +300,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      {aboutConfig.readyToWorkTogetherSection.visible && (
-        <section className="py-16 bg-gradient-to-r from-primary to-accent">
-          <div className="container-custom px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-white">
-                Ready to Work Together?
-              </h2>
-              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Let's discuss your project and see how we can bring your ideas to life with our expertise.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="btn-secondary">
-                  Start Your Project
-                </a>
-                <a href="/portfolio" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
-                  View My Work
-                </a>
-              </div>
-            </motion.div>     
-          </div>
-        </section>
-      )}
+
     </Layout>
   )
 }

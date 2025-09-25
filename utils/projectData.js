@@ -7,7 +7,7 @@ export const PROJECT_CATEGORIES = [
   'Industrial Design', 
   'Product Design',
   'Automotive Design',
-  'Aerospace Design',
+
 ]
 
 // Software tools used
@@ -351,8 +351,80 @@ export const PROJECTS_DATA = {
     },
     
     skills: ['Surface Modeling', 'Automotive Design', 'Aerodynamics', 'Class-A Surfaces', 'CFD Analysis']
+  },
+  // Mini Evaporative Cooler Project
+   'mini-evap-cooler': {
+    id: 'mini-evap-cooler',
+    title: 'Mini Evaporative Cooler',
+    category: 'Consumer Product Design',
+    software: 'SolidWorks, Blender',
+    description: 'Compact evaporative cooler designed for efficient personal cooling with ergonomic controls and modular housing.',
+    shortDescription: 'Portable cooling device with modern design and efficient airflow.',
+    
+    // Media files - organized by type
+    thumbnail: '/projects/mini-evap-cooler/thumbnails/cooler-thumbnail.png',
+    heroImage: '/projects/mini-evap-cooler/images/cooler-hero.png',
+    gallery: [
+      '/projects/mini-evap-cooler/images/Cooler-1.png',
+      '/projects/mini-evap-cooler/images/Cooler-2.png',
+      '/projects/mini-evap-cooler/images/Cooler-3.png',
+      '/projects/mini-evap-cooler/images/Cooler-4.png',
+      '/projects/mini-evap-cooler/images/Cooler-5.png',
+      '/projects/mini-evap-cooler/images/Cooler-6.png',
+      ],
+      models: [
+      {
+        name: 'Mini Cooler Model',
+        url: 'projects/mini-evap-cooler/models/mini-evap-cooler.glb',
+        type: 'glb'
+      }
+    ],
+    videos: [
+      {
+        name: 'Product Visualization',
+        url: '/projects/mini-evap-cooler/videos/mini-cooler-showcase.mp4',
+        type: 'mp4'
+      }
+    ],
+    
+    // Project metadata
+    tags: ['Consumer Electronics', 'Cooling System', 'Product Design', 'Portable Device'],
+    featured: false,
+    year: 2025,
+    status: 'Concept Completed',
+    client: 'Internal Project',
+    
+    // Technical specifications
+    specifications: {
+      complexity: 'Medium',
+      parts: '15+ components',
+      analysis: 'Airflow Optimization',
+      manufacturing: 'Prototype Ready',
+      materials: ['ABS Plastic', 'Aluminum Fan Blades (Concept)'],
+      dimensions: '280mm x 120mm x 150mm'
+    },
+    
+    // Detailed information
+    technicalDetails: [
+      'Compact housing with integrated water storage base',
+      'Axial fan designed for balanced airflow and efficiency',
+      'Front louvered grill for optimized air distribution',
+      'Ergonomic angled control panel with rotary knobs',
+      'Designed for portability and desktop/bedside use'
+    ],
+    
+    // Project timeline
+    timeline: {
+      startDate: '2025-08-01',
+      endDate: '2025-08-04',
+      duration: '3 days'
+    },
+    
+    // Skills demonstrated
+    skills: ['3D CAD Modeling', 'Product Visualization', 'Design for Assembly', 'Rendering', 'Concept Development']
   }
 }
+
 
 // Helper functions for project management
 export const getProjectById = (id) => {
