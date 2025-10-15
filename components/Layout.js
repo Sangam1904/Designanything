@@ -4,7 +4,7 @@ import Footer from './Footer'
 import { useState, useEffect } from 'react'
 import { generateCSSVariables } from '../config/siteConfig'
 
-export default function Layout({ children, title = 'Solid Canvas', description = 'Professional CAD modeling, 3D design, and product animation services. Transform your ideas into reality with our expert engineering design team.' }) {
+export default function Layout({ children, title = 'DesignAnything', description = 'Professional CAD modeling, 3D design, and product animation services. Transform your ideas into reality with my expertise in engineering design.', fullTitle = null }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -34,20 +34,23 @@ export default function Layout({ children, title = 'Solid Canvas', description =
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <Head>
-        <title>{title} | Solid Canvas</title>
+        {(() => {
+          const computedTitle = fullTitle ?? `${title} | DesignAnything`;
+          return <title>{computedTitle}</title>;
+        })()}
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="CAD modeling, 3D design, SOLIDWORKS, CATIA, product animation, engineering design, freelance CAD" />
-        <meta name="author" content="Solid Canvas Team" />
+        <meta name="author" content="DesignAnything" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://solidcanvas.com/" />
-        <meta property="og:title" content={title} />
+        <meta property="og:url" content="https://designanything.com/" />
+        <meta property="og:title" content={fullTitle ?? `${title} | DesignAnything`} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="/og-image.jpg" />
 
-        
+
         {/* Model Viewer Script */}
         <script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
         

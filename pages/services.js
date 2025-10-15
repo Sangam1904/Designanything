@@ -14,7 +14,7 @@ export default function Services() {
       icon: Box,
       title: 'CAD Modeling',
       description: 'Professional 3D modeling using industry-standard software for mechanical, industrial, and product design.',
-      backgroundImage: 'public/images/services/cad-modeling-bg.jpg',
+      backgroundImage: '/images/services/cad-modeling-bg.png',
       features: [
         'Mechanical component design',
         'Assembly modeling and management',
@@ -31,11 +31,10 @@ export default function Services() {
       icon: Zap,
       title: '3D Design',
       description: 'Creative 3D design solutions for products, furniture, and industrial applications with complex geometry.',
-      backgroundImage: 'public/images/services/3d-design-bg.jpg',
+      backgroundImage: '/images/services/3d-design-bg.jpg',
       features: [
         'Product concept development',
         'Industrial design',
-        'Furniture and interior design',
         'Complex surface modeling',
         'Aesthetic design optimization',
         'Manufacturing-ready models'
@@ -48,12 +47,10 @@ export default function Services() {
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
-      backgroundImage: 'public/images/services/product-animation-bg.jpg',
+      backgroundImage: '/images/services/product-animation-bg.jpg',
       features: [
         'Assembly and disassembly animations',
         'Product walkthrough videos',
-        'Marketing and promotional content',
-        'Technical demonstration videos',
         'Interactive 3D presentations',
         'Motion graphics integration'
       ],
@@ -65,14 +62,13 @@ export default function Services() {
       icon: Palette,
       title: 'Rendering',
       description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
-      backgroundImage: 'public/images/services/rendering-bg.jpg',
+      backgroundImage: '/images/services/rendering-bg.jpg',
       features: [
         'Photorealistic product renders',
         'Material and texture setup',
         'Advanced lighting design',
         'Environment and background creation',
-        '360-degree product views',
-        'Marketing-ready imagery'
+        '360-degree product views'
       ],
       software: ['Blender', 'KeyShot', 'SOLIDWORKS Visualize'],
       color: 'from-orange-500 to-red-500'
@@ -82,7 +78,7 @@ export default function Services() {
       icon: Settings,
       title: 'Simulation',
       description: 'Engineering analysis and simulation using advanced tools for stress analysis, thermal analysis, and optimization.',
-      backgroundImage: 'public/images/services/simulation-bg.jpg',
+      backgroundImage: '/images/services/simulation-bg.jpg',
       features: [
         'Structural stress analysis',
         'Thermal analysis',
@@ -99,7 +95,7 @@ export default function Services() {
       icon: FileText,
       title: 'Documentation',
       description: 'Complete technical documentation including drawings, specifications, and project reports.',
-      backgroundImage: 'public/images/services/documentation-bg.jpg',
+      backgroundImage: '/images/services/documentation-bg.jpg',
       features: [
         'Technical drawings and blueprints',
         'Assembly instructions',

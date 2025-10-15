@@ -7,39 +7,39 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      role: 'Product Manager',
-      company: 'TechCorp Industries',
-      content: 'The CAD modeling service exceeded our expectations. The team delivered precise models that accelerated our product development timeline significantly.',
+      name: 'Dr. Anandrao Kashid',
+      role: 'Dean',
+      company: 'NKOCET, Solapur',
+      content: 'The design and development work was entirely executed by the team, and the results far exceeded our expectations. The professionalism and quality delivered were truly commendable.',
       rating: 5,
-      project: 'Automotive Component Design'
+      project: 'Institutional Collaboration'
     },
     {
       id: 2,
-      name: 'Michael Chen',
-      role: 'Design Director',
-      company: 'Innovate Design Studio',
-      content: 'Exceptional quality and attention to detail. Our 3D designs have never looked better, and the turnaround time was impressive.',
+      name: 'Prof. Bavaraj Birajdar',
+      role: 'Professor',
+      company: 'NKOCET, Solapur',
+      content: 'The entire design and execution process was handled by the team alone. Their dedication, precision, and delivery were outstanding and impactful for our institution.',
       rating: 5,
-      project: 'Consumer Electronics Design'
+      project: 'Academic Engagement'
     },
     {
       id: 3,
-      name: 'Emily Rodriguez',
-      role: 'Engineering Lead',
-      company: 'Future Motors',
-      content: 'Professional service with outstanding results. The assembly models helped us identify design issues early in the process.',
+      name: 'Aditya Shinde',
+      role: 'Student',
+      company: 'WIT, Solapur',
+      content: 'From start to finish, all work was independently completed by the team. Their innovative approach and technical skills left a strong impression.',
       rating: 5,
-      project: 'Electric Vehicle Assembly'
+      project: 'Student Project Support'
     },
     {
       id: 4,
-      name: 'David Kim',
-      role: 'R&D Manager',
-      company: 'GreenTech Solutions',
-      content: 'The simulation and analysis services provided valuable insights that improved our product performance and reliability.',
+      name: 'Subodh Shilwant',
+      role: 'Owner',
+      company: 'Durga Engineering Works, Solapur',
+      content: 'All the development and execution tasks were carried out solely by the team. Their efficiency and quality of output were beyond expectations.',
       rating: 5,
-      project: 'Renewable Energy System'
+      project: 'Industrial Collaboration'
     }
   ]
 

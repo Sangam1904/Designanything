@@ -33,7 +33,7 @@ export default function Footer() {
   ]
 
   return (
-                    <footer className="bg-primary text-tertiary">
+                    <footer className="bg-gray-900 text-gray-300">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -44,25 +44,25 @@ export default function Footer() {
                 alt="DesignAnything Logo" 
                 className="w-12 h-12 sm:w-14 sm:h-14"
               />
-              <span className="font-playfair text-xl font-bold text-light">DesignAnything</span>
+              <span className="font-playfair text-xl font-bold text-white">DesignAnything</span>
             </div>
-            <p className="text-light mb-6 leading-relaxed text-lg text-left">
+            <p className="text-gray-300 mb-6 leading-relaxed text-lg text-left">
               Transforming ideas into reality through expert engineering design. 
               Professional CAD modeling, 3D design, and product animation services.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-light">
-                <Mail className="w-5 h-5 text-secondary" />
-                <span>designanything25@gmail.com</span>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Mail className="w-5 h-5 text-yellow-500" />
+                <span>anythingcandesign@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-light">
-                <Phone className="w-5 h-5 text-secondary" />
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Phone className="w-5 h-5 text-yellow-500" />
                 <span>+91 7498441756</span>
               </div>
-              <div className="flex items-center space-x-3 text-light">
-                <MapPin className="w-5 h-5 text-secondary" />
+              <div className="flex items-center space-x-3 text-gray-300">
+                <MapPin className="w-5 h-5 text-yellow-500" />
                 <span>India</span>
               </div>
             </div>
@@ -70,13 +70,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">Services</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </Link>
@@ -87,13 +87,13 @@ export default function Footer() {
 
           {/* Portfolio */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">Portfolio</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4 text-white">Portfolio</h3>
             <ul className="space-y-2">
               {footerLinks.portfolio.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </Link>
@@ -104,13 +104,13 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold mb-4 text-light">About</h3>
+            <h3 className="font-playfair text-lg font-semibold mb-4 text-white">About</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-light hover:text-secondary transition-colors duration-200 text-base"
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Newsletter */}
-                              <div className="border-t border-tertiary/30 mt-8 pt-8">
+                              <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Social Links */}
             <div className="flex space-x-4">
@@ -131,7 +131,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-primary/50 rounded-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-200"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-yellow-500 hover:text-white transition-all duration-200 text-gray-400"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -142,16 +142,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-                              <div className="border-t border-tertiary/30 mt-8 pt-8">
+                              <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                                    <p className="text-tertiary text-base">
+                                    <p className="text-gray-400 text-base">
               © {currentYear} DesignAnything. All rights reserved.
             </p>
             <div className="flex space-x-6 text-base">
-              <Link href="/privacy" className="text-tertiary hover:text-secondary transition-colors duration-200">
+              <Link href="/privacy" className="text-gray-400 hover:text-yellow-500 transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-tertiary hover:text-secondary transition-colors duration-200">
+              <Link href="/terms" className="text-gray-400 hover:text-yellow-500 transition-colors duration-200">
                 Terms of Service
               </Link>
             </div>

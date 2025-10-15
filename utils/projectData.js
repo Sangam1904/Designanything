@@ -164,58 +164,62 @@ export const PROJECTS_DATA = {
 },
 
 
-  // Hydrogen Bike Project
-  'hydrogen-bike': {
-    id: 'hydrogen-bike',
-    title: 'Hydrogen-Powered Bicycle',
+  // Belt support assembly project
+  'belt-support-assembly': {
+    id: 'belt-support-assembly',
+    title: 'Belt Support Assembly',
     category: 'Product Design',
-    software: 'Blender',
-    description: 'Revolutionary hydrogen fuel cell bicycle design with integrated energy storage and distribution system.',
-    shortDescription: 'Next-generation hydrogen fuel cell bicycle',
+    software: 'SolidWorks',
+    description: 'Compact belt support assembly modeled in SolidWorks. Simple, robust design intended for easy fabrication and maintenance with fewer than 10 components.',
+    shortDescription: 'Simple SolidWorks belt support (≤10 parts)',
     
-    thumbnail: '/projects/hydrogen-bike/thumbnails/hydrogen-bike-thumbnail.jpg',
-    heroImage: '/projects/hydrogen-bike/images/hydrogen-bike-hero.jpg',
+    thumbnail: '/projects/belt-support-assembly/thumbnails/belt-support.png',
+    heroImage: '/projects/belt-support-assembly/images/belt-support12.png',
     gallery: [
-      '/projects/hydrogen-bike/images/hydrogen-bike-1.jpg',
-      '/projects/hydrogen-bike/images/hydrogen-bike-2.jpg',
-      '/projects/hydrogen-bike/images/hydrogen-bike-3.jpg'
+      '/projects/belt-support-assembly/images/belt1.png',
+      '/projects/belt-support-assembly/images/belt2.jpg',
+      '/projects/belt-support-assembly/images/belt3.png',
+      '/projects/belt-support-assembly/images/belt4.png',
+      '/projects/belt-support-assembly/images/belt5.png'
+
     ],
     models: [
       {
-        name: 'Hydrogen Bike Model',
-        url: '/models/hydrogen-bike.glb',
+        name: 'Belt Support Assembly Model',
+        url: '/projects/belt-support-assembly/models/belt-support.glb',
         type: 'glb'
       },
     ],
     videos: [
       {
         name: 'Design Overview',
-        url: '/projects/hydrogen-bike/videos/hydrogen-bike-overview.mp4',
+        url: '/projects/belt-support-assembly/videos/belt-support-assembly-overview.mp4',
         type: 'mp4'
       }
     ],
     
-    tags: ['Sustainable Transport', 'Fuel Cell Technology', 'Bicycle Design', 'Green Energy'],
+    tags: ['Belt Support', 'SolidWorks', 'Assembly Design', 'Sheet Metal', 'Fixtures', 'Manufacturing Design'],
     featured: true,
     year: 2024,
-    status: 'In Development',
-    client: 'EcoTransport Inc.',
+    status: 'Completed',
+    client: 'Internal Project',
     
     specifications: {
-      complexity: 'High',
-      parts: '150+ components',
-      analysis: 'Structural & Thermal',
-      manufacturing: 'Prototype',
-      materials: ['Carbon Fiber', 'Aluminum Alloy', 'Stainless Steel'],
-      dimensions: '1800mm x 600mm x 1000mm'
+      complexity: 'Low',
+      parts: '≤10 components',
+      analysis: 'Static load & deflection',
+      manufacturing: 'Fabrication-ready',
+      materials: ['Mild Steel', 'Aluminum', 'Standard Fasteners'],
+      dimensions: 'Customizable to belt width'
     },
     
     technicalDetails: [
-      'Integrated hydrogen fuel cell system design',
-      'Lightweight carbon fiber frame construction',
-      'Advanced thermal management for fuel cells',
-      'Ergonomic design for optimal rider comfort',
-      'Modular battery and fuel cell integration'
+      'Parametric SolidWorks design driven by belt width and load requirements',
+      'Simple bracket, roller, and base layout with standard M6/M8 fasteners',
+      'Sheet-metal friendly thicknesses and bend radii for easy fabrication',
+      'Basic static stress check for mounting bracket and roller shaft',
+      'Clearances and tolerances set for smooth belt tracking and assembly',
+      'Exploded view and BOM generated for quick manufacturing handoff'
     ],
     
     timeline: {
@@ -375,7 +379,7 @@ export const PROJECTS_DATA = {
       models: [
       {
         name: 'Mini Cooler Model',
-        url: 'projects/mini-evap-cooler/models/mini-evap-cooler.glb',
+        url: '/projects/mini-evap-cooler/models/mini-evap-cooler.glb',
         type: 'glb'
       }
     ],

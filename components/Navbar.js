@@ -61,11 +61,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
   
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
     ...(downloadsConfig.visible ? [{ name: 'Downloads', href: '/downloads' }] : []),
-    { name: 'About', href: '/about' },
   ]
 
   return (
@@ -75,8 +75,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                     scrolled 
                       ? darkMode 
-                        ? 'bg-dark/90 backdrop-blur-md shadow-lg border-b border-light/10'
-                        : 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200'
+                        ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200'
+                        : 'bg-black/90 backdrop-blur-md shadow-lg border-b border-gray-200'
                       : 'bg-transparent'
                   }`}
     >
@@ -92,7 +92,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             
                                     <span className={`font-inter text-xl font-medium ${
                           scrolled 
-                            ? darkMode ? 'text-light' : 'text-gray-800'
+                            ? darkMode ? 'text-gray-800' : 'text-white'
                             : 'text-light'
                         }`}>
                           DesignAnything
@@ -112,7 +112,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               >
                 <span className={`${
                   scrolled 
-                    ? darkMode ? 'text-tertiary hover:text-accent' : 'text-gray-600 hover:text-gray-800'
+                    ? darkMode ? 'text-gray-600 hover:text-gray-800' : 'text-gray-300 hover:text-white'
                     : 'text-tertiary hover:text-accent'
                 } transition-colors duration-200 font-medium text-base`}>
                   {item.name}
@@ -122,7 +122,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </div>
 
           {/* Right side buttons */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4">
             {/* Dark mode toggle */}
             <NavButton
               onClick={() => setDarkMode(!darkMode)}
@@ -131,7 +131,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
               distance={70}
               spring={{ mass: 0.1, stiffness: 200, damping: 15 }}
             >
-              <div className="p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800 hover:bg-tertiary/30 dark:hover:bg-gray-700 transition-colors duration-200">
+              <div className={`p-2 rounded-lg transition-colors duration-200 ${
+                scrolled 
+                  ? darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-gray-700 hover:bg-gray-600'
+                  : 'bg-tertiary/20 dark:bg-gray-800 hover:bg-tertiary/30 dark:hover:bg-gray-700'
+              }`}>
                 {darkMode ? (
                   <Sun className="w-6 h-6 text-yellow-500" />
                 ) : (
@@ -143,9 +147,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {/* CTA Button */}
             <NavButton
               href="/contact"
-              baseSize={90}
-              maxSize={100}
-              distance={110}
+              baseSize={95}
+              maxSize={105}
+              distance={115}
               spring={{ mass: 0.1, stiffness: 200, damping: 15 }}
             >
               <div className="btn-primary px-6 py-3 text-base font-medium">
@@ -157,13 +161,25 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-                                    className="md:hidden p-2 rounded-lg bg-tertiary/20 dark:bg-gray-800"
+                                    className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
+                scrolled 
+                  ? darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-gray-700 hover:bg-gray-600'
+                  : 'bg-tertiary/20 dark:bg-gray-800'
+              }`}
             aria-label="Toggle mobile menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
+              <X className={`w-6 h-6 ${
+                scrolled 
+                  ? darkMode ? 'text-gray-800' : 'text-white'
+                  : 'text-metallic-200 dark:text-tertiary'
+              }`} />
             ) : (
-              <Menu className="w-6 h-6 text-metallic-200 dark:text-tertiary" />
+              <Menu className={`w-6 h-6 ${
+                scrolled 
+                  ? darkMode ? 'text-gray-800' : 'text-white'
+                  : 'text-metallic-200 dark:text-tertiary'
+              }`} />
             )}
           </button>
         </div>

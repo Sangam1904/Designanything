@@ -16,7 +16,7 @@ export default function ServicesOverview() {
       icon: Zap,
       title: '3D Design',
       description: 'Creative 3D design solutions for products, furniture, and industrial applications. Surface modeling and complex geometry.',
-      features: ['Surface Modeling', 'Product Design', 'Industrial Design', 'Furniture Design'],
+      features: ['Surface Modeling', 'Product Design', 'Industrial Design', 'Fixture Design'],
       color: 'from-purple-500 to-pink-500',
       href: '/services/3d-design'
     },
@@ -24,7 +24,7 @@ export default function ServicesOverview() {
       icon: Video,
       title: 'Product Animation',
       description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
-      features: ['Assembly Animation', 'Product Walkthrough', 'Marketing Videos', 'Technical Demos'],
+      features: ['Assembly Animation', 'Product Walkthrough'],
       color: 'from-green-500 to-emerald-500',
       href: '/services/product-animation'
     },
@@ -32,7 +32,7 @@ export default function ServicesOverview() {
       icon: Palette,
       title: 'Rendering',
       description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
-      features: ['Photorealistic Renders', 'Material Setup', 'Lighting Design', 'Environment Creation'],
+      features: ['Photorealistic Renders', 'Environment Creation'],
       color: 'from-orange-500 to-red-500',
       href: '/services/rendering'
     },
@@ -48,7 +48,7 @@ export default function ServicesOverview() {
       icon: FileText,
       title: 'Documentation',
       description: 'Complete technical documentation including drawings, specifications, and project reports.',
-      features: ['Technical Drawings', 'Specifications', 'Project Reports', 'User Manuals'],
+      features: ['Technical Drawings', 'Specifications', 'Project Reports'],
       color: 'from-gray-500 to-slate-500',
       href: '/services/documentation'
     }

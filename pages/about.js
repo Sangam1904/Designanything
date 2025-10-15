@@ -4,7 +4,6 @@ import { Award, Users, Target, Zap, ExternalLink, Linkedin, Mail, Download } fro
 import Prism from '../components/Prism'
 import ScrollFloat from '../components/ScrollFloat'
 import { getLayoutConfig, getSectionConfig, getThemeConfig } from '../config/siteConfig'
-import { getTeamMembers } from '../utils/teamData'
 import Link from 'next/link'
 
 export default function About() {
@@ -13,36 +12,33 @@ export default function About() {
   const missionVisionConfig = getSectionConfig('missionAndVision')
   const valuesConfig = getSectionConfig('values')
   
-  // Get team members
-  const teamMembers = getTeamMembers()
-  
   const values = [
     {
       icon: Award,
       title: 'Excellence',
-      description: 'We strive for excellence in every project, delivering the highest quality CAD models and designs.'
+      description: 'I strive for excellence in every project, delivering the highest quality CAD models and designs.'
     },
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'We believe in close collaboration with our clients to ensure their vision is perfectly realized.'
+      description: 'I believe in close collaboration with my clients to ensure their vision is perfectly realized.'
     },
     {
       icon: Target,
       title: 'Innovation',
-      description: 'We embrace cutting-edge technology and innovative design approaches to solve complex challenges.'
+      description: 'I embrace cutting-edge technology and innovative design approaches to solve complex challenges.'
     },
     {
       icon: Zap,
       title: 'Efficiency',
-      description: 'We optimize our processes to deliver fast turnaround times without compromising quality.'
+      description: 'I optimize my processes to deliver fast turnaround times without compromising quality.'
     }
   ]
 
   return (
     <Layout 
-      title="About Our Team"
-      description="Learn about Solid Canvas - a professional CAD modeling and 3D design company. Meet our talented team and discover our mission to transform ideas into reality."
+      title="About Me"
+      description="Learn about Sangmeshwar Kanade - a professional CAD modeling and 3D design expert. Discover my mission to transform ideas into reality through expert engineering design."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 relative overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
@@ -78,11 +74,11 @@ export default function About() {
                 scrollEnd="center center"
                 stagger={0.03}
               >
-                About Our Team
+                About Me
               </ScrollFloat>
             </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              We are passionate about transforming ideas into reality through expert engineering design, 
+              I am passionate about transforming ideas into reality through expert engineering design, 
               innovative CAD modeling, and stunning 3D visualizations.
             </p>
           </motion.div>
@@ -114,11 +110,11 @@ export default function About() {
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 To empower businesses and individuals with cutting-edge CAD modeling and 3D design solutions 
-                that bridge the gap between imagination and reality. We believe that every great product 
+                that bridge the gap between imagination and reality. I believe that every great product 
                 starts with a great design.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                Our team combines technical expertise with creative vision to deliver designs that are not 
+                I combine technical expertise with creative vision to deliver designs that are not 
                 only functional and manufacturable but also aesthetically pleasing and innovative.
               </p>
             </motion.div>
@@ -178,7 +174,7 @@ export default function About() {
                 </ScrollFloat>
               </div>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                The principles that guide our work and relationships with clients
+                The principles that guide my work and relationships with clients
               </p>
           </motion.div>
 
@@ -207,7 +203,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* About Me */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -218,84 +214,112 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6 text-gray-800 dark:text-white">
-              Meet Our <span className="gradient-text">Team</span>
+              About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Talented professionals dedicated to bringing your ideas to life
+              Passionate designer dedicated to bringing your ideas to life
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            >
+              {/* Profile Image - Circular */}
+              <div className="flex justify-center lg:justify-end">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700">
+                    <img 
+                      src="/images/team/sangam.jpg" 
+                      alt="Sangmeshwar Kanade - Mechanical Design Engineer"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full opacity-80"></div>
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-secondary to-primary rounded-full opacity-60"></div>
+                </motion.div>
+              </div>
+
+              {/* Profile Content - Simple Section */}
               <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="p-4 lg:p-8"
               >
-                {/* Profile Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-bold text-white mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-secondary text-sm font-medium">
-                      {member.role}
+                <div className="mb-6">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3">
+                    Sangmeshwar Kanade
+                  </h3>
+                  <p className="text-xl text-secondary font-medium mb-4">
+                     Mechanical Design Engineer
+                  </p>
+                  <div className="mb-6">
+                    <p className="text-base text-gray-500 dark:text-gray-400 mb-1">
+                      B.E. Mechanical Engineering
+                    </p>
+                    <p className="text-sm text-gray-400 dark:text-gray-500">
+                      DBATU University • 2024
                     </p>
                   </div>
                 </div>
+                
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-lg">
+                  Professional in SOLIDWORKS, CATIA, and Blender with over 2 years of experience in mechanical design and product development. I specialize in transforming complex ideas into precise, manufacturable designs.
+                </p>
 
-                {/* Profile Content */}
-                <div className="p-6">
-                  <div className="mb-4">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                      {member.professionalEducation}
-                    </p>
-                    <p className="text-xs text-gray-400 dark:text-gray-500">
-                      {member.university} • {member.graduationYear}
-                    </p>
-                  </div>
-                  
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {member.description}
-                  </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-lg">
+                  My passion lies in creating innovative solutions that bridge the gap between concept and reality. From initial sketches to final production-ready models, I ensure every project meets the highest standards of quality and precision.
+                </p>
 
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {member.skills.slice(0, 2).map((skill, skillIndex) => (
+                {/* Skills */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Skills</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {['SOLIDWORKS Professional', 'CATIA Enthusiast', 'Blender Beginner', 'ANSYS Simulation'].map((skill, index) => (
                       <span 
-                        key={skillIndex}
-                        className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-medium"
+                        key={index}
+                        className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium"
                       >
                         {skill}
                       </span>
                     ))}
-                    {member.skills.length > 2 && (
-                      <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
-                        +{member.skills.length - 2} more
-                      </span>
-                    )}
                   </div>
+                </div>
 
-                  {/* View Profile Button */}
-                  <Link 
-                    href={`/team/${member.id}`}
-                    className="inline-flex items-center text-secondary hover:text-primary transition-colors duration-200 text-sm font-medium group"
+                {/* Social Links */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="mailto:sangmeshwarkanade1904@gmail.com"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-200 shadow-lg hover:shadow-xl"
                   >
-                    View Profile
-                    <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
+                    <Mail className="w-5 h-5" />
+                    Gmail
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/sangmeshwarkanade/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                    LinkedIn
+                  </a>
                 </div>
               </motion.div>
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
