@@ -65,6 +65,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
     ...(downloadsConfig.visible ? [{ name: 'Downloads', href: '/downloads' }] : []),
   ]
 
@@ -143,19 +144,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 )}
               </div>
             </NavButton>
-
-            {/* CTA Button */}
-            <NavButton
-              href="/contact"
-              baseSize={95}
-              maxSize={105}
-              distance={115}
-              spring={{ mass: 0.1, stiffness: 200, damping: 15 }}
-            >
-              <div className="btn-primary px-6 py-3 text-base font-medium">
-                Contact
-              </div>
-            </NavButton>
           </div>
 
           {/* Mobile menu button */}
@@ -221,15 +209,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   </>
                 )}
               </button>
-
-              {/* Mobile CTA */}
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 bg-secondary text-white rounded-md hover:bg-primary transition-colors duration-200 text-center w-full"
-              >
-                Contact
-              </Link>
             </div>
           </motion.div>
         )}

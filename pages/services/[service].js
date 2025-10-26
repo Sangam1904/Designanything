@@ -8,142 +8,143 @@ import {
   Play, 
   ChevronLeft,
   ChevronRight,
-  ExternalLink
+  ExternalLink,
+  CheckCircle,
+  Box,
+  FileText,
+  Settings,
+  Video
 } from 'lucide-react'
 import Layout from '../../components/Layout'
-import { generateProjectData } from '../../utils/projectDiscovery'
 import Link from 'next/link'
 
 // Service data structure
 const Data = {
-  'cad-modeling': {
-    title: 'CAD Modeling',
-    tagline: 'Professional CAD modeling services for product design, engineering, and manufacturing',
-    description: 'My CAD modeling expertise spans across multiple industries, delivering precise 3D models that bridge the gap between concept and reality. We specialize in parametric modeling, surface design, and assembly management using industry-standard software.',
-    heroImage: '/images/services/cad-modeling-bg.png',
+  'product-design-modeling': {
+    title: 'Product Design & 3D Modeling',
+    tagline: 'Concept to final parametric 3D model using SOLIDWORKS, CATIA, and Blender',
+    description: 'Transform your ideas into reality with comprehensive product design and 3D modeling services. From initial concept sketches to final parametric models, I specialize in industrial and mechanical product design using industry-standard software.',
+    heroImage: '/images/services/product-design-hero.jpg',
+    icon: Box,
     features: [
-      'Parametric Modeling',
-      'Assembly Management',
-      'Technical Drawings',
-      'GD&T Implementation',
-      'Manufacturing Optimization',
-      'Surface Design'
+      'Concept to final parametric 3D model',
+      'Industrial & Mechanical product design',
+      'Surface + Solid modeling',
+      'Model optimization for manufacturability',
+      'Part models (.sldprt / .step / .igs)',
+      'Assemblies (.sldasm)',
+      'Exploded views & animation (optional)',
+      'Manufacturing-ready drawings'
     ],
+    deliverables: [
+      'Part models (.sldprt / .step / .igs)',
+      'Assemblies (.sldasm)',
+      'Exploded views & animation (optional)',
+      'Manufacturing-ready drawings'
+    ],
+    software: ['SOLIDWORKS', 'CATIA', 'Blender'],
+    idealClients: 'Startups, manufacturers, prototyping labs',
     gallery: [
-      '/images/services/cad-modeling/cad-gallery-1.jpg',
-      '/images/services/cad-modeling/cad-gallery-2.jpg',
-      '/images/services/cad-modeling/cad-gallery-3.jpg',
-      '/images/services/cad-modeling/cad-gallery-4.jpg'
+      '/images/services/product-design-1.jpg',
+      '/images/services/product-design-2.jpg',
+      '/images/services/product-design-3.jpg',
+      '/images/services/product-design-4.jpg'
     ],
-    videoUrl: 'https://www.youtube.com/embed/cad-modeling-demo',
-    related: ['3d-design', 'simulation', 'documentation']
+    videoUrl: 'https://www.youtube.com/embed/product-design-demo',
+    related: ['technical-drawing-gdt', 'simulation-analysis', 'animation-rendering']
   },
-  '3d-design': {
-    title: '3D Design',
-    tagline: 'Creative 3D design solutions for visualization, prototyping, and digital art',
-    description: 'Transform your ideas into stunning 3D visualizations with my comprehensive 3D design services. From product visualization to architectural renders, we create immersive experiences that captivate your audience.',
-    heroImage: '/images/services/3d-design-bg.jpg',
+  'technical-drawing-gdt': {
+    title: 'Technical Drawing + GD&T + Manufacturing Documentation',
+    tagline: 'Engineering drawings, tolerancing, and Model-Based Definition (MBD) for production-ready documentation',
+    description: 'Ensure your designs meet manufacturing standards with comprehensive technical documentation services. I provide engineering drawings, GD&T application, and Model-Based Definition to create production-ready documentation.',
+    heroImage: '/images/services/technical-drawing-hero.jpg',
+    icon: FileText,
     features: [
-      'Product Visualization',
-      'Animation & Motion', 
-      'Surface Design',         
-      'Parametric Modeling',
-      'Industrial Design',
-      'Complex Geometry'
+      'Engineering drawings & tolerancing',
+      'GD&T application based on fit/function',
+      'BOM creation & assembly sheets',
+      'Model-Based Definition (PMI on 3D model)',
+      '2D drawings in PDF/AutoCAD',
+      'GD&T-marked 3D models',
+      'BOM tables, revision sheets'
     ],
+    deliverables: [
+      '2D drawings in PDF/AutoCAD',
+      'GD&T-marked 3D models',
+      'BOM tables, revision sheets'
+    ],
+    software: ['SOLIDWORKS', 'AutoCAD', 'MBD Tools'],
+    idealClients: 'Fabrication workshops, CNC & molding vendors, industrial machine builders',
     gallery: [
-      '/images/services/3d-design/3d-gallery-1.jpg',
-      '/images/services/3d-design/3d-gallery-2.jpg',
-      '/images/services/3d-design/3d-gallery-3.jpg',
-      '/images/services/3d-design/3d-gallery-4.jpg'
+      '/images/services/technical-drawing-1.jpg',
+      '/images/services/technical-drawing-2.jpg',
+      '/images/services/technical-drawing-3.jpg',
+      '/images/services/technical-drawing-4.jpg'
     ],
-    videoUrl: 'https://www.youtube.com/embed/3d-design-demo',
-    related: ['cad-modeling', 'rendering', 'product-animation']
+    videoUrl: 'https://www.youtube.com/embed/technical-drawing-demo',
+    related: ['product-design-modeling', 'simulation-analysis', 'animation-rendering']
   },
-  'product-animation': {
-    title: 'Product Animation',
-    tagline: 'Dynamic product animations and motion graphics that bring your designs to life',
-    description: 'Create engaging content for marketing, presentations, and client demonstrations with our professional product animation services. We specialize in assembly animations, product walkthroughs, and technical demonstrations.',
-    heroImage: '/images/services/product-animation-bg.jpg',
+  'simulation-analysis': {
+    title: 'Simulation & Analysis',
+    tagline: 'Structural analysis, thermal simulation, and design optimization using ANSYS and SOLIDWORKS Simulation',
+    description: 'Validate your designs with comprehensive simulation and analysis services. I provide structural analysis, thermal simulation, and design optimization to ensure your products meet performance and safety requirements.',
+    heroImage: '/images/services/simulation-hero.jpg',
+    icon: Settings,
     features: [
-      'Product Demonstrations',
-      'Assembly Animations',
-      'Environmental Modeling',
-      'Technical Walkthroughs',
+      'Structural analysis (FEA)',
+      'Static & dynamic load evaluation',
+      'Flow & thermal simulation',
+      'Design optimization & iteration',
+      'Simulation reports',
+      'Material, load & safety factor evaluation',
+      'Final optimized model for manufacturing'
     ],
+    deliverables: [
+      'Simulation reports',
+      'Material, load & safety factor evaluation',
+      'Final optimized model for actual manufacturing'
+    ],
+    software: ['ANSYS', 'SOLIDWORKS Simulation', 'Flow Simulation'],
+    idealClients: 'Robotics companies, EV startups, machine design firms',
     gallery: [
-      '/images/services/product-animation/product-1.jpg',
-      '/images/services/product-animation/product-2.jpg',
-      '/images/services/product-animation/product-3.jpg',
-      '/images/services/product-animation/product-4.jpg'
-    ],
-    videoUrl: 'https://www.youtube.com/embed/product-animation-demo',
-    related: ['3d-design', 'rendering', 'cad-modeling']
-  },
-  'rendering': {
-    title: 'Rendering',
-    tagline: 'Photorealistic renders and visualizations that bring your designs to life',
-    description: 'Our rendering services deliver stunning, photorealistic imagery that showcases your designs in their best light. From product marketing to architectural visualization, we create compelling visuals that engage your audience.',
-    heroImage: '/images/services/rendering-bg.jpg',
-    features: [
-      'Photorealistic Product Renders',
-      'Material & Texture Setup',
-      'Advanced Lighting Design',
-      '360° Product Views',
-      'Environment Creation',
-    ],
-    gallery: [
-      '/images/services/rendering/rendering-1.jpg',
-      '/images/services/rendering/rendering-2.jpg',
-      '/images/services/rendering/rendering-3.jpg',
-      '/images/services/rendering/rendering-4.jpg'
-    ],
-    videoUrl: 'https://www.youtube.com/embed/rendering-demo',
-    related: ['3d-design', 'product-animation', 'cad-modeling']
-  },
-  'simulation': {
-    title: 'Simulation',
-    tagline: 'Engineering analysis and simulation for design optimization and validation',
-    description: 'Ensure your designs meet performance and safety requirements with our comprehensive engineering analysis services. We provide structural, thermal, and fluid dynamics analysis using advanced simulation tools.',
-    heroImage: '/images/services/simulation-bg.jpg',
-    features: [
-      'Structural Analysis',
-      'Thermal Analysis',
-      'Fluid Dynamics',
-      'Optimization Studies',
-      'Finite Element Analysis (FEA)',
-      'Performance Validation'
-    ],
-    gallery: [
-      '/images/services/simulation/simulation-1.jpg',
-      '/images/services/simulation/simulation-2.jpg',
-      '/images/services/simulation/simulation-3.jpg',
-      '/images/services/simulation/simulation-4.jpg'
+      '/images/services/simulation-1.jpg',
+      '/images/services/simulation-2.jpg',
+      '/images/services/simulation-3.jpg',
+      '/images/services/simulation-4.jpg'
     ],
     videoUrl: 'https://www.youtube.com/embed/simulation-demo',
-    related: ['cad-modeling', 'documentation', '3d-design']
+    related: ['product-design-modeling', 'technical-drawing-gdt', 'animation-rendering']
   },
-  'documentation': {
-    title: 'Documentation',
-    tagline: 'Complete technical documentation for manufacturing and quality control',
-    description: 'From technical drawings to comprehensive project reports, our documentation services ensure your designs are properly documented for manufacturing, assembly, and quality control processes.',
-    heroImage: '/images/services/documentation-bg.jpg',
+  'animation-rendering': {
+    title: 'Product Animation, Rendering & Presentation',
+    tagline: 'Photorealistic renders, animations, and promotional videos using Blender, KeyShot, and SolidWorks Visualize',
+    description: 'Bring your products to life with stunning visual presentations. I create photorealistic renders, animations, and promotional videos that captivate your audience and showcase your products in their best light.',
+    heroImage: '/images/services/animation-hero.jpg',
+    icon: Video,
     features: [
-      'Technical Drawings',
-      'Assembly Instructions',
-      'Bill of Materials (BOM)',
-      'Project Specifications',
-      'User Manuals',
-      'Quality Control Documentation'
+      'Photorealistic product renders',
+      'Exploded animations',
+      'Promo videos for social media / investors',
+      'Branding visuals for product launch',
+      '4K renders',
+      'GIF animations',
+      'Video presentation (10–60 sec)'
     ],
+    deliverables: [
+      '4K renders',
+      'GIF animations',
+      'Video presentation (10–60 sec)'
+    ],
+    software: ['Blender', 'KeyShot', 'SolidWorks Visualize'],
+    idealClients: 'Marketing agencies, product startups, YouTube creators',
     gallery: [
-      '/images/services/documentation/documentation-1.jpg',
-      '/images/services/documentation/documentation-2.jpg',
-      '/images/services/documentation/documentation-3.jpg',
-      '/images/services/documentation/documentation-4.jpg'
+      '/images/services/animation-1.jpg',
+      '/images/services/animation-2.jpg',
+      '/images/services/animation-3.jpg',
+      '/images/services/animation-4.jpg'
     ],
-    videoUrl: 'https://www.youtube.com/embed/documentation-demo',
-    related: ['cad-modeling', 'simulation', '3d-design']
+    videoUrl: 'https://www.youtube.com/embed/animation-demo',
+    related: ['product-design-modeling', 'technical-drawing-gdt', 'simulation-analysis']
   }
 }
 
@@ -184,42 +185,57 @@ export default function ServicePage() {
 
   return (
     <Layout title={currentService.title} description={currentService.tagline}>
-      {/* Title Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Background Image */}
+      <section className="pt-20 pb-16 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${currentService.heroImage})`,
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-6xl mx-auto text-center"
           >
-            <h1 className="text-5xl lg:text-7xl font-playfair font-bold text-gray-800 dark:text-white mb-6 leading-tight">
+            {/* Service Icon */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex items-center justify-center mb-8"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl">
+                <currentService.icon className="w-10 h-10 text-white" />
+              </div>
+            </motion.div>
+            
+            {/* Service Title */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-4xl sm:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight"
+            >
               {currentService.title}
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            </motion.h1>
+            
+            {/* Service Tagline */}
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto"
+            >
               {currentService.tagline}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Hero Image/Service Image */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-6xl mx-auto"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={currentService.heroImage} 
-                alt={currentService.title}
-                className="w-full h-96 lg:h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -270,7 +286,7 @@ export default function ServicePage() {
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">✨</span>
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
                   {feature}
@@ -281,13 +297,97 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Deliverables Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white mb-4">
+              Deliverables
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              What you'll receive upon project completion
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {currentService.deliverables.map((deliverable, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 + index * 0.1 }}
+                className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                    {deliverable}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Software & Ideal Clients */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Software */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              <h2 className="text-3xl font-playfair font-bold text-gray-800 dark:text-white mb-6">
+                Software Used
+              </h2>
+              <div className="space-y-4">
+                {currentService.software.map((soft, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">{soft.charAt(0)}</span>
+                    </div>
+                    <span className="text-lg text-gray-600 dark:text-gray-300">{soft}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Ideal Clients */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+            >
+              <h2 className="text-3xl font-playfair font-bold text-gray-800 dark:text-white mb-6">
+                Ideal Clients
+              </h2>
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {currentService.idealClients}
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white mb-4">
@@ -348,20 +448,20 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Related  Section */}
+      {/* Related Services Section */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
+            transition={{ duration: 0.8, delay: 2.0 }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-gray-800 dark:text-white mb-4">
-              Related 
+              Related Services
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Explore my other design and engineering 
+              Explore my other design and engineering services
             </p>
           </motion.div>
 
@@ -375,14 +475,19 @@ export default function ServicePage() {
                   key={serviceId}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.6 + index * 0.1 }}
+                  transition={{ duration: 0.8, delay: 2.2 + index * 0.1 }}
                   className="group"
                 >
                   <Link href={`/services/${serviceId}`}>
                     <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                      <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 group-hover:text-primary transition-colors duration-200">
-                        {relatedService.title}
-                      </h3>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                          <relatedService.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-primary transition-colors duration-200">
+                          {relatedService.title}
+                        </h3>
+                      </div>
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
                         {relatedService.tagline}
                       </p>

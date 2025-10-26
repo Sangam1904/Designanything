@@ -1,7 +1,7 @@
 {
   "name": "Solid Canvas",
   "version": "1.0.0",
-  "description": "Portfolio website for Solid Canvas - CAD modeling, 3D design, and product animation services",
+  "description": "Portfolio website for Solid Canvas - CAD modeling, 3D design, and product animation",
   "private": true,
   "scripts": {
     "dev": "next dev",

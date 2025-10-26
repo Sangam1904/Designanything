@@ -2,7 +2,7 @@
 
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
-import { Box, Zap, Video, Palette, Settings, FileText, CheckCircle, ArrowRight } from 'lucide-react'
+import { Box, FileText, Settings, Video, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Prism from '../components/Prism'
 import ScrollFloat from '../components/ScrollFloat'
@@ -10,102 +10,81 @@ import ScrollFloat from '../components/ScrollFloat'
 export default function Services() {
   const services = [
     {
-      id: 'cad-modeling',
+      id: 'product-design-modeling',
       icon: Box,
-      title: 'CAD Modeling',
-      description: 'Professional 3D modeling using industry-standard software for mechanical, industrial, and product design.',
-      backgroundImage: '/images/services/cad-modeling-bg.png',
+      title: 'Product Design & 3D Modeling',
+      description: 'Concept to final parametric 3D model using SOLIDWORKS, CATIA, and Blender for industrial & mechanical product design.',
+      backgroundImage: '/images/services/product-design-hero.jpg',
       features: [
-        'Mechanical component design',
-        'Assembly modeling and management',
-        'GD&T and engineering drawings',
-        'Sheet metal design',
-        'Weldment design',
-        'Surface modeling'
+        'Concept to final parametric 3D model',
+        'Industrial & Mechanical product design',
+        'Surface + Solid modeling',
+        'Model optimization for manufacturability',
+        'Part models (.sldprt / .step / .igs)',
+        'Assemblies (.sldasm)',
+        'Exploded views & animation (optional)',
+        'Manufacturing-ready drawings'
       ],
-      software: ['SOLIDWORKS', 'CATIA', 'AutoCAD'],
-      color: 'from-blue-500 to-cyan-500'
+      software: ['SOLIDWORKS', 'CATIA', 'Blender'],
+      color: 'from-blue-500 to-cyan-500',
+      idealClients: 'Startups, manufacturers, prototyping labs'
     },
     {
-      id: '3d-design',
-      icon: Zap,
-      title: '3D Design',
-      description: 'Creative 3D design solutions for products, furniture, and industrial applications with complex geometry.',
-      backgroundImage: '/images/services/3d-design-bg.jpg',
+      id: 'technical-drawing-gdt',
+      icon: FileText,
+      title: 'Technical Drawing + GD&T + Manufacturing Documentation',
+      description: 'Engineering drawings, tolerancing, and Model-Based Definition (MBD) for production-ready documentation.',
+      backgroundImage: '/images/services/technical-drawing-hero.jpg',
       features: [
-        'Product concept development',
-        'Industrial design',
-        'Complex surface modeling',
-        'Aesthetic design optimization',
-        'Manufacturing-ready models'
+        'Engineering drawings & tolerancing',
+        'GD&T application based on fit/function',
+        'BOM creation & assembly sheets',
+        'Model-Based Definition (PMI on 3D model)',
+        '2D drawings in PDF/AutoCAD',
+        'GD&T-marked 3D models',
+        'BOM tables, revision sheets'
       ],
-      software: ['Blender', 'CATIA', 'SOLIDWORKS'],
-      color: 'from-purple-500 to-pink-500'
+      software: ['SOLIDWORKS', 'AutoCAD', 'MBD Tools'],
+      color: 'from-green-500 to-emerald-500',
+      idealClients: 'Fabrication workshops, CNC & molding vendors, industrial machine builders'
     },
     {
-      id: 'product-animation',
+      id: 'simulation-analysis',
+      icon: Settings,
+      title: 'Simulation & Analysis',
+      description: 'Structural analysis, thermal simulation, and design optimization using ANSYS and SOLIDWORKS Simulation.',
+      backgroundImage: '/images/services/simulation-hero.jpg',
+      features: [
+        'Structural analysis (FEA)',
+        'Static & dynamic load evaluation',
+        'Flow & thermal simulation',
+        'Design optimization & iteration',
+        'Simulation reports',
+        'Material, load & safety factor evaluation',
+        'Final optimized model for manufacturing'
+      ],
+      software: ['ANSYS', 'SOLIDWORKS Simulation', 'Flow Simulation'],
+      color: 'from-purple-500 to-pink-500',
+      idealClients: 'Robotics companies, EV startups, machine design firms'
+    },
+    {
+      id: 'animation-rendering',
       icon: Video,
-      title: 'Product Animation',
-      description: 'High-quality product animations and visualizations for marketing, presentations, and client demonstrations.',
-      backgroundImage: '/images/services/product-animation-bg.jpg',
-      features: [
-        'Assembly and disassembly animations',
-        'Product walkthrough videos',
-        'Interactive 3D presentations',
-        'Motion graphics integration'
-      ],
-      software: ['Blender', 'SOLIDWORKS'],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      id: 'rendering',
-      icon: Palette,
-      title: 'Rendering',
-      description: 'Photorealistic renders and visualizations that bring your designs to life with stunning detail and lighting.',
-      backgroundImage: '/images/services/rendering-bg.jpg',
+      title: 'Product Animation, Rendering & Presentation',
+      description: 'Photorealistic renders, animations, and promotional videos using Blender, KeyShot, and SolidWorks Visualize.',
+      backgroundImage: '/images/services/animation-hero.jpg',
       features: [
         'Photorealistic product renders',
-        'Material and texture setup',
-        'Advanced lighting design',
-        'Environment and background creation',
-        '360-degree product views'
+        'Exploded animations',
+        'Promo videos for social media / investors',
+        'Branding visuals for product launch',
+        '4K renders',
+        'GIF animations',
+        'Video presentation (10–60 sec)'
       ],
-      software: ['Blender', 'KeyShot', 'SOLIDWORKS Visualize'],
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      id: 'simulation',
-      icon: Settings,
-      title: 'Simulation',
-      description: 'Engineering analysis and simulation using advanced tools for stress analysis, thermal analysis, and optimization.',
-      backgroundImage: '/images/services/simulation-bg.jpg',
-      features: [
-        'Structural stress analysis',
-        'Thermal analysis',
-        'Modal analysis',
-        'Design optimization',
-        'Finite element analysis (FEA)',
-        'Performance validation'
-      ],
-      software: ['ANSYS', 'SOLIDWORKS Simulation'],
-      color: 'from-indigo-500 to-blue-500'
-    },
-    {
-      id: 'documentation',
-      icon: FileText,
-      title: 'Documentation',
-      description: 'Complete technical documentation including drawings, specifications, and project reports.',
-      backgroundImage: '/images/services/documentation-bg.jpg',
-      features: [
-        'Technical drawings and blueprints',
-        'Assembly instructions',
-        'Bill of materials (BOM)',
-        'Project specifications',
-        'User manuals and guides',
-        'Quality control documentation'
-      ],
-      software: ['SOLIDWORKS', 'AutoCAD', 'Microsoft Office'],
-      color: 'from-gray-500 to-slate-500'
+      software: ['Blender', 'KeyShot', 'SolidWorks Visualize'],
+      color: 'from-orange-500 to-red-500',
+      idealClients: 'Marketing agencies, product startups, YouTube creators'
     }
   ]
 
@@ -145,7 +124,7 @@ export default function Services() {
   return (
     <Layout 
       title="Services"
-      description="Professional CAD modeling, 3D design, product animation, rendering, and simulation services. Transform your ideas into reality with Solid Canvas."
+      description="Professional product design, 3D modeling, technical documentation, simulation analysis, and product animation services. Transform your ideas into reality."
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 relative overflow-hidden">
@@ -195,7 +174,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto"
           >
             {services.map((service, index) => (
               <Link 
@@ -272,7 +251,7 @@ export default function Services() {
                   </div>
 
                   {/* Software */}
-                  <div>
+                  <div className="mb-6">
                     <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Software Used:</h4>
                     <div className="flex flex-wrap gap-2">
                       {service.software.map((soft) => (
@@ -284,6 +263,14 @@ export default function Services() {
                         </span>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Ideal Clients */}
+                  <div>
+                    <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Ideal Clients:</h4>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      {service.idealClients}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -345,7 +332,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Service Positioning Table */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -365,120 +352,49 @@ export default function Services() {
                 scrollEnd="center center"
                 stagger={0.02}
               >
-                Flexible Pricing
+                Service Positioning
               </ScrollFloat>
             </div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Transparent pricing tailored to your project requirements and budget
+              Clear service categories with specific tools and deliverables
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700"
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Basic</h3>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">$ 10</div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Simple 3D modeling</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Basic renders</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">2 revisions</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Source files included</span>
-                </li>
-              </ul>
-              <a href="/contact" className="btn-primary w-full">Contact</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border-2 border-blue-500 dark:border-blue-400 relative"
-            >
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-600 dark:bg-blue-400 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Professional</h3>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">$ 25 </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Complex 3D modeling</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Photorealistic renders</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300"> 4-5 revisions</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Animation included</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Technical documentation</span>
-                </li>
-              </ul>
-              <a href="/contact" className="btn-primary w-full">Contact</a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700"
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Enterprise</h3>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">Custom</div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Full project management</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Advanced simulation</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Multiple iterations</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Ongoing support</span>
-                </li>
-                <li className="flex items-center justify-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-600 dark:text-gray-300">Priority communication</span>
-                </li>
-              </ul>
-              <a href="/contact" className="btn-primary w-full">Contact Us</a>
-            </motion.div>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+              <thead className="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-800 dark:text-white">Service Category</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-800 dark:text-white">Tools Used</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-800 dark:text-white">What Client Gets</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                <tr>
+                  <td className="px-6 py-4 text-sm text-gray-800 dark:text-white font-medium">Product Design & 3D Modeling</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">SOLIDWORKS, CATIA, Blender</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Optimized 3D CAD Models</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-gray-800 dark:text-white font-medium">GD&T + Documentation</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">MBD, Drafting Tools</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Production-Ready Drawings</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-gray-800 dark:text-white font-medium">Simulation & Analysis</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">ANSYS, Flow Sim</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Reliable & Tested Design</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-gray-800 dark:text-white font-medium">Renders & Animation</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Blender, KeyShot</td>
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Attractive Visual Presentations</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
-
-      {/* CTA removed as requested */}
     </Layout>
   )
 }

@@ -6,10 +6,10 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: 'CAD Modeling', href: '/services/cad-modeling' },
-      { name: '3D Design', href: '/services/3d-design' },
-      { name: 'Product Animation', href: '/services/product-animation' },
-      { name: 'Rendering', href: '/services/rendering' },
+      { name: 'Product Design & 3D Modeling', href: '/services/product-design-modeling' },
+      { name: 'Technical Drawing + GD&T', href: '/services/technical-drawing-gdt' },
+      { name: 'Simulation & Analysis', href: '/services/simulation-analysis' },
+      { name: 'Animation & Rendering', href: '/services/animation-rendering' },
     ],
     portfolio: [
       { name: 'Mechanical Design', href: '/portfolio?category=Mechanical Design' },
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-lg text-left">
               Transforming ideas into reality through expert engineering design. 
-              Professional CAD modeling, 3D design, and product animation services.
+              Professional CAD modeling, 3D design, and product animation.
             </p>
             
             {/* Contact Info */}

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import { useState, useEffect } from 'react'
 import { generateCSSVariables } from '../config/siteConfig'
 
-export default function Layout({ children, title = 'DesignAnything', description = 'Professional CAD modeling, 3D design, and product animation services. Transform your ideas into reality with my expertise in engineering design.', fullTitle = null }) {
+export default function Layout({ children, title = 'DesignAnything', description = 'Professional CAD modeling, 3D design, and product animation. Transform your ideas into reality with my expertise in engineering design.', fullTitle = null }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {

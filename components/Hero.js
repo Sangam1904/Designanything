@@ -83,7 +83,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="text-xl sm:text-2xl text-tertiary mb-12 leading-relaxed max-w-3xl mx-auto"
           >
-            Professional CAD modeling, 3D design, and product animation services. 
+            Professional CAD modeling, 3D design, and product animation. 
             <br className="hidden sm:block" />
             From concept to completion, I bring your vision to life.
           </motion.p>
