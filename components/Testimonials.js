@@ -34,12 +34,12 @@ export default function Testimonials() {
     },
     {
       id: 4,
-      name: 'Subodh Shilwant',
-      role: 'Owner',
-      company: 'Durga Engineering Works, Solapur',
-      content: 'All the development and execution tasks were carried out solely by the team. Their efficiency and quality of output were beyond expectations.',
+      name: 'Shivam Patil',
+      role: 'Student',
+      company: 'Sinhgad Institute of Technology, Solapur',
+      content: 'From start to finish, all work was independently completed by the team. Their innovative approach and technical skills left a strong impression.',
       rating: 5,
-      project: 'Industrial Collaboration'
+      project: 'Student Project Support'
     }
   ]
 

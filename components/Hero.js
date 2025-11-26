@@ -128,30 +128,7 @@ export default function Hero() {
 
 
           {/* Trust Indicators */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={isHeroVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-tertiary"
-          >
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">SOLIDWORKS Professional</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">CATIA Enthusiast</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">Blender Beginner</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm font-medium">ANSYS Simulation</span>
-            </div>
-          </motion.div>
-
+      
         </div>
       </div>
 

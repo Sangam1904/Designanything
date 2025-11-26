@@ -14,7 +14,6 @@ export const PROJECT_CATEGORIES = [
 export const SOFTWARE_TOOLS = [
   'SOLIDWORKS',
   'CATIA',
-  'Fusion 360',
   'Blender',
   'ANSYS',
   'AutoCAD',
@@ -236,7 +235,7 @@ export const PROJECTS_DATA = {
     id: 'drone-design',
     title: 'Drone Design',
     category: 'Automotive Design',
-    software: 'Fusion 360',
+    software: 'SolidWorks',
     description: 'Premium drone design with advanced aerodynamics and aesthetic optimization.',
     shortDescription: 'Luxury car body with advanced aerodynamics',
     
@@ -329,7 +328,7 @@ export const PROJECTS_DATA = {
     featured: false,
     year: 2023,
     status: 'Completed',
-    client: 'Luxury Motors',
+   
     
     specifications: {
       complexity: 'Very High',
@@ -351,7 +350,7 @@ export const PROJECTS_DATA = {
     timeline: {
       startDate: '2023-06-01',
       endDate: '2023-12-15',
-      duration: '6.5 months'
+      duration: '1 week'
     },
     
     skills: ['Surface Modeling', 'Automotive Design', 'Aerodynamics', 'Class-A Surfaces', 'CFD Analysis']
@@ -426,6 +425,79 @@ export const PROJECTS_DATA = {
     
     // Skills demonstrated
     skills: ['3D CAD Modeling', 'Product Visualization', 'Design for Assembly', 'Rendering', 'Concept Development']
+  },
+
+  // Electric Concept Moped Project
+  'ev-concept-moped': {
+    id: 'ev-concept-moped',
+    title: 'EV Concept Moped',
+    category: 'Product Design',
+    software: 'SolidWorks + SolidWorks Visualize',
+    description: 'Concept EV moped designed with a balanced mix of welded frame structure, sheet-metal body panels, and detailed component assemblies. The project focuses on ergonomic riding posture, compact power-train placement, and urban commute usability.',
+    shortDescription: 'Concept electric moped with welded chassis + sheet metal body',
+    
+    thumbnail: '/projects/ev-concept-moped/thumbnails/moped-thumb.png',
+    heroImage: '/projects/ev-concept-moped/images/moped-hero.png',
+    gallery: [
+      '/projects/ev-concept-moped/images/moped1.png',
+      '/projects/ev-concept-moped/images/moped2.png',
+      '/projects/ev-concept-moped/images/moped3.png',
+      '/projects/ev-concept-moped/images/moped4.png',
+      '/projects/ev-concept-moped/images/moped5.png'
+    ],
+    models: [
+      {
+        name: 'EV Concept Moped Assembly',
+        url: '/projects/ev-concept-moped/models/ev-moped.glb',
+        type: 'glb'
+      }
+    ],
+    videos: [
+      {
+        name: 'Design Showcase',
+        url: '/projects/ev-concept-moped/videos/moped-showcase.mp4',
+        type: 'mp4'
+      }
+    ],
+    
+    tags: ['Electric Vehicle', 'Urban Mobility', 'SolidWorks', 'Weldment', 'Sheet Metal', 'Product Design', 'Assembly', 'Visualization'],
+    featured: false,
+    year: 2025,
+    status: 'Concept Prototype',
+    client: 'Internal Concept Study',
+    
+    specifications: {
+      complexity: 'Moderate',
+      parts: '50+ components',
+      analysis: 'Preliminary structural load considerations for chassis',
+      manufacturing: 'Prototype fabrication feasibility considered',
+      materials: ['Mild Steel Weldment Frame', 'Sheet Metal Body Panels', 'Standard Fasteners', 'Rubber Tyres & Bushings'],
+      dimensions: 'Optimized for city commute ergonomics'
+    },
+    
+    technicalDetails: [
+      'Parametric chassis designed using SolidWorks Weldment tools for easy frame modification',
+      'Sheet metal body panels designed with correct bend radii and thickness for manufacturing feasibility',
+      'Solid model components include steering head, fork assembly, seat base, rear swing arm, wheels, and handlebar mount',
+      'Assembly consists of subassemblies grouped to simplify model management and motion testing',
+      'Rendered in SolidWorks Visualize with custom environment HDRI lighting for realistic product presentation',
+      'Designed to explore urban EV form-factor with focus on lightweight structure and material optimization'
+    ],
+    
+    timeline: {
+      startDate: '2025-01-10',
+      endDate: '2025-02-04',
+      duration: '3–4 Weeks'
+    },
+    
+    skills: [
+      '3D CAD Modeling',
+      'Weldment Design',
+      'Sheet Metal Design',
+      'Assembly Modeling (50+ parts)',
+      'Product Visualization',
+      'Concept Development'
+    ]
   }
 }
 

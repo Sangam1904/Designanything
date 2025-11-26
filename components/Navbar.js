@@ -78,7 +78,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
                       ? darkMode 
                         ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200'
                         : 'bg-black/90 backdrop-blur-md shadow-lg border-b border-gray-200'
-                      : 'bg-transparent'
+                      : darkMode 
+                        ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200'
+                        : 'bg-transparent'
                   }`}
     >
       <div className="container-custom px-4 sm:px-6 lg:px-8">
@@ -94,7 +96,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                                     <span className={`font-inter text-xl font-medium ${
                           scrolled 
                             ? darkMode ? 'text-gray-800' : 'text-white'
-                            : 'text-light'
+                            : darkMode ? 'text-gray-800' : 'text-gray-800'
                         }`}>
                           DesignAnything
                         </span>
@@ -114,7 +116,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <span className={`${
                   scrolled 
                     ? darkMode ? 'text-gray-600 hover:text-gray-800' : 'text-gray-300 hover:text-white'
-                    : 'text-tertiary hover:text-accent'
+                    : darkMode ? 'text-gray-600 hover:text-gray-800' : 'text-tertiary hover:text-accent'
                 } transition-colors duration-200 font-medium text-base`}>
                   {item.name}
                 </span>
@@ -135,7 +137,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <div className={`p-2 rounded-lg transition-colors duration-200 ${
                 scrolled 
                   ? darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-gray-700 hover:bg-gray-600'
-                  : 'bg-tertiary/20 dark:bg-gray-800 hover:bg-tertiary/30 dark:hover:bg-gray-700'
+                  : darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-tertiary/20 hover:bg-tertiary/30'
               }`}>
                 {darkMode ? (
                   <Sun className="w-6 h-6 text-yellow-500" />
@@ -152,7 +154,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                                     className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
                 scrolled 
                   ? darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-gray-700 hover:bg-gray-600'
-                  : 'bg-tertiary/20 dark:bg-gray-800'
+                  : darkMode ? 'bg-gray-200 hover:bg-gray-300' : 'bg-tertiary/20'
               }`}
             aria-label="Toggle mobile menu"
           >
@@ -160,13 +162,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <X className={`w-6 h-6 ${
                 scrolled 
                   ? darkMode ? 'text-gray-800' : 'text-white'
-                  : 'text-metallic-200 dark:text-tertiary'
+                  : darkMode ? 'text-gray-800' : 'text-metallic-200'
               }`} />
             ) : (
               <Menu className={`w-6 h-6 ${
                 scrolled 
                   ? darkMode ? 'text-gray-800' : 'text-white'
-                  : 'text-metallic-200 dark:text-tertiary'
+                  : darkMode ? 'text-gray-800' : 'text-metallic-200'
               }`} />
             )}
           </button>
@@ -180,13 +182,19 @@ export default function Navbar({ darkMode, setDarkMode }) {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-                                    <div className="px-2 pt-2 pb-3 space-y-1 bg-light dark:bg-gray-800 rounded-lg mt-2 shadow-lg">
+                                    <div className={`px-2 pt-2 pb-3 space-y-1 rounded-lg mt-2 shadow-lg ${
+                      darkMode ? 'bg-gray-100' : 'bg-light dark:bg-gray-800'
+                    }`}>
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200 w-full"
+                  className={`block px-3 py-2 rounded-md transition-colors duration-200 w-full ${
+                    darkMode 
+                      ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-200' 
+                      : 'text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700'
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -195,7 +203,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
               {/* Mobile dark mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                                    className="w-full flex items-center px-3 py-2 text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
+                                    className={`w-full flex items-center px-3 py-2 rounded-md transition-colors duration-200 ${
+                      darkMode 
+                        ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-200' 
+                        : 'text-metallic-200 hover:text-secondary hover:bg-tertiary/20 dark:text-tertiary dark:hover:text-secondary dark:hover:bg-gray-700'
+                    }`}
               >
                 {darkMode ? (
                   <>
