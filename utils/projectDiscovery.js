@@ -3,8 +3,8 @@
 
 import { 
   PROJECTS_DATA, 
-  getProjectById, 
-  getFeaturedProjects, 
+  getProjectById as getProjectByIdOriginal, 
+  getFeaturedProjects as getFeaturedProjectsOriginal, 
   getProjectsByCategory, 
   getProjectsBySoftware, 
   getAllProjects, 
@@ -25,6 +25,8 @@ const convertToLegacyFormat = (project) => {
     category: project.category,
     software: project.software,
     description: project.description,
+    // Preserve thumbnail for ImageVideoDisplay component
+    thumbnail: project.thumbnail || project.heroImage,
     image: project.thumbnail || project.heroImage,
     gallery: project.gallery || [project.thumbnail || project.heroImage],
     modelUrl: project.models?.[0]?.url || null,
@@ -33,7 +35,9 @@ const convertToLegacyFormat = (project) => {
     featured: project.featured || false,
     year: project.year || new Date().getFullYear(),
     specifications: project.specifications || {},
-    technicalDetails: project.technicalDetails || []
+    technicalDetails: project.technicalDetails || [],
+    // Preserve models array for components that need it
+    models: project.models || []
   }
 }
 
@@ -57,30 +61,38 @@ export const getSoftware = () => {
 
 // New functions using the organized structure
 export const getProject = (id) => {
-  return getProjectById(id)
+  const project = getProjectByIdOriginal(id)
+  return project ? convertToLegacyFormat(project) : null
 }
 
 export const getFeatured = () => {
-  return getFeaturedProjects()
+  return getFeaturedProjectsOriginal().map(project => convertToLegacyFormat(project))
 }
 
-// Export the functions with the expected names for backward compatibility
-export { getFeaturedProjects, getProjectById }
+// Wrapper functions that return converted format for backward compatibility
+export const getFeaturedProjects = () => {
+  return getFeaturedProjectsOriginal().map(project => convertToLegacyFormat(project))
+}
+
+export const getProjectById = (id) => {
+  const project = getProjectByIdOriginal(id)
+  return project ? convertToLegacyFormat(project) : null
+}
 
 export const getProjectsByCategoryFilter = (category) => {
-  return getProjectsByCategory(category)
+  return getProjectsByCategory(category).map(project => convertToLegacyFormat(project))
 }
 
 export const getProjectsBySoftwareFilter = (software) => {
-  return getProjectsBySoftware(software)
+  return getProjectsBySoftware(software).map(project => convertToLegacyFormat(project))
 }
 
 export const getAll = () => {
-  return getAllProjects()
+  return getAllProjects().map(project => convertToLegacyFormat(project))
 }
 
 export const search = (query) => {
-  return searchProjects(query)
+  return searchProjects(query).map(project => convertToLegacyFormat(project))
 }
 
 export const getStats = () => {
