@@ -4,33 +4,10 @@ This file shows you exactly how to add your own content to the website with real
 
 ---
 
-## 🚀 NEW: Admin Dashboard for Easy Content Management
+## 📝 Adding a New Project
 
-### Step 1: Access the Admin Panel
-1. Go to: `http://localhost:3000/admin`
-2. Enter the password: `admin123` (you can change this in the code)
-3. You'll see a form to add new projects
-
-### Step 2: Add a New Project via Admin
-Fill out the form with your project details:
-
-**Required Fields:**
-- **Project Title:** "My Amazing 3D Model"
-- **Short Description:** "A detailed mechanical assembly designed in SOLIDWORKS"
-- **Detailed Description:** "This project showcases advanced CAD modeling techniques..."
-- **Software Used:** "SOLIDWORKS, ANSYS"
-- **Key Tags:** "Mechanical, Assembly, Analysis"
-- **Technical Information:** "Material: Steel, Weight: 2.5kg, Dimensions: 200x150x100mm"
-- **Specifications:** "Tolerance: ±0.1mm, Surface Finish: Ra 1.6"
-
-**File Uploads:**
-- **Thumbnail Image URL:** `/images/portfolio/my-project-thumb.jpg`
-- **GLTF/GLB Model URL:** `/models/my-project.glb`
-- **STEP File URL:** `/downloads/my-project.step`
-- **Gallery Images:** `/images/portfolio/my-project-1.jpg, /images/portfolio/my-project-2.jpg`
-
-### Step 3: File Preparation
-Before using the admin panel, prepare your files:
+### Step 1: Prepare Your Files
+Before adding a project, prepare your files:
 
 1. **3D Models:** Place in `public/models/`
    - `my-project.glb` (for 3D viewer)
@@ -44,22 +21,25 @@ Before using the admin panel, prepare your files:
 3. **STEP Files:** Place in `public/downloads/`
    - `my-project.step` (for CAD downloads)
 
-### Step 4: Save and View
-1. Click "Save Project" in the admin panel
-2. Your project is automatically added to the portfolio
-3. Visit `http://localhost:3000/portfolio` to see your new project
-4. Click on it to view the interactive 3D model and gallery
+### Step 2: Add Project Data
+Open `utils/projectData.js` and add your project to the `PROJECTS_DATA` object (see Example 2 below for details).
+
+### Step 3: Test Your Project
+1. Save the file
+2. Run: `npm run dev`
+3. Go to: `http://localhost:3000/portfolio`
+4. Click on your project to see the 3D model and gallery
 
 ---
 
 ## 🎮 Interactive 3D Model Viewer (Portfolio Only)
 
 ### Step 1: 3D Model Integration
-The 3D Model Viewer is now **exclusively integrated in the Portfolio section**:
+The 3D Model Viewer is **exclusively integrated in the Portfolio section**:
 
 1. **Portfolio Grid:** Each project card shows a 3D model preview
 2. **Project Detail Modal:** Full-screen 3D model viewer with controls
-3. **Admin-Only Upload:** Models are pre-uploaded by admin, no public uploads
+3. **Model Management:** Models are added manually to the project data structure
 
 ### Step 2: Model Viewer Features
 - **OrbitControls:** Rotate, zoom, and pan with mouse
@@ -148,33 +128,60 @@ Open `components/Navbar.js` and replace the  section:
 1. **3D Model:** Save as `public/models/my-project.glb`
 2. **Project Image:** Save as `public/images/portfolio/my-project.jpg`
 
-### Step 2: Add to Portfolio (Alternative to Admin Panel)
-Open `utils/projectDiscovery.js` and add to the `PROJECT_METADATA` array:
+### Step 2: Add to Portfolio
+Open `utils/projectData.js` and add your project to the `PROJECTS_DATA` object:
 
 ```javascript
-{
+'my-custom-project': {
   id: 'my-custom-project',
   title: 'My Custom Project',
   category: 'Product Design',
   software: 'Fusion 360',
   description: 'This is my amazing project description that showcases my skills.',
-  detailedDescription: 'Detailed technical information about the project...',
-  image: '/images/portfolio/my-project.jpg',
-  modelUrl: '/models/my-project.glb',  // 3D model path
-  stepUrl: '/downloads/my-project.step',
-  videoUrl: 'https://www.youtube.com/watch?v=your-video',
-  tags: ['Custom Tag', 'Design', 'Innovation'],
-  technicalInfo: 'Material: Aluminum, Weight: 1.2kg',
-  specifications: [
-    { key: 'Dimensions', value: '150x100x50mm' },
-    { key: 'Tolerance', value: '±0.05mm' }
-  ],
+  shortDescription: 'Brief description for cards',
+  thumbnail: '/projects/my-custom-project/thumbnails/my-project-thumbnail.jpg',
+  heroImage: '/projects/my-custom-project/images/my-project-hero.jpg',
   gallery: [
-    '/images/portfolio/my-project-1.jpg',
-    '/images/portfolio/my-project-2.jpg'
+    '/projects/my-custom-project/images/my-project-1.jpg',
+    '/projects/my-custom-project/images/my-project-2.jpg'
   ],
+  models: [
+    {
+      name: 'Main Model',
+      url: '/models/my-project.glb',
+      type: 'glb'
+    }
+  ],
+  videos: [
+    {
+      name: 'Project Overview',
+      url: '/projects/my-custom-project/videos/my-project-overview.mp4',
+      type: 'mp4'
+    }
+  ],
+  tags: ['Custom Tag', 'Design', 'Innovation'],
   featured: true,
-  year: 2024
+  year: 2024,
+  status: 'Completed',
+  specifications: {
+    complexity: 'Medium',
+    parts: '20+ components',
+    analysis: 'Structural',
+    manufacturing: 'Production Ready',
+    materials: ['Aluminum', 'Steel'],
+    dimensions: '150x100x50mm'
+  },
+  technicalDetails: [
+    'Technical detail 1',
+    'Technical detail 2',
+    'Technical detail 3'
+  ],
+  timeline: {
+    startDate: '2024-01-01',
+    endDate: '2024-03-01',
+    duration: '2 months'
+  },
+  skills: ['CAD Modeling', 'Product Design', 'Analysis']
 }
 ```
 
@@ -359,15 +366,14 @@ For better mobile performance, use different image sizes:
 ### Before Adding Content:
 - [ ] Install dependencies: `npm install`
 - [ ] Start development server: `npm run dev`
-- [ ] Test the admin panel: `http://localhost:3000/admin`
 - [ ] Prepare your files in the `public/` folder
 
 ### For Each New Project:
 - [ ] Create 3D model (.glb/.gltf)
 - [ ] Create thumbnail image (400x300px)
 - [ ] Create gallery images (1200x800px)
-- [ ] Create STEP file for downloads
-- [ ] Use admin panel or manual method to add project
+- [ ] Create STEP file for downloads (optional)
+- [ ] Add project data to `utils/projectData.js`
 - [ ] Test 3D viewer functionality in portfolio
 - [ ] Test mobile responsiveness
 
@@ -390,11 +396,11 @@ For better mobile performance, use different image sizes:
 - Check file path (must start with `/`)
 - Check browser console for errors
 
-**Admin Panel Not Working:**
-- Clear browser cache
-- Check localStorage in browser dev tools
-- Verify password is correct
-- Check for JavaScript errors
+**Project Not Appearing:**
+- Check project data structure in `utils/projectData.js`
+- Verify all file paths are correct
+- Check browser console for errors
+- Restart development server
 
 **Images Not Displaying:**
 - Check file paths start with `/`
@@ -419,7 +425,7 @@ If you encounter any issues:
 4. Test with smaller files first
 5. Check the documentation in other .md files
 
-The website is designed to be user-friendly and easy to customize. Start with the admin panel for the easiest content management experience!
+The website is designed to be user-friendly and easy to customize. Follow the examples above to add your content!
 
 ---
 
@@ -428,7 +434,7 @@ The website is designed to be user-friendly and easy to customize. Start with th
 ### **Component Placement:**
 - ✅ **Portfolio Grid:** Each project card shows 3D model preview
 - ✅ **Project Detail Modal:** Full-screen 3D model viewer
-- ✅ **Admin-Only:** Models pre-uploaded, no public uploads
+- ✅ **Model Management:** Models added via project data structure
 - ✅ **Home Page:** Clean, no 3D viewer (as requested)
 
 ### **Data Flow:**
@@ -455,6 +461,6 @@ The website is designed to be user-friendly and easy to customize. Start with th
 - ✅ **HDRI Environment:** Realistic lighting
 - ✅ **Loading States:** Smooth loading
 - ✅ **Fallback:** "3D model not available" message
-- ✅ **Admin-Only Upload:** Secure model management
+- ✅ **Manual Management:** Models managed via project data structure
 
 The 3D Model Viewer is now perfectly integrated into the Portfolio section with all the requested features!

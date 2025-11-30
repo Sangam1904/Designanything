@@ -1,16 +1,33 @@
-// Portfolio Project Data Management System
-// This file contains all project data in an organized, scalable structure
+/**
+ * Portfolio Project Data Management System
+ * 
+ * This file contains all project data in an organized, scalable structure.
+ * Each project follows a consistent schema with media files, metadata, and technical details.
+ * 
+ * Project Structure:
+ * - Each project has a unique ID (kebab-case)
+ * - Media files are organized in /public/projects/{project-id}/
+ * - 3D models can be in /public/models/ or project-specific folders
+ * - All projects are stored in the PROJECTS_DATA object
+ * 
+ * @module utils/projectData
+ */
 
-// Project categories for filtering
+/**
+ * Available project categories for filtering
+ * @constant {string[]}
+ */
 export const PROJECT_CATEGORIES = [
   'Mechanical Design',
   'Industrial Design', 
   'Product Design',
   'Automotive Design',
-
 ]
 
-// Software tools used
+/**
+ * Software tools used across projects
+ * @constant {string[]}
+ */
 export const SOFTWARE_TOOLS = [
   'SOLIDWORKS',
   'CATIA',
@@ -19,7 +36,32 @@ export const SOFTWARE_TOOLS = [
   'AutoCAD',
 ]
 
-// Project data structure - each project has its own folder
+/**
+ * Main project data object
+ * 
+ * Structure for each project:
+ * - id: Unique identifier (kebab-case)
+ * - title: Display title
+ * - category: One of PROJECT_CATEGORIES
+ * - software: Software used (comma-separated if multiple)
+ * - description: Full project description
+ * - shortDescription: Brief description for cards
+ * - thumbnail: Path to thumbnail image
+ * - heroImage: Path to hero/featured image
+ * - gallery: Array of gallery image paths
+ * - models: Array of 3D model objects {name, url, type}
+ * - videos: Array of video objects {name, url, type}
+ * - tags: Array of tag strings
+ * - featured: Boolean for featured projects
+ * - year: Project year
+ * - status: Project status (e.g., 'Completed', 'In Development')
+ * - specifications: Object with technical specs
+ * - technicalDetails: Array of technical detail strings
+ * - timeline: Object with startDate, endDate, duration
+ * - skills: Array of skills demonstrated
+ * 
+ * @constant {Object}
+ */
 export const PROJECTS_DATA = {
   // Arc Reactor Project
   'arc-reactor': {
@@ -502,27 +544,62 @@ export const PROJECTS_DATA = {
 }
 
 
-// Helper functions for project management
+/**
+ * Helper Functions for Project Management
+ * 
+ * These functions provide easy access to project data with filtering,
+ * searching, and statistical capabilities.
+ */
+
+/**
+ * Get a project by its unique ID
+ * @param {string} id - Project ID (kebab-case)
+ * @returns {Object|null} Project object or null if not found
+ */
 export const getProjectById = (id) => {
   return PROJECTS_DATA[id] || null
 }
 
+/**
+ * Get all featured projects
+ * @returns {Array} Array of featured project objects
+ */
 export const getFeaturedProjects = () => {
   return Object.values(PROJECTS_DATA).filter(project => project.featured)
 }
 
+/**
+ * Get projects filtered by category
+ * @param {string} category - Category name
+ * @returns {Array} Array of projects in the specified category
+ */
 export const getProjectsByCategory = (category) => {
   return Object.values(PROJECTS_DATA).filter(project => project.category === category)
 }
 
+/**
+ * Get projects filtered by software
+ * @param {string} software - Software name
+ * @returns {Array} Array of projects using the specified software
+ */
 export const getProjectsBySoftware = (software) => {
   return Object.values(PROJECTS_DATA).filter(project => project.software === software)
 }
 
+/**
+ * Get all projects
+ * @returns {Array} Array of all project objects
+ */
 export const getAllProjects = () => {
   return Object.values(PROJECTS_DATA)
 }
 
+/**
+ * Search projects by query string
+ * Searches in title, description, tags, and category
+ * @param {string} query - Search query
+ * @returns {Array} Array of matching project objects
+ */
 export const searchProjects = (query) => {
   const searchTerm = query.toLowerCase()
   return Object.values(PROJECTS_DATA).filter(project => 
@@ -533,19 +610,28 @@ export const searchProjects = (query) => {
   )
 }
 
-// Get all unique categories
+/**
+ * Get all unique categories from projects
+ * @returns {Array} Array of category strings, with 'all' as first item
+ */
 export const getAllCategories = () => {
   const categories = [...new Set(Object.values(PROJECTS_DATA).map(project => project.category))]
   return ['all', ...categories]
 }
 
-// Get all unique software tools
+/**
+ * Get all unique software tools from projects
+ * @returns {Array} Array of software strings, with 'all' as first item
+ */
 export const getAllSoftware = () => {
   const software = [...new Set(Object.values(PROJECTS_DATA).map(project => project.software))]
   return ['all', ...software]
 }
 
-// Get project statistics
+/**
+ * Get project statistics
+ * @returns {Object} Statistics object with counts and totals
+ */
 export const getProjectStats = () => {
   const projects = Object.values(PROJECTS_DATA)
   return {

@@ -80,32 +80,59 @@ npm run export
 
 ```
 designanything-portfolio/
-├── components/           # React components
-│   ├── CTASection.js    # Call-to-action sections
-│   ├── Footer.js        # Website footer
-│   ├── Hero.js          # Hero section
-│   ├── ModelViewer.js   # 3D model viewer
-│   ├── Navbar.js        # Navigation bar
-│   ├── PortfolioPreview.js # Featured projects
-│   └── ThreeViewer.js   # 3D viewer wrapper
-├── pages/               # Next.js pages
-│   ├── _app.js         # App configuration
-│   ├── index.js        # Homepage
-│   ├── about.js        # About page
-│   ├── portfolio/      # Portfolio pages
-│   ├── services.js     # Services page
-│   └── blog/           # Blog pages
-├── public/             # Static assets
-│   ├── images/         # Images and s
-│   ├── models/         # 3D model files
-│   └── videos/         # Video files
-├── styles/             # CSS styles
-│   └── globals.css     # Global styles
-├── utils/              # Utility functions
-│   ├── projectData.js  # Project data management
-│   └── blogData.js     # Blog data management
-└── config/             # Configuration files
-    └── siteConfig.js   # Site configuration
+├── components/              # React components
+│   ├── Footer.js           # Website footer
+│   ├── Hero.js             # Hero section
+│   ├── ImageVideoDisplay.js # Image/video gallery component
+│   ├── Layout.js           # Main layout wrapper
+│   ├── ModelErrorBoundary.js # Error handling for 3D models
+│   ├── ModelPreloader.js   # 3D model preloading
+│   ├── ModelViewer.js      # 3D model viewer (React Three Fiber)
+│   ├── Navbar.js           # Navigation bar
+│   ├── PortfolioPreview.js # Featured projects preview
+│   ├── ProjectDetailModal.js # Project detail modal
+│   ├── ThreeViewer.js      # 3D viewer wrapper
+│   ├── Testimonials.js     # Testimonials section
+│   ├── Stats.js            # Statistics section
+│   └── [animation components] # Prism, ScrollFloat, SplitText, FluidCursor
+├── pages/                  # Next.js pages
+│   ├── _app.js            # App configuration
+│   ├── index.js            # Homepage
+│   ├── about.js            # About page
+│   ├── contact.js          # Contact page
+│   ├── downloads.js        # Downloads page
+│   ├── services.js         # Services listing page
+│   ├── portfolio/          # Portfolio pages
+│   │   ├── index.js        # Portfolio grid
+│   │   └── [id].js         # Individual project page
+│   ├── services/           # Service detail pages
+│   │   └── [service].js    # Dynamic service page
+│   └── blog/               # Blog pages
+│       ├── index.js        # Blog listing
+│       └── [slug].js       # Individual blog post
+├── public/                 # Static assets
+│   ├── images/             # Images (blog, hero, portfolio, team)
+│   ├── models/             # 3D model files (.glb)
+│   ├── projects/           # Project-specific assets
+│   │   └── [project-id]/   # Organized by project
+│   │       ├── images/     # Project images
+│   │       ├── models/     # Project-specific models
+│   │       ├── videos/     # Project videos
+│   │       └── thumbnails/ # Project thumbnails
+│   ├── downloads/          # Downloadable files
+│   └── videos/             # General videos
+├── styles/                 # CSS styles
+│   └── globals.css         # Global styles and Tailwind
+├── utils/                  # Utility functions
+│   ├── projectData.js      # Project data management (main data source)
+│   ├── projectDiscovery.js # Project discovery utilities
+│   ├── blogData.js         # Blog data management
+│   ├── blogContentParser.js # Blog content parsing
+│   └── teamData.js         # Team member data
+├── config/                 # Configuration files
+│   └── siteConfig.js       # Site configuration and theming
+└── hooks/                  # Custom React hooks
+    └── useScrollAnimation.js # Scroll animation hook
 ```
 
 ## 🎨 Customization
@@ -117,10 +144,11 @@ designanything-portfolio/
 - **Fonts**: Update in `pages/_app.js`
 
 ### Adding New Projects
-1. Create project folder in `public/projects/`
-2. Add project data to `utils/projectData.js`
-3. Upload images and 3D models
-4. Update featured projects list
+1. Create project folder structure in `public/projects/[project-id]/`
+2. Add project data to `utils/projectData.js` in the `PROJECTS_DATA` object
+3. Organize media files (images, models, videos, thumbnails)
+4. Set `featured: true` for projects to appear on homepage
+5. See `EXAMPLE_CONTENT_ADDITION.md` for detailed examples
 
 ### Content Management
 - **Projects**: Edit `utils/projectData.js`
@@ -130,17 +158,26 @@ designanything-portfolio/
 
 ## 📚 Documentation
 
-### Guides
+### Content Management Guides
 - **[Content Management Guide](CONTENT_MANAGEMENT_GUIDE.md)** - Complete content management reference
 - **[Portfolio Management Guide](PORTFOLIO_MANAGEMENT_GUIDE.md)** - Adding and managing projects
-- **[Brand Customization Guide](BRAND_CUSTOMIZATION_GUIDE.md)** - Changing , brand name, and colors
-- **[3D Model Viewer Guide](3D_MODEL_VIEWER_GUIDE.md)** - 3D model integration and troubleshooting
-- **[3D Model Troubleshooting](3D_MODEL_TROUBLESHOOTING.md)** - Common issues and solutions
+- **[Example Content Addition](EXAMPLE_CONTENT_ADDITION.md)** - Step-by-step examples for adding content
+- **[Featured Projects Management](FEATURED_PROJECTS_MANAGEMENT.md)** - Managing featured projects
+
+### Customization Guides
+- **[Brand Customization Guide](BRAND_CUSTOMIZATION_GUIDE.md)** - Changing logo, brand name, and colors
+- **[Services Images Guide](SERVICES_IMAGES_GUIDE.md)** - Managing service images
+- **[Blog Media Guide](BLOG_MEDIA_GUIDE.md)** - Blog content and media management
 
 ### Technical Documentation
+- **[3D Model Viewer Guide](3D_MODEL_VIEWER_GUIDE.md)** - 3D model integration and usage
+- **[3D Model Troubleshooting](3D_MODEL_TROUBLESHOOTING.md)** - Common issues and solutions
 - **[Implementation Summary](IMPLEMENTATION_SUMMARY.md)** - Complete feature overview
-- **[Deployment Guide](DEPLOYMENT_GUIDE.md)** - Deployment instructions
 - **[Folder Structure Guide](FOLDER_STRUCTURE_GUIDE.md)** - Project organization
+
+### Deployment
+- **[Deployment Guide](DEPLOYMENT_GUIDE.md)** - Deployment instructions (Vercel, Netlify, etc.)
+- **[Deployment Instructions](DEPLOYMENT_INSTRUCTIONS.md)** - Step-by-step deployment guide
 
 ## 🛠️ Technology Stack
 

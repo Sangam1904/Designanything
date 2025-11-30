@@ -1,3 +1,17 @@
+/**
+ * Layout Component
+ * 
+ * Main layout wrapper for all pages. Handles:
+ * - SEO meta tags and Open Graph data
+ * - Dark mode theme management
+ * - Global navigation and footer
+ * - CSS variable generation for theming
+ * 
+ * @param {ReactNode} children - Page content to render
+ * @param {string} title - Page title (defaults to 'DesignAnything')
+ * @param {string} description - Meta description for SEO
+ * @param {string} fullTitle - Optional full title override
+ */
 import Head from 'next/head'
 import Navbar from './Navbar'
 import Footer from './Footer'

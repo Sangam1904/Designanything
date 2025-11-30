@@ -4,8 +4,7 @@ Allow: /
 # Sitemap
 Sitemap: https://designanything.com/sitemap.xml
 
-# Disallow admin areas
-Disallow: /admin/
+# Disallow API and internal routes
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
