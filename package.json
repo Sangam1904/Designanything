@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:gh-pages": "cross-env GITHUB_PAGES_BASE_PATH=/anything-can-design next build",
+    "export": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build:gh-pages && gh-pages -d out"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
